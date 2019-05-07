@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="jaydu1">
 <meta property="og:description" content="DefinitionA discrete-time partially observable Markov decision process (POMDP) models the relationship between an agent and its environment. Formally, a POMDP is a 7-tuple $(S,A,T,R,\Omega,O,\gamma)$,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-07T13:00:36.248Z">
+<meta property="og:updated_time" content="2019-05-07T13:11:22.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Partially Observable Markov Decision Process">
 <meta name="twitter:description" content="DefinitionA discrete-time partially observable Markov decision process (POMDP) models the relationship between an agent and its environment. Formally, a POMDP is a 7-tuple $(S,A,T,R,\Omega,O,\gamma)$,">
@@ -433,11 +433,10 @@
 <p>Of these, $\tau$ and $r$ need to be derived from the original POMDP. $\tau$ is</p>
 <script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>where $\mathbb{P}(o|a,b)$ is the value derived in the previous section and</p>
 <script type="math/tex; mode=display">\mathbb{P}(b'|b,a,o)=\begin{cases}
-1&\text{if the belief update with arguments}b,a,o\text{ returns }b'\\
-0&\text{otherwise }\end{cases}$$.
-
-The belief MDP reward function ($r$) is the expected reward from the POMDP reward function over the belief state distribution:
-$$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>The belief MDP is not partially observable anymore, since at any given time the agent knows its belief, and by extension the state of the belief MDP.</p>
+1&\text{if the belief update with arguments }b,a,o\text{ returns }b'\\
+0&\text{otherwise }
+\end{cases}.</script><p>The belief MDP reward function ($r$) is the expected reward from the POMDP reward function over the belief state distribution:</p>
+<script type="math/tex; mode=display">r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>The belief MDP is not partially observable anymore, since at any given time the agent knows its belief, and by extension the state of the belief MDP.</p>
 <h1 id="Policy-And-Value-Function"><a href="#Policy-And-Value-Function" class="headerlink" title="Policy And Value Function"></a>Policy And Value Function</h1><p>Unlike the “originating” POMDP (where each action is available from only one state), in the corresponding Belief MDP all belief states allow all actions, since you (almost) always have some probability of believing you are in any (originating) state. As such, $\pi$  specifies an action $a=\pi(b)$ for any belief $b$.</p>
 <p>Here it is assumed the objective is to maximize the expected total discounted reward over an infinite horizon. When $R$ defines a cost, the objective becomes the minimization of the expected cost.</p>
 <p>The expected reward for policy $\pi$ starting from belief $b_{0}$ is defined as</p>
