@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="reinforcement-learning,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="jaydu1">
-<meta property="og:url" content="http://yoursite.com/tags/course/index.html">
+<meta name="description" content="定义一个部分观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中  $S$是状态集合；  $A$是动作集合； $T$是转移概率函数； $R: S \times A \to \mathbb{R}$是报酬函数； $\Omega$是观测集合； $O$是条件观测概率函数； $\gamma \in [0, 1]$是折扣因子。">
+<meta name="keywords" content="reinforcement-learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部分观测马尔科夫决策过程">
+<meta property="og:url" content="http://yoursite.com/reinforcement-learning/POMDP/index.html">
 <meta property="og:site_name" content="jaydu1">
+<meta property="og:description" content="定义一个部分观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中  $S$是状态集合；  $A$是动作集合； $T$是转移概率函数； $R: S \times A \to \mathbb{R}$是报酬函数； $\Omega$是观测集合； $O$是条件观测概率函数； $\gamma \in [0, 1]$是折扣因子。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-07T12:58:32.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jaydu1">
+<meta name="twitter:title" content="部分观测马尔科夫决策过程">
+<meta name="twitter:description" content="定义一个部分观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中  $S$是状态集合；  $A$是动作集合； $T$是转移概率函数； $R: S \times A \to \mathbb{R}$是报酬函数； $\Omega$是观测集合； $O$是条件观测概率函数； $\gamma \in [0, 1]$是折扣因子。">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/course/">
+  <link rel="canonical" href="http://yoursite.com/reinforcement-learning/POMDP/">
 
 
 
 
 
-  <title>标签: course | jaydu1</title>
+  <title>部分观测马尔科夫决策过程 | jaydu1</title>
   
 
 
@@ -150,7 +155,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,82 +286,250 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>course<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-                    
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/POMDP/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/course/SYSU/" itemprop="url">
-              
-                <span itemprop="name">课程材料（SYSU）</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">部分观测马尔科夫决策过程</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-25T19:40:52+08:00" content="2019-04-25">
-          04-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54+08:00">
+                2019-05-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
-      	 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/reinforcement-learning/POMDP/" class="leancloud_visitors" data-flag-title="部分观测马尔科夫决策过程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-                    
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>一个部分观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中</p>
+<ul>
+<li>$S$是状态集合； </li>
+<li>$A$是动作集合；</li>
+<li>$T$是转移概率函数；</li>
+<li>$R: S \times A \to \mathbb{R}$是报酬函数；</li>
+<li>$\Omega$是观测集合；</li>
+<li>$O$是条件观测概率函数；</li>
+<li>$\gamma \in [0, 1]$是折扣因子。</li>
+</ul>
+<p>在每个时间，环境处于某个状态$s\in S$。代理采取了行动$a\in A$，导致了环境以概率$T(s’\mid s,a)$转移到状态$s’$。同时，代理观测到的是$o\in \Omega$，$o$依赖于行动$a$以及新状态$s’$, 概率为$O(o\mid s’,a)$。最后，代理接收到报酬$r=R(s, a)$。这个过程一直重复下去。POMDP的目标是最大化未来的期望总报酬$E\left[\sum _{t=0}^{\infty }\gamma^{t}r_{t}\right]$，其中$r_{t}$ 是时间$t$得到的报酬。折扣因子$\gamma$决定了对即时报酬与未来报酬的不同重视程度。</p>
+<p>当$\gamma =0$时，代理制关注会产生最大即时报酬的行动；当$\gamma =1$时，代理会着眼于最大化未来报酬之和。</p>
+<script type="math/tex; mode=display">\begin{align\ast}
+\text{Underlying Model}\qquad&s_0\rightarrow s_1\rightarrow \cdots \qquad\qquad\\
+&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
+\text{Observation}\qquad &o_0\rightarrow o_1\rightarrow \cdots \qquad\qquad\\ 
+&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
+\text{Belief}\qquad&b_0\rightarrow b_1\rightarrow \cdots \qquad\qquad
+\end{align\ast}</script><h1 id="信念马尔科夫决策过程"><a href="#信念马尔科夫决策过程" class="headerlink" title="信念马尔科夫决策过程"></a>信念马尔科夫决策过程</h1><p>代理的信念$b(s)$是一个描在某一时刻述处于状态$s$概率的函数。在采取行动$a$、观测到$o$之和，代理需要更新它的信念函数。因为状态转移服具有马尔科夫性，对于信念函数的计算只涉及前一时刻的信念、采取的动作以及目前的观测。更新的操作记为$b’ = \tau(b,a,o)$</p>
+<p>在到达$s’$之和，代理以概率$O(o\mid s’,a)$观测到$o\in \Omega$。令$b$为状态空间$S$上的概率分布。$b(s)$代表环境处于状态$s$的概率。给定$b(s)$，在采取行动$a$、观测到$o$之后，</p>
+<script type="math/tex; mode=display">b'(s')=\eta O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script><p>其中$\eta =\frac{1}{\mathbb{P}(o\mid b,a)}$是一个归一化常数，使得$\mathbb{P}(o\mid b,a)=\sum _{s’\in S}O(o\mid s’,a)\sum _{s\in S}T(s’\mid s,a)b(s)$。</p>
+<p>马尔科夫信念状态使得我们可以用MDP来描述POMDP。这个信念马尔科夫决策过程会定义到连续状态空间，因为有信念空间$B$是无限的。</p>
+<p>正式地，信念马尔科夫决策过程由元组$(B,A,\tau,r,\gamma)$定义，其中</p>
+<ul>
+<li>$B$是POMDP状态集上的信念空间；</li>
+<li>$A$是与原POMDP相同的动作集合；</li>
+<li>$\tau$是信念状态的转移函数；</li>
+<li>$r:B \times A \to \mathbb{R}$是信念状态上的保存函数；</li>
+<li>$\gamma$是与原POMDP相同的折扣因子。</li>
+</ul>
+<p>$\tau$和$r$需要从原POMDP中计算得到：</p>
+<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 <script type="math/tex">\mathbb{P}(o\mid b,a)=\sum _{s'\in S}O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script></p>
+<script type="math/tex; mode=display">\mathbb{P}(b'|b,a,o)={\begin{cases}1&{\text{if the belief update with arguments }b,a,o{\text{ returns }b'\\0&{\text{otherwise }\end{cases}$$.
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/course/UCB/" itemprop="url">
-              
-                <span itemprop="name">课程材料（UCB）</span>
-              
-            </a>
-        
-      </h2>
+报酬函数$r$定义为：
+$$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>
+<h1 id="策略和价值函数"><a href="#策略和价值函数" class="headerlink" title="策略和价值函数"></a>策略和价值函数</h1><p>与原POMDP不同的是，信念马尔科夫决策过程的所有信念状态运行多种动作发生，因为信念函数的输出是一个概率分布。因此，$\pi$对任意信念$b$输出动作$a=\pi(b)$。</p>
+<p>这里我们假设目标函数是最大化无限阶段的期望总折扣报酬。当定义代价为$R$时，目标变为最小化期望代价。</p>
+<p>给定初始信念$b_{0}$，策略$\pi$的期望报酬定义为</p>
+<script type="math/tex; mode=display">V^\pi(b_0) = \sum_{t=0}^\infty  \gamma^t r(b_t, a_t) = \sum_{t=0}^\infty \gamma^t E\Bigl[ R(s_t,a_t) \mid b_0, \pi \Bigr]</script><p>其中$\gamma&lt;1$是折扣因子。最优策略$\pi^\ast$是由优化长期报酬得到：</p>
+<script type="math/tex; mode=display">\pi ^{\ast}={\underset  {\pi }{\mbox{argmax}}\ V^{\pi }(b_{0})</script><p>最优策略$\pi^\ast$对每一个信念状态产生最高期望报酬，即最优值函数$V^{\ast}$。这个值函数是贝尔曼方程的解：</p>
+<script type="math/tex; mode=display">V^{\ast}(b)=\max _{a\in A}{\Bigl [}r(b,a)+\gamma \sum _{o\in \Omega }\Pr(o\mid b,a)V^{\ast}(\tau (b,a,o)){\Bigr ]}</script><p>对有限阶段的POMDPs，最优值函数是分段线性、凸的。它可以用有限的向量集合表示。对无限阶段的POMDPs，最优值函数可以由有限向量集合任意逼近，并且保持凸性。值迭代应用动态规划更新，逐渐改善值函数，直到收敛到$\epsilon$-最优的值函数，保持分段线性和凸性。通过改善值函数，策略也间接得到改善。另外也可以yoga策略迭代直接改善策略。这与MDP的值迭代和策略迭代相同。</p>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-25T19:40:52+08:00" content="2019-04-25">
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      	 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create.</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-qcode.JPG" alt="Jinhong Du 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-qcode.JPG" alt="Jinhong Du 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/reinforcement-learning/" rel="tag"># reinforcement-learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/reinforcement-learning/MDP/" rel="next" title="马尔科夫决策过程">
+                <i class="fa fa-chevron-left"></i> 马尔科夫决策过程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -364,6 +537,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -384,8 +564,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -463,6 +652,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信念马尔科夫决策过程"><span class="nav-number">2.</span> <span class="nav-text">信念马尔科夫决策过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略和价值函数"><span class="nav-number">3.</span> <span class="nav-text">策略和价值函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -603,6 +808,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
