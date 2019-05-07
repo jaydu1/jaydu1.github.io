@@ -432,8 +432,11 @@
 <li>$\gamma$是与原POMDP相同的折扣因子。</li>
 </ul>
 <p>$\tau$和$r$需要从原POMDP中计算得到：</p>
-<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 <script type="math/tex">\mathbb{P}(o\mid b,a)=\sum _{s'\in S}O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script></p>
-<script type="math/tex; mode=display">\mathbb{P}(b'|b,a,o)={\begin{cases}1&{\text{if the belief update with arguments }b,a,o{\text{ returns }b'\\0&{\text{otherwise }\end{cases}$$.
+<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 <script type="math/tex">\mathbb{P}(o\mid b,a)=\sum_{s'\in S}O(o\mid s',a)\sum_{s\in S}T(s'\mid s,a)b(s)</script></p>
+<script type="math/tex; mode=display">\mathbb{P}(b'|b,a,o)=\begin{cases}
+1&\text{if the belief update with arguments }b,a,o\text{ returns }b'\\
+0&\text{otherwise }
+\end{cases}$$.
 
 报酬函数$r$定义为：
 $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>

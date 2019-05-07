@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/en/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/en/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/en/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/en/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/en/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/en/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/en/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="reinforcement-learning,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Markov Decision ProcessA Markov decision process is a $5$-tuple $(S,A,P_{\cdot}(\cdot,\cdot),R_{\cdot}(\cdot,\cdot),\gamma)$, where  $S$ is a finite set of states.  $A$ is a finite set of actions (alt">
+<meta name="keywords" content="reinforcement-learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markov Decision Process">
+<meta property="og:url" content="http://yoursite.com/reinforcement-learning/MDP/index.html">
+<meta property="og:site_name" content="jaydu1">
+<meta property="og:description" content="Markov Decision ProcessA Markov decision process is a $5$-tuple $(S,A,P_{\cdot}(\cdot,\cdot),R_{\cdot}(\cdot,\cdot),\gamma)$, where  $S$ is a finite set of states.  $A$ is a finite set of actions (alt">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/en/reinforcement-learning/MDP/MDP_algo_1.png">
+<meta property="og:image" content="http://yoursite.com/en/reinforcement-learning/MDP/MDP_algo_2.png">
+<meta property="og:updated_time" content="2019-05-06T09:08:44.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markov Decision Process">
+<meta name="twitter:description" content="Markov Decision ProcessA Markov decision process is a $5$-tuple $(S,A,P_{\cdot}(\cdot,\cdot),R_{\cdot}(\cdot,\cdot),\gamma)$, where  $S$ is a finite set of states.  $A$ is a finite set of actions (alt">
+<meta name="twitter:image" content="http://yoursite.com/en/reinforcement-learning/MDP/MDP_algo_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/en/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/reinforcement-learning/MDP/">
+
+
+
+
+
+  <title>Markov Decision Process | jaydu1</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edf6e323a1defe42b06a553cf51cfb67";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/en/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jaydu1</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/en/" rel="section">
+          
+            
+            
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/en/tags/" rel="section">
+          
+            
+            
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/en/categories/" rel="section">
+          
+            
+            
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/en/archives/" rel="section">
+          
+            
+            
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resources">
+          <a href="/en/resources" rel="section">
+          
+            
+            
+            
+              <i class="menu-item-icon fa fa-fw fa-download"></i> <br>
+            
+            Resources
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/en/../" rel="section">
+          
+            
+            
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br>
+            
+            中文
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/MDP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Markov Decision Process</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T21:39:54+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/reinforcement-learning/MDP/" class="leancloud_visitors" data-flag-title="Markov Decision Process">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h1><p>A Markov decision process is a $5$-tuple $(S,A,P_{\cdot}(\cdot,\cdot),R_{\cdot}(\cdot,\cdot),\gamma)$, where</p>
+<ul>
+<li><p>$S$ is a finite set of states.</p>
+</li>
+<li><p>$A$ is a finite set of actions (alternatively, $A(s)$ is the finite set of actions available from state $s$).</p>
+</li>
+<li><p>$R_{a}(s,s’)$ is the immediate reward (or expected immediate reward) received after transitioning from state $s$ to state $s’$, due to $a$. It can also be like $R(s)$ or $R(s,a)$.</p>
+</li>
+<li><p>$P_a(s,s’)=P(s_{t+1}=s’|s_t=s,a_t=a)$ is the probability that action $a$ in state $s$ at time $t$ will lead to state $s’$ at time $t+1$. </p>
+</li>
+<li><p>$\gamma\in[0,1]$ is a discount factor, which represents the difference in importance between future rewards and present rewards.</p>
+</li>
+</ul>
+<p>The solution to the MDP is the policy $\pi(s)\rightarrow a$, which maximizes the long-term expected reward. In reinforcement learning domains, we simply assume the policy is deterministic and history-independent.</p>
+<h1 id="Total-Reward"><a href="#Total-Reward" class="headerlink" title="Total Reward"></a>Total Reward</h1><p>$V(s)$, the state value function, is the total discounted reward from time-step $t$,</p>
+<script type="math/tex; mode=display">\begin{align*}V(s_t)&=R(s_t)+\gamma R(s_{t+1})+\cdots\\
+\qquad\qquad&=\sum\limits_{i=t}^{\infty}\gamma^iR(s_{i})\qquad 0\leqslant\gamma\leqslant 1
+\end{align*}</script><p>We can show that </p>
+<script type="math/tex; mode=display">V<\infty</script><h1 id="Policies"><a href="#Policies" class="headerlink" title="Policies"></a>Policies</h1><script type="math/tex; mode=display">\begin{align*}\pi^*&=\mathop{\arg\max}_{\pi}\mathbb{E}V^{\pi}\\
+&=\mathop{\arg\max}_{a}\sum\limits_{s'\in S}P_a(s,s')V(s')
+\end{align*}</script><p>The long term and delayed reward is given by</p>
+<script type="math/tex; mode=display">V^{\pi}(s)=\mathbb{E}[V(s_0)|\pi,s_0=s]</script><p>which is not equal to the immediate reward $R(s)$.</p>
+<p>From <strong>Bellman Equation</strong>, the value function can be decomposed into two parts:immediate reward $R(s)$ and discounted value of successor state $\gamma V(S_{t+1})$.</p>
+<script type="math/tex; mode=display">\begin{align*}
+V(s) &=\mathbb{E}[V|S_t=s]\\
+&=\mathbb{E}\left[\sum\limits_{i=0}^{\infty}\gamma^iR_{i}|S_t=s\right]\\
+&=\mathbb{E}[R(s)+V(s)|S_t=s]\\
+&=\mathbb{E}[R(s)+\gamma V(S_{t+1})|S_t=s]\\
+&= R(s)+ \gamma\sum\limits_{s'\in S}P_a(s,s')V(s')
+\end{align*}</script><p>Similar result holds for $V^{\pi}(s)$.</p>
+<h1 id="Policy-Iterated-RL"><a href="#Policy-Iterated-RL" class="headerlink" title="Policy-Iterated RL"></a>Policy-Iterated RL</h1><p>Policy iteration tries to evaluate and improve the policy in turn. Once a policy $\pi$ has been improved by using $V^{\pi}$ to yield a better policy $\pi’$, we can then compute $V^{\pi’}$ and improve it again to yield an even better policy. We can thus obtain a sequence of monotonically improving policies and value functions: <script type="math/tex">\pi_0\xrightarrow{E}V^{\pi_0}\xrightarrow{I}\pi_1\xrightarrow{E}\cdots \xrightarrow{I}V^{\pi^{\ast}}\xrightarrow{E}V^{\ast}</script><br>where $\xrightarrow{E}$ denotes a policy evaluation and $\xrightarrow{I}$ denotes a policy improvement. Each policy is guaranteed to be a strict improvement over the previous one (unless it is already optimal). Because a finite MDP has only a finite number of policies, this process must converge to an optimal policy and optimal value function in a finite number of iterations.</p>
+<img src="/en/reinforcement-learning/MDP/MDP_algo_1.png" title="Policy Iteration">
+<h1 id="Value-Iterated-RL"><a href="#Value-Iterated-RL" class="headerlink" title="Value-Iterated RL"></a>Value-Iterated RL</h1><p>One drawback to policy iteration is that each of its iterations involves policy evaluation, which may itself be a protracted iterative computation requiring multiple sweeps through the state set. If policy evaluation is done iteratively, then convergence exactly to  occurs only in the limit. </p>
+<p>In fact, the policy evaluation step of policy iteration can be truncated in several ways without losing the convergence guarantees of policy iteration. One important special case is when policy evaluation is stopped after just one sweep (one backup of each state). This algorithm is called value iteration. It can be written as a particularly simple backup operation that combines the policy improvement and truncated policy evaluation steps: </p>
+<script type="math/tex; mode=display">\begin{align*}V_{k+1}(s)&=\max\limits_a \mathbb{E}[ r_{t+1}+\gamma V_k(s_{t+1})]|s_t=s, a_t=a)\\
+&=\max\limits_a \sum\limits_{s'} P_a(s,s')[ R_{a}(s,s')+\gamma V_k(s')] \end{align*}</script><p>for all $s\in S$. For arbitrary $V_0$, the sequence $\{V_k\}$ can be shown to converge to $V^\ast$ under the $V^\ast$.</p>
+<img src="/en/reinforcement-learning/MDP/MDP_algo_2.png" title="Value Iteration">
+<h1 id="Code-Example"><a href="#Code-Example" class="headerlink" title="Code Example"></a>Code Example</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> gym</span><br><span class="line"><span class="keyword">from</span> gym <span class="keyword">import</span> wrappers</span><br></pre></td></tr></table></figure>
+<h2 id="Policy-Iterated-RL-1"><a href="#Policy-Iterated-RL-1" class="headerlink" title="Policy-Iterated RL"></a>Policy-Iterated RL</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">policy_evaluation</span><span class="params">(env, policy, gamma=<span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Iteratively evaluate the value-function under policy.</span></span><br><span class="line"><span class="string">    Alternatively, we could formulate a set of linear equations in iterms of v[s] </span></span><br><span class="line"><span class="string">    and solve them to find the value function.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    v = np.zeros(env.nS)</span><br><span class="line">    eps = <span class="number">1e-10</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        prev_v = np.copy(v)</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">            policy_a = policy[s]</span><br><span class="line">            v[s] = sum([p * (r + gamma * prev_v[s_]) <span class="keyword">for</span> p, s_, r, _ <span class="keyword">in</span> env.P[s][policy_a]])</span><br><span class="line">        <span class="keyword">if</span> (np.sum((np.fabs(prev_v - v))) &lt;= eps):</span><br><span class="line">            <span class="comment"># value converged</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> v</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">policy_improvement</span><span class="params">(v, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Extract the policy given a value-function """</span></span><br><span class="line">    policy = np.zeros(env.nS)</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">        q_sa = np.zeros(env.nA)</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> range(env.nA):</span><br><span class="line">            q_sa[a] = sum([p * (r + gamma * v[s_]) <span class="keyword">for</span> p, s_, r, _ <span class="keyword">in</span>  env.P[s][a]])</span><br><span class="line">        policy[s] = np.argmax(q_sa)</span><br><span class="line">    <span class="keyword">return</span> policy</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">policy_iteration</span><span class="params">(env, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Policy-Iteration algorithm """</span></span><br><span class="line">    <span class="comment"># initialize a random policy</span></span><br><span class="line">    policy = np.random.choice(env.nA, size=(env.nS))</span><br><span class="line">    <span class="comment"># parameter</span></span><br><span class="line">    max_iterations = <span class="number">200000</span></span><br><span class="line">    gamma = <span class="number">1.0</span></span><br><span class="line">    <span class="comment"># run iterations</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(max_iterations):</span><br><span class="line">        <span class="comment"># calculate the value given the old policy</span></span><br><span class="line">        old_policy_v = policy_evaluation(env, policy, gamma)</span><br><span class="line">        <span class="comment"># find the new policy</span></span><br><span class="line">        new_policy = policy_improvement(old_policy_v, gamma)</span><br><span class="line">        <span class="keyword">if</span> (np.all(policy == new_policy)):</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'Policy-Iteration converged at step %d.'</span> %(i+<span class="number">1</span>))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        policy = new_policy</span><br><span class="line">    <span class="keyword">return</span> policy</span><br></pre></td></tr></table></figure>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_episode</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>, render = False)</span>:</span></span><br><span class="line">    <span class="string">""" Runs an episode and return the total reward """</span></span><br><span class="line">    obs = env.reset()</span><br><span class="line">    total_reward = <span class="number">0</span></span><br><span class="line">    step_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> render:</span><br><span class="line">            env.render()</span><br><span class="line">        obs, reward, done , _ = env.step(int(policy[obs]))</span><br><span class="line">        total_reward += (gamma ** step_idx * reward)</span><br><span class="line">        step_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> done:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> total_reward</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_policy</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>, n = <span class="number">100</span>, render = False)</span>:</span></span><br><span class="line">    scores = [run_episode(env, policy, gamma, render) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">    <span class="keyword">return</span> np.mean(scores)</span><br><span class="line"></span><br><span class="line">env_name  = <span class="string">'FrozenLake8x8-v0'</span></span><br><span class="line">env = gym.make(env_name).unwrapped</span><br><span class="line">optimal_policy = policy_iteration(env, gamma = <span class="number">1.0</span>)</span><br><span class="line">scores = evaluate_policy(env, optimal_policy, gamma = <span class="number">1.0</span>, render = <span class="literal">False</span>)</span><br><span class="line">print(<span class="string">'Average scores = '</span>, np.mean(scores))</span><br><span class="line"><span class="comment"># Policy-Iteration converged at step 13.</span></span><br><span class="line"><span class="comment"># Average scores =  1.0</span></span><br></pre></td></tr></table></figure>
+<h2 id="Value-Iterated-RL-1"><a href="#Value-Iterated-RL-1" class="headerlink" title="Value-Iterated RL"></a>Value-Iterated RL</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract_policy</span><span class="params">(v, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Extract the policy given a value-function """</span></span><br><span class="line">    policy = np.zeros(env.nS)</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">        q_sa = np.zeros(env.action_space.n)</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> range(env.action_space.n):</span><br><span class="line">            <span class="keyword">for</span> next_sr <span class="keyword">in</span> env.P[s][a]:</span><br><span class="line">                <span class="comment"># next_sr is a tuple of (probability, next state, reward, done)</span></span><br><span class="line">                p, s_, r, _ = next_sr</span><br><span class="line">                q_sa[a] += (p * (r + gamma * v[s_]))</span><br><span class="line">        policy[s] = np.argmax(q_sa)</span><br><span class="line">    <span class="keyword">return</span> policy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">value_iteration</span><span class="params">(env, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Value-iteration algorithm """</span></span><br><span class="line">    v = np.zeros(env.nS)  <span class="comment"># initialize value-function</span></span><br><span class="line">    max_iterations = <span class="number">100000</span></span><br><span class="line">    eps = <span class="number">1e-20</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(max_iterations):</span><br><span class="line">        prev_v = np.copy(v)</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">            q_sa = [sum([p*(r + prev_v[s_]) <span class="keyword">for</span> p, s_, r, _ <span class="keyword">in</span> env.P[s][a]]) <span class="keyword">for</span> a <span class="keyword">in</span> range(env.nA)]</span><br><span class="line">            v[s] = max(q_sa)</span><br><span class="line">        <span class="keyword">if</span> (np.sum(np.fabs(prev_v - v)) &lt;= eps):</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'Value-iteration converged at iteration# %d.'</span> %(i+<span class="number">1</span>))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> v</span><br></pre></td></tr></table></figure>
+<h2 id="Evaluation-1"><a href="#Evaluation-1" class="headerlink" title="Evaluation"></a>Evaluation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_episode</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>, render = False)</span>:</span></span><br><span class="line">    <span class="string">""" Evaluates policy by using it to run an episode and finding its</span></span><br><span class="line"><span class="string">    total reward.</span></span><br><span class="line"><span class="string">    args:</span></span><br><span class="line"><span class="string">    env: gym environment.</span></span><br><span class="line"><span class="string">    policy: the policy to be used.</span></span><br><span class="line"><span class="string">    gamma: discount factor.</span></span><br><span class="line"><span class="string">    render: boolean to turn rendering on/off.</span></span><br><span class="line"><span class="string">    returns:</span></span><br><span class="line"><span class="string">    total reward: real value of the total reward recieved by agent under policy.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    obs = env.reset()</span><br><span class="line">    total_reward = <span class="number">0</span></span><br><span class="line">    step_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> render:</span><br><span class="line">            env.render()</span><br><span class="line">        obs, reward, done , _ = env.step(int(policy[obs]))</span><br><span class="line">        total_reward += (gamma ** step_idx * reward)</span><br><span class="line">        step_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> done:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> total_reward</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_policy</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>,  n = <span class="number">100</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Evaluates a policy by running it n times.</span></span><br><span class="line"><span class="string">    returns:</span></span><br><span class="line"><span class="string">    average total reward</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    scores = [</span><br><span class="line">            run_episode(env, policy, gamma = gamma, render = <span class="literal">False</span>)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">    <span class="keyword">return</span> np.mean(scores)</span><br><span class="line"></span><br><span class="line">env_name  = <span class="string">'FrozenLake8x8-v0'</span></span><br><span class="line">gamma = <span class="number">1.0</span></span><br><span class="line">env = gym.make(env_name).unwrapped</span><br><span class="line">optimal_v = value_iteration(env, gamma);</span><br><span class="line">policy = extract_policy(optimal_v, gamma)</span><br><span class="line">policy_score = evaluate_policy(env, policy, gamma, n=<span class="number">1000</span>)</span><br><span class="line">print(<span class="string">'Policy average score = '</span>, policy_score)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Value-iteration converged at iteration# 2357.</span></span><br><span class="line"><span class="comment"># Policy average score =  1.0</span></span><br></pre></td></tr></table></figure>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol>
+<li><a href="http://incompleteideas.net/book/first/ebook/node43.html" target="_blank" rel="noopener">Policy Iteration</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Your support will encourage me to continue to create.</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-qcode.JPG" alt="Jinhong Du WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-qcode.JPG" alt="Jinhong Du Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/en/tags/reinforcement-learning/" rel="tag"># reinforcement-learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/en/reinforcement-learning/Q-learning/" rel="next" title="Q-learning">
+                <i class="fa fa-chevron-left"></i> Q-learning
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/en/reinforcement-learning/POMDP/" rel="prev" title="Partially Observable Markov Decision Process">
+                Partially Observable Markov Decision Process <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/en/images/avatar.png" alt="Jinhong Du">
+            
+              <p class="site-author-name" itemprop="name">Jinhong Du</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/en/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/en/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/en/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jaydu1" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jayduking@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markov-Decision-Process"><span class="nav-number">1.</span> <span class="nav-text">Markov Decision Process</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Total-Reward"><span class="nav-number">2.</span> <span class="nav-text">Total Reward</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Policies"><span class="nav-number">3.</span> <span class="nav-text">Policies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Policy-Iterated-RL"><span class="nav-number">4.</span> <span class="nav-text">Policy-Iterated RL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Value-Iterated-RL"><span class="nav-number">5.</span> <span class="nav-text">Value-Iterated RL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-Example"><span class="nav-number">6.</span> <span class="nav-text">Code Example</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy-Iterated-RL-1"><span class="nav-number">6.1.</span> <span class="nav-text">Policy-Iterated RL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation"><span class="nav-number">6.2.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Value-Iterated-RL-1"><span class="nav-number">6.3.</span> <span class="nav-text">Value-Iterated RL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation-1"><span class="nav-number">6.4.</span> <span class="nav-text">Evaluation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinhong Du</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/en/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/en/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/en/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/en/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/en/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/en/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/en/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/en/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/en/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/en/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/en/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/en/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/en/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("5aOOwIWB3aC4iaRjNDJrYJgm-gzGzoHsz", "Vm6WEpC1PP66yMVQ3QGXrign");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

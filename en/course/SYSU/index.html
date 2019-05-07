@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/en/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,29 +48,27 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/en/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/en/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/en/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/en/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/en/images/favicon-16x16-next.png?v=5.1.4">
 
 
+  <link rel="mask-icon" href="/en/images/logo.svg?v=5.1.4" color="#222">
 
 
 
-  <meta name="keywords" content="reinforcement-learning,">
 
 
+  <meta name="keywords" content="course,">
 
 
 
@@ -79,25 +77,27 @@
 
 
 
-<meta name="description" content="定义一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中  $S$是状态集合；  $A$是动作集合； $T$是转移概率函数； $R: S \times A \to \mathbb{R}$是报酬函数； $\Omega$是观测集合； $O$是条件观测概率函数； $\gamma \in [0, 1]$是折扣因子">
-<meta name="keywords" content="reinforcement-learning">
+
+
+<meta name="description" content="Math    Course Name Github BaiduDisk      Real Function link 0jgw   Complex Function link gq93   Optimization link dtkm     Statistics    Course Name Github BaiduDisk      Mathematical Statistics link">
+<meta name="keywords" content="course">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部分可观测马尔科夫决策过程">
-<meta property="og:url" content="http://yoursite.com/reinforcement-learning/POMDP/index.html">
+<meta property="og:title" content="Course materials in SYSU">
+<meta property="og:url" content="http://yoursite.com/course/SYSU/index.html">
 <meta property="og:site_name" content="jaydu1">
-<meta property="og:description" content="定义一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中  $S$是状态集合；  $A$是动作集合； $T$是转移概率函数； $R: S \times A \to \mathbb{R}$是报酬函数； $\Omega$是观测集合； $O$是条件观测概率函数； $\gamma \in [0, 1]$是折扣因子">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T13:07:10.613Z">
+<meta property="og:description" content="Math    Course Name Github BaiduDisk      Real Function link 0jgw   Complex Function link gq93   Optimization link dtkm     Statistics    Course Name Github BaiduDisk      Mathematical Statistics link">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-25T15:58:55.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="部分可观测马尔科夫决策过程">
-<meta name="twitter:description" content="定义一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中  $S$是状态集合；  $A$是动作集合； $T$是转移概率函数； $R: S \times A \to \mathbb{R}$是报酬函数； $\Omega$是观测集合； $O$是条件观测概率函数； $\gamma \in [0, 1]$是折扣因子">
+<meta name="twitter:title" content="Course materials in SYSU">
+<meta name="twitter:description" content="Math    Course Name Github BaiduDisk      Real Function link 0jgw   Complex Function link gq93   Optimization link dtkm     Statistics    Course Name Github BaiduDisk      Mathematical Statistics link">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/en/',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -106,7 +106,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/reinforcement-learning/POMDP/">
+  <link rel="canonical" href="http://yoursite.com/course/SYSU/">
 
 
 
 
 
-  <title>部分可观测马尔科夫决策过程 | jaydu1</title>
+  <title>Course materials in SYSU | jaydu1</title>
   
 
 
@@ -148,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -164,7 +164,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/en/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">jaydu1</span>
         <span class="logo-line-after"><i></i></span>
@@ -192,79 +192,79 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/en/" rel="section">
           
             
             
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            Home
           </a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/en/tags/" rel="section">
           
             
             
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            Tags
           </a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/en/categories/" rel="section">
           
             
             
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            Categories
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/en/archives/" rel="section">
           
             
             
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            Archives
           </a>
         </li>
       
         
         <li class="menu-item menu-item-resources">
-          <a href="/resources" rel="section">
+          <a href="/en/resources" rel="section">
           
             
             
             
               <i class="menu-item-icon fa fa-fw fa-download"></i> <br>
             
-            资源
+            Resources
           </a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/en" rel="section">
+          <a href="/en/../" rel="section">
           
             
             
             
               <i class="menu-item-icon fa fa-fw fa-language"></i> <br>
             
-            EN
+            中文
           </a>
         </li>
       
@@ -300,12 +300,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/POMDP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/SYSU/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/en/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">部分可观测马尔科夫决策过程</h1>
+          <h1 class="post-title" itemprop="name headline">Course materials in SYSU</h1>
         
 
         <div class="post-meta">
@@ -327,10 +327,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54+08:00">
-                2019-05-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52+08:00">
+                2019-04-25
               </time>
             
 
@@ -348,12 +348,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
+                  <a href="/en/categories/course/" itemprop="url" rel="index">
+                    <span itemprop="name">course</span>
                   </a>
                 </span>
 
@@ -369,13 +369,13 @@
 
           
           
-             <span id="/reinforcement-learning/POMDP/" class="leancloud_visitors" data-flag-title="部分可观测马尔科夫决策过程">
+             <span id="/en/course/SYSU/" class="leancloud_visitors" data-flag-title="Course materials in SYSU">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">Visitors&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -400,51 +400,90 @@
       
 
       
-        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中</p>
-<ul>
-<li>$S$是状态集合； </li>
-<li>$A$是动作集合；</li>
-<li>$T$是转移概率函数；</li>
-<li>$R: S \times A \to \mathbb{R}$是报酬函数；</li>
-<li>$\Omega$是观测集合；</li>
-<li>$O$是条件观测概率函数；</li>
-<li>$\gamma \in [0, 1]$是折扣因子。</li>
-</ul>
-<p>在每个时间，环境处于某个状态$s\in S$。代理采取了行动$a\in A$，导致了环境以概率$T(s’\mid s,a)$转移到状态$s’$。同时，代理观测到的是$o\in \Omega$，$o$依赖于行动$a$以及新状态$s’$, 概率为$O(o\mid s’,a)$。最后，代理接收到报酬$r=R(s, a)$。这个过程一直重复下去。POMDP的目标是最大化未来的期望总报酬$\mathbb{E}\left[\sum _{t=0}^{\infty }\gamma^{t}r_{t}\right]$，其中$r_{t}$ 是时间$t$得到的报酬。折扣因子$\gamma$决定了对即时报酬与未来报酬的不同重视程度。</p>
-<p>当$\gamma =0$时，代理制关注会产生最大即时报酬的行动；当$\gamma =1$时，代理会着眼于最大化未来报酬之和。</p>
-<script type="math/tex; mode=display">\begin{align*}
-\text{Underlying Model}\qquad&s_0\rightarrow s_1\rightarrow \cdots \qquad\qquad\\
-&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
-\text{Observation}\qquad &o_0\rightarrow o_1\rightarrow \cdots \qquad\qquad\\ 
-&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
-\text{Belief}\qquad&b_0\rightarrow b_1\rightarrow \cdots \qquad\qquad
-\end{align*}</script><h1 id="信念马尔科夫决策过程"><a href="#信念马尔科夫决策过程" class="headerlink" title="信念马尔科夫决策过程"></a>信念马尔科夫决策过程</h1><p>代理的信念$b(s)$是一个描在某一时刻述处于状态$s$概率的函数。在采取行动$a$、观测到$o$之和，代理需要更新它的信念函数。因为状态转移服具有马尔科夫性，对于信念函数的计算只涉及前一时刻的信念、采取的动作以及目前的观测。更新的操作记为$b’ = \tau(b,a,o)$</p>
-<p>在到达$s’$之和，代理以概率$O(o\mid s’,a)$观测到$o\in \Omega$。令$b$为状态空间$S$上的概率分布。$b(s)$代表环境处于状态$s$的概率。给定$b(s)$，在采取行动$a$、观测到$o$之后，</p>
-<script type="math/tex; mode=display">b'(s')=\eta O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script><p>其中$\eta =\frac{1}{\mathbb{P}(o\mid b,a)}$是一个归一化常数，使得$\mathbb{P}(o\mid b,a)=\sum _{s’\in S}O(o\mid s’,a)\sum _{s\in S}T(s’\mid s,a)b(s)$。</p>
-<p>马尔科夫信念状态使得我们可以用MDP来描述POMDP。这个信念马尔科夫决策过程会定义到连续状态空间，因为有信念空间$B$是无限的。</p>
-<p>正式地，信念马尔科夫决策过程由元组$(B,A,\tau,r,\gamma)$定义，其中</p>
-<ul>
-<li>$B$是POMDP状态集上的信念空间；</li>
-<li>$A$是与原POMDP相同的动作集合；</li>
-<li>$\tau$是信念状态的转移函数；</li>
-<li>$r:B \times A \to \mathbb{R}$是信念状态上的保存函数；</li>
-<li>$\gamma$是与原POMDP相同的折扣因子。</li>
-</ul>
-<p>$\tau$和$r$需要从原POMDP中计算得到：</p>
-<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 <script type="math/tex">\mathbb{P}(o\mid b,a)=\sum_{s'\in S}O(o\mid s',a)\sum_{s\in S}T(s'\mid s,a)b(s)</script></p>
-<script type="math/tex; mode=display">\mathbb{P}(b'|b,a,o)=\begin{cases}
-1&\text{if the belief update with arguments }b,a,o\text{ returns }b'\\
-0&\text{otherwise }
-\end{cases}$$.
-
-报酬函数$r$定义为：
-$$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>
-<h1 id="策略和价值函数"><a href="#策略和价值函数" class="headerlink" title="策略和价值函数"></a>策略和价值函数</h1><p>与原POMDP不同的是，信念马尔科夫决策过程的所有信念状态运行多种动作发生，因为信念函数的输出是一个概率分布。因此，$\pi$对任意信念$b$输出动作$a=\pi(b)$。</p>
-<p>这里我们假设目标函数是最大化无限阶段的期望总折扣报酬。当定义代价为$R$时，目标变为最小化期望代价。</p>
-<p>给定初始信念$b_{0}$，策略$\pi$的期望报酬定义为</p>
-<script type="math/tex; mode=display">V^\pi(b_0) = \sum_{t=0}^\infty  \gamma^t r(b_t, a_t) = \sum_{t=0}^\infty \gamma^t \mathbb{E}\Bigl[ R(s_t,a_t) \mid b_0, \pi \Bigr]</script><p>其中$\gamma&lt;1$是折扣因子。最优策略$\pi^\ast$是由优化长期报酬得到：</p>
-<script type="math/tex; mode=display">\pi^{\ast}=\underset{\pi }{\mbox{argmax}}\ V^{\pi}(b_{0})</script><p>最优策略$\pi^\ast$对每一个信念状态产生最高期望报酬，即最优值函数$V^{\ast}$。这个值函数是贝尔曼方程的解：</p>
-<script type="math/tex; mode=display">V^{\ast}(b)=\max _{a\in A}{\Bigl [}r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o)){\Bigr ]}</script><p>对有限阶段的POMDPs，最优值函数是分段线性、凸的。它可以用有限的向量集合表示。对无限阶段的POMDPs，最优值函数可以由有限向量集合任意逼近，并且保持凸性。值迭代应用动态规划更新，逐渐改善值函数，直到收敛到$\epsilon$-最优的值函数，保持分段线性和凸性。通过改善值函数，策略也间接得到改善。另外也可以用策略迭代直接改善策略。这与MDP的值迭代和策略迭代相同。</p>
+        <h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real Function</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Math/Real%20Function" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1ES_EFeewTD7fIDxJlL1SZA" target="_blank" rel="noopener">0jgw</a></td>
+</tr>
+<tr>
+<td>Complex Function</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Math/Complex%20Function/" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1J10IvkHlv-fufIOI13s3ew" target="_blank" rel="noopener">gq93</a></td>
+</tr>
+<tr>
+<td>Optimization</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Math/Optimization" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1F_rQMJV9oShI4hwsHscGKw" target="_blank" rel="noopener">dtkm</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mathematical Statistics</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Mathematical%20Statistics" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1YpusdMvS93n4EpXuALlTlA" target="_blank" rel="noopener">6hva</a></td>
+</tr>
+<tr>
+<td>Applied Linear Statistical Models</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Applied%20Linear%20Statistical%20Models" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1WC1FgzRQhStSuqtqcN2TBQ" target="_blank" rel="noopener">8duc</a></td>
+</tr>
+<tr>
+<td>Stochastic Processes</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1M70iCYSwwy0-8pDybM6tLA" target="_blank" rel="noopener">ywch</a></td>
+</tr>
+<tr>
+<td>Statistical Computing</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Statistical%20Computing" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1nTUFxsza-Xq4VQ5El7kUKQ" target="_blank" rel="noopener">2r15</a></td>
+</tr>
+<tr>
+<td>Modern Multivariate Statistical Techniques</td>
+<td><a href>link</a></td>
+<td><a href="https://pan.baidu.com/s/17-wagfrpqdgH1Q-rXlPkLg" target="_blank" rel="noopener">nwdy</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Computer-Science"><a href="#Computer-Science" class="headerlink" title="Computer Science"></a>Computer Science</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data Structure</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Computer%20Science/Data%20Structure" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1s8Icgy-ehznvFg_vsWIzWg" target="_blank" rel="noopener">hdsk</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -459,21 +498,21 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
   <div>Your support will encourage me to continue to create.</div>
   <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
+    <span>Donate</span>
   </button>
   <div id="QR" style="display: none;">
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechat-qcode.JPG" alt="Jinhong Du 微信支付">
-        <p>微信支付</p>
+        <img id="wechat_qr" src="/images/wechat-qcode.JPG" alt="Jinhong Du WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay-qcode.JPG" alt="Jinhong Du 支付宝">
-        <p>支付宝</p>
+        <img id="alipay_qr" src="/images/alipay-qcode.JPG" alt="Jinhong Du Alipay">
+        <p>Alipay</p>
       </div>
     
 
@@ -491,7 +530,7 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
       
         <div class="post-tags">
           
-            <a href="/tags/reinforcement-learning/" rel="tag"># reinforcement-learning</a>
+            <a href="/en/tags/course/" rel="tag"># course</a>
           
         </div>
       
@@ -504,8 +543,8 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/reinforcement-learning/MDP/" rel="next" title="马尔科夫决策过程">
-                <i class="fa fa-chevron-left"></i> 马尔科夫决策过程
+              <a href="/en/course/UCB/" rel="next" title="Course materials in UCB">
+                <i class="fa fa-chevron-left"></i> Course materials in UCB
               </a>
             
           </div>
@@ -513,6 +552,10 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/en/reinforcement-learning/Q-learning/" rel="prev" title="Q-learning">
+                Q-learning <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -569,10 +612,10 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -581,7 +624,7 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Jinhong Du">
+              <img class="site-author-image" itemprop="image" src="/en/images/avatar.png" alt="Jinhong Du">
             
               <p class="site-author-name" itemprop="name">Jinhong Du</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -592,10 +635,10 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/en/archives/">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -604,9 +647,9 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                <a href="/en/categories/index.html">
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -615,9 +658,9 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/en/tags/index.html">
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -665,7 +708,7 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信念马尔科夫决策过程"><span class="nav-number">2.</span> <span class="nav-text">信念马尔科夫决策过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略和价值函数"><span class="nav-number">3.</span> <span class="nav-text">策略和价值函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Math"><span class="nav-number">1.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statistics"><span class="nav-number">2.</span> <span class="nav-text">Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computer-Science"><span class="nav-number">3.</span> <span class="nav-text">Computer Science</span></a></li></ol></div>
             
 
           </div>
@@ -695,7 +738,7 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -703,7 +746,7 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -762,64 +805,64 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/en/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/en/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/en/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/en/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/en/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/en/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/en/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/en/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/en/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/en/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/en/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/en/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/en/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -967,38 +1010,7 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
         showTime(Counter);
       }
     });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -1016,6 +1028,17 @@ $$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程�
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
+
+  
+
+  
+
+  
+  
+
+  
   
 
 
