@@ -634,7 +634,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 \end{align*}</script><p>相似结论也对$V^{\pi}(s)$成立.</p>
 <h1 id="策略迭代强化学习"><a href="#策略迭代强化学习" class="headerlink" title="策略迭代强化学习"></a>策略迭代强化学习</h1><p>策略迭代尝试轮流评估、改善策略。一旦一个策略$\pi$通过值函数$V^{\pi}$改善后，得到更优策略$\pi’$，我们可以计算新的值函数$V^{\pi’}$并且继续改进策略。因此我们可以得到一个单调改善的策略序列：<script type="math/tex">\pi_0\xrightarrow{E}V^{\pi_0}\xrightarrow{I}\pi_1\xrightarrow{E}\cdots \xrightarrow{I}V^{\pi^\ast}\xrightarrow{E}V^{\ast}</script><br>其中$\xrightarrow{E}$表示策略评估，$\xrightarrow{I}$表示策略改善。在这个过程，每个策略都严格优于前一个策略，除非该策略已经是最优的。因为有限马尔科夫决策过程只有有限个策略，这保证了算法的收敛性。</p>
 <img src="/reinforcement-learning/MDP/MDP_algo_1.png" title="Policy Iteration">
-<h1 id="值迭代强化学习"><a href="#值迭代强化学习" class="headerlink" title="值迭代强化学习"></a>值迭代强化学习</h1><p>策略迭代的一个缺陷是每一次迭代中的策略评估需要扫描全部状态。如果我们不断进行策略评估迭代，那么收敛得到的值函数对应的也应该是最优策略对应的值函数：</p>
+<h1 id="值迭代强化学习"><a href="#值迭代强化学习" class="headerlink" title="值迭代强化学习"></a>值迭代强化学习</h1><p>策略迭代的一个缺陷是每一次迭代中的策略评估需要扫描全部状态。如果我们在每一次迭代只进行一次策略评估和策略改善，那么收敛得到的值函数对应的也应该是最优策略对应的值函数，在下式，我们并没有直接求出改善后的策略，而是直接最大化值函数：</p>
 <script type="math/tex; mode=display">\begin{align*}V_{k+1}(s)&=\max\limits_a \mathbb{E}[ r_{t+1}+\gamma V_k(s_{t+1})]|s_t=s, a_t=a)\\
 &=\max\limits_a \sum\limits_{s'} P_a(s,s')[ R_{a}(s,s')+\gamma V_k(s')] \end{align*}</script><p>对任意$s\in S$。对任意$V_0$，可以证明序列$\{V_k\}$收敛到$V^{\ast}$，只要$V^{\ast}$存在。</p>
 <img src="/reinforcement-learning/MDP/MDP_algo_2.png" title="Value Iteration">
