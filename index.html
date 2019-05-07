@@ -432,14 +432,15 @@
 <li>$\gamma$是与原POMDP相同的折扣因子。</li>
 </ul>
 <p>$\tau$和$r$需要从原POMDP中计算得到：</p>
-<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 <script type="math/tex">\mathbb{P}(o\mid b,a)=\sum_{s'\in S}O(o\mid s',a)\sum_{s\in S}T(s'\mid s,a)b(s)</script></p>
-<script type="math/tex; mode=display">\mathbb{P}(b'|b,a,o)=\begin{cases}
+<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 </p>
+<script type="math/tex; mode=display">\begin{align*}
+\mathbb{P}(o\mid b,a)&=\sum_{s'\in S}O(o\mid s',a)\sum_{s\in S}T(s'\mid s,a)b(s)\\
+\mathbb{P}(b'|b,a,o)&=\begin{cases}
 1&\text{if the belief update with arguments }b,a,o\text{ returns }b'\\
 0&\text{otherwise }
-\end{cases}$$.
-
-报酬函数$r$定义为：
-$$r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>
+\end{cases}.
+\end{align*}</script><p>报酬函数$r$定义为：</p>
+<script type="math/tex; mode=display">r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>
 <h1 id="策略和价值函数"><a href="#策略和价值函数" class="headerlink" title="策略和价值函数"></a>策略和价值函数</h1><p>与原POMDP不同的是，信念马尔科夫决策过程的所有信念状态运行多种动作发生，因为信念函数的输出是一个概率分布。因此，$\pi$对任意信念$b$输出动作$a=\pi(b)$。</p>
 <p>这里我们假设目标函数是最大化无限阶段的期望总折扣报酬。当定义代价为$R$时，目标变为最小化期望代价。</p>
 <p>给定初始信念$b_{0}$，策略$\pi$的期望报酬定义为</p>
