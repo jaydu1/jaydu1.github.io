@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/reinforcement-learning/POMDP/" itemprop="url">部分观测马尔科夫决策过程</a></h1>
+                <a class="post-title-link" href="/reinforcement-learning/POMDP/" itemprop="url">部分可观测马尔科夫决策过程</a></h1>
         
 
         <div class="post-meta">
@@ -368,7 +368,7 @@
 
           
           
-             <span id="/reinforcement-learning/POMDP/" class="leancloud_visitors" data-flag-title="部分观测马尔科夫决策过程">
+             <span id="/reinforcement-learning/POMDP/" class="leancloud_visitors" data-flag-title="部分可观测马尔科夫决策过程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -401,7 +401,7 @@
       
         
           
-            <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>一个部分观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中</p>
+            <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中</p>
 <ul>
 <li>$S$是状态集合； </li>
 <li>$A$是动作集合；</li>
@@ -413,13 +413,13 @@
 </ul>
 <p>在每个时间，环境处于某个状态$s\in S$。代理采取了行动$a\in A$，导致了环境以概率$T(s’\mid s,a)$转移到状态$s’$。同时，代理观测到的是$o\in \Omega$，$o$依赖于行动$a$以及新状态$s’$, 概率为$O(o\mid s’,a)$。最后，代理接收到报酬$r=R(s, a)$。这个过程一直重复下去。POMDP的目标是最大化未来的期望总报酬$E\left[\sum _{t=0}^{\infty }\gamma^{t}r_{t}\right]$，其中$r_{t}$ 是时间$t$得到的报酬。折扣因子$\gamma$决定了对即时报酬与未来报酬的不同重视程度。</p>
 <p>当$\gamma =0$时，代理制关注会产生最大即时报酬的行动；当$\gamma =1$时，代理会着眼于最大化未来报酬之和。</p>
-<script type="math/tex; mode=display">\begin{align\ast}
+<script type="math/tex; mode=display">\begin{align*}
 \text{Underlying Model}\qquad&s_0\rightarrow s_1\rightarrow \cdots \qquad\qquad\\
 &\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
 \text{Observation}\qquad &o_0\rightarrow o_1\rightarrow \cdots \qquad\qquad\\ 
 &\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
 \text{Belief}\qquad&b_0\rightarrow b_1\rightarrow \cdots \qquad\qquad
-\end{align\ast}</script><h1 id="信念马尔科夫决策过程"><a href="#信念马尔科夫决策过程" class="headerlink" title="信念马尔科夫决策过程"></a>信念马尔科夫决策过程</h1><p>代理的信念$b(s)$是一个描在某一时刻述处于状态$s$概率的函数。在采取行动$a$、观测到$o$之和，代理需要更新它的信念函数。因为状态转移服具有马尔科夫性，对于信念函数的计算只涉及前一时刻的信念、采取的动作以及目前的观测。更新的操作记为$b’ = \tau(b,a,o)$</p>
+\end{align*}</script><h1 id="信念马尔科夫决策过程"><a href="#信念马尔科夫决策过程" class="headerlink" title="信念马尔科夫决策过程"></a>信念马尔科夫决策过程</h1><p>代理的信念$b(s)$是一个描在某一时刻述处于状态$s$概率的函数。在采取行动$a$、观测到$o$之和，代理需要更新它的信念函数。因为状态转移服具有马尔科夫性，对于信念函数的计算只涉及前一时刻的信念、采取的动作以及目前的观测。更新的操作记为$b’ = \tau(b,a,o)$</p>
 <p>在到达$s’$之和，代理以概率$O(o\mid s’,a)$观测到$o\in \Omega$。令$b$为状态空间$S$上的概率分布。$b(s)$代表环境处于状态$s$的概率。给定$b(s)$，在采取行动$a$、观测到$o$之后，</p>
 <script type="math/tex; mode=display">b'(s')=\eta O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script><p>其中$\eta =\frac{1}{\mathbb{P}(o\mid b,a)}$是一个归一化常数，使得$\mathbb{P}(o\mid b,a)=\sum _{s’\in S}O(o\mid s’,a)\sum _{s\in S}T(s’\mid s,a)b(s)$。</p>
 <p>马尔科夫信念状态使得我们可以用MDP来描述POMDP。这个信念马尔科夫决策过程会定义到连续状态空间，因为有信念空间$B$是无限的。</p>
