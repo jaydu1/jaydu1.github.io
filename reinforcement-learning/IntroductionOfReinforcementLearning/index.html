@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="简介Q-leaning是一种model-free（不需要对环境建立模型）的强化学习方法。Q-leaning的目标是学习一个策略（policy），用于指导代理（agent）对不同环境采取对应的行动。对任何有限阶段的马尔科夫决策过程，Q-learning可以找到最优策略以最大化总报酬的期望。 预备知识强化学习涉及一个代理（agent），一个状态集合$S$，一个动作集合$A$。观测到某个状态$s_t\i">
+<meta name="description" content="介绍强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。   试错搜索； 延时报酬。  我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。 强化学习中的一个特有的挑战是如何权衡新知识的探">
 <meta name="keywords" content="reinforcement-learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Q-learning">
-<meta property="og:url" content="http://yoursite.com/reinforcement-learning/Q-learning/index.html">
+<meta property="og:title" content="强化学习简介">
+<meta property="og:url" content="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/index.html">
 <meta property="og:site_name" content="jaydu1">
-<meta property="og:description" content="简介Q-leaning是一种model-free（不需要对环境建立模型）的强化学习方法。Q-leaning的目标是学习一个策略（policy），用于指导代理（agent）对不同环境采取对应的行动。对任何有限阶段的马尔科夫决策过程，Q-learning可以找到最优策略以最大化总报酬的期望。 预备知识强化学习涉及一个代理（agent），一个状态集合$S$，一个动作集合$A$。观测到某个状态$s_t\i">
+<meta property="og:description" content="介绍强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。   试错搜索； 延时报酬。  我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。 强化学习中的一个特有的挑战是如何权衡新知识的探">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T15:20:50.485Z">
+<meta property="og:image" content="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png">
+<meta property="og:image" content="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png">
+<meta property="og:updated_time" content="2019-05-18T02:55:04.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Q-learning">
-<meta name="twitter:description" content="简介Q-leaning是一种model-free（不需要对环境建立模型）的强化学习方法。Q-leaning的目标是学习一个策略（policy），用于指导代理（agent）对不同环境采取对应的行动。对任何有限阶段的马尔科夫决策过程，Q-learning可以找到最优策略以最大化总报酬的期望。 预备知识强化学习涉及一个代理（agent），一个状态集合$S$，一个动作集合$A$。观测到某个状态$s_t\i">
+<meta name="twitter:title" content="强化学习简介">
+<meta name="twitter:description" content="介绍强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。   试错搜索； 延时报酬。  我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。 强化学习中的一个特有的挑战是如何权衡新知识的探">
+<meta name="twitter:image" content="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/reinforcement-learning/Q-learning/">
+  <link rel="canonical" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
 
 
 
 
 
-  <title>Q-learning | jaydu1</title>
+  <title>强化学习简介 | jaydu1</title>
   
 
 
@@ -300,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/Q-learning/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -317,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Q-learning</h1>
+          <h1 class="post-title" itemprop="name headline">强化学习简介</h1>
         
 
         <div class="post-meta">
@@ -329,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T10:51:23+08:00">
-                2019-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54+08:00">
+                2019-05-07
               </time>
             
 
@@ -369,7 +372,7 @@
 
           
           
-             <span id="/reinforcement-learning/Q-learning/" class="leancloud_visitors" data-flag-title="Q-learning">
+             <span id="/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="强化学习简介">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,56 +403,35 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Q-leaning是一种model-free（不需要对环境建立模型）的强化学习方法。Q-leaning的目标是学习一个策略（policy），用于指导代理（agent）对不同环境采取对应的行动。对任何有限阶段的马尔科夫决策过程，Q-learning可以找到最优策略以最大化总报酬的期望。</p>
-<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><p>强化学习涉及一个代理（agent），一个状态集合$S$，一个动作集合$A$。观测到某个状态$s_t\in S$后，agent选择一个动作$a_t\in A$，会得到环境的一个反馈报酬$r_t$，并且进入下一个状态$s_{t+1}$。</p>
-<p>我们的目标是最大化未来总报酬，也就是在给定当前状态的条件下，未来报酬之和的期望。在实际应用中，常使用加权和，例如折扣准则，来计算未来总报酬。</p>
-<p>Q-learning就是要学习函数$Q:S\times A\mapsto \mathbb{R}$，在某个状态$s_t$时，agent可以选择动作$a_t$使得$Q(s_t,a_t)$的值最大。</p>
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>Q-learning涉及的问题是如何学习$Q$函数，最简答的方法是维护一个大小为$|S|\times |A|$的表格，利用值迭代更新Q-table。具体的更新公式为：</p>
-<script type="math/tex; mode=display">Q^{new}(s_{t},a_{t})\leftarrow (1-\alpha )\cdot  Q(s_{t},a_{t})+\alpha \cdot  \left( r_t + \gamma \cdot \max_a Q(s_{t+1},a) \right)</script><p>每一次更新需要利用到$s_t$、$r_t$与$s_{t+1}$。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code>import gym
-import numpy as np 
-# 1. Load Environment and Q-table structure
-env = gym.make(&#39;FrozenLake8x8-v0&#39;)
-Q = np.zeros([env.observation_space.n,env.action_space.n])
-# env.obeservation.n, env.action_space.n gives number of states and action in env loaded
-
-# 2. Parameters of Q-leanring
-eta = .628
-gma = .9
-epis = 100
-rev_list = [] # rewards per episode calculate
-
-# 3. Q-learning Algorithm
-for i in range(epis):
-    # Reset environment
-    s = env.reset()
-    rAll = 0
-    d = False
-    j = 0
-
-    # The Q-Table learning algorithm
-    while j &lt; 99:
-        env.render()
-        j+=1
-        # Choose action from Q table
-        a = np.argmax(Q[s,:] + np.random.randn(1,env.action_space.n)*(1./(i+1)))
-        # Get new state &amp; reward from environment
-        s1,r,d,_ = env.step(a)
-        # Update Q-Table with new knowledge
-        Q[s,a] = Q[s,a] + eta*(r + gma*np.max(Q[s1,:]) - Q[s,a])
-        rAll += r
-        s = s1
-        if d == True:
-            break
-    rev_list.append(rAll)
-    env.render()
-</code></pre><h2 id="变种"><a href="#变种" class="headerlink" title="变种"></a>变种</h2><ol>
-<li>Deep Q-learning</li>
-<li>Double Q-learning</li>
-<li>Double Deep Q-learning</li>
-<li>Delayed Q-learning</li>
-<li>Greedly GQ</li>
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。</p>
+<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="强化学习">
+<ul>
+<li>试错搜索；</li>
+<li>延时报酬。</li>
+</ul>
+<p>我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。</p>
+<p>强化学习中的一个特有的挑战是如何权衡新知识的探索（<strong>exploration</strong>）与旧知识的利用（<strong>exploitation</strong>）。代理需要利用已有的经验来取得报酬，但它也要探索以便在以后可以采取更好的行动选择。</p>
+<p>主流的方法，例如搜索和学习，是被称为弱方法；而基于特点知识的方法被称为强方法。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>在强化学习中，我们需要选择：待优化目标函数的类型（策略、值函数、动力模型）以及函数近似器的类型。</p>
+<p>首先，我们有两种算法：</p>
+<ul>
+<li>基于模型的强化学习算法：基于动力学模型，预测下一阶段的状态和下一步的报酬；</li>
+<li>模型无关的强化学习算法：不基于动力学模型。<br>然后，对于模型无关的强化学习算法，下图展示了进一步的分类：</li>
+</ul>
+<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
+<p>策略优化方法围绕策略函数$\pi:S\mapsto A$。这些方法将强化学习视为一个数值优化问题，最大化与策略参数有关的期望总报酬。这里有两种方式来优化策略：</p>
+<ol>
+<li>导数无关（Derivative free optimization， DFO）的优化算法，包括进化算法，例如基因编程、模拟退火等等；</li>
+<li>策略梯度方法。</li>
 </ol>
+<p>近似动态规划（Approximate dynamic programming， ADP）着眼于学习值函数$V:S\mapsto\mathbb{R}$，用来预测在一个状态下代理会接受到的报酬。</p>
+<p>最后，actor-critic方法结合了策略优化和动态规划。这些方法优化一个策略，但他们用值函数来假设优化过程。通常它是通过近似动态规划的方法来计算值函数的。</p>
+<h1 id="强化学习的基本元素"><a href="#强化学习的基本元素" class="headerlink" title="强化学习的基本元素"></a>强化学习的基本元素</h1><ul>
+<li>一个策略$\pi$；</li>
+<li>一个报酬信号$r_t$；</li>
+<li>一个值函数$V(s)$；</li>
+<li>（可选）一个描述环境的模型。</li>
+</ul>
 
       
     </div>
@@ -509,8 +491,8 @@ for i in range(epis):
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/course/SYSU/" rel="next" title="课程材料（SYSU）">
-                <i class="fa fa-chevron-left"></i> 课程材料（SYSU）
+              <a href="/reinforcement-learning/POMDP/" rel="next" title="部分可观测马尔科夫决策过程">
+                <i class="fa fa-chevron-left"></i> 部分可观测马尔科夫决策过程
               </a>
             
           </div>
@@ -518,10 +500,6 @@ for i in range(epis):
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/reinforcement-learning/MDP/" rel="prev" title="马尔科夫决策过程">
-                马尔科夫决策过程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -674,7 +652,7 @@ for i in range(epis):
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预备知识"><span class="nav-number">2.</span> <span class="nav-text">预备知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法"><span class="nav-number">3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.1.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变种"><span class="nav-number">3.2.</span> <span class="nav-text">变种</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类"><span class="nav-number">2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强化学习的基本元素"><span class="nav-number">3.</span> <span class="nav-text">强化学习的基本元素</span></a></li></ol></div>
             
 
           </div>

@@ -297,6 +297,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/IntroductionOfReinforcementLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">Introduction Of Reinforcement Learning</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54+08:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="Introduction Of Reinforcement Learning">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Reinforcement learning is a computational goal-directed approach to learning from interaction with environment.</p>
+<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="Reinforcement Learning">
+<ul>
+<li>trial-and-error search </li>
+<li>delayed reward</li>
+</ul>
+<p>We can use ideas from dynamical systems theory to formulate a reinforcement learning problem, specifically, as the optimal control of incompletely-known Markov decision processes. A learning agent must be able to sense the state of its environment to some extent and must be able to take actions that affect the state. The agent also must have a goal or goals relating to the state of the environment.</p>
+<p>One of the challenges that arise in reinforcement learning, and not in other kinds of learning, is the trade-off between <strong>exploration</strong> and <strong>exploitation</strong>. The agent has to exploit what it has already experienced in order to obtain reward, but it also has to explore in order to make better action selections in the future.</p>
+<p>Methods based on general principles, such as search or learning, were characterized as “weak methods,” whereas those based on speciﬁc knowledge were called “strong methods.”</p>
+<h1 id="Taxonomy"><a href="#Taxonomy" class="headerlink" title="Taxonomy"></a>Taxonomy</h1><p>In reinforcement learning, we have two orthogonal choices: what kind of objective to optimize (involving a policy, value function, or dynamics model), and what kind of function approximators to use.</p>
+<p>First, we have two kinds of algorithms:</p>
+<ul>
+<li>Model-based RL algorithms: based on dynamics model that tends to predict the next state and the reward at the next step;</li>
+<li>Model-free RL algorithms: not based on a dynamics model.</li>
+</ul>
+<p>Then, for model-free RL algorithms, the figure below shows a taxonomy:</p>
+<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
+<p>Policy optimization methods are centered around the policy, the function that maps the agent’s state to its next action. These methods view reinforcement learning as a numerical optimization problem where we optimize the expected reward with respect to the policy’s parameters. There are two ways to optimize a policy. </p>
+<ol>
+<li>Derivative free optimization (DFO) algorithms, including evolutionary algorithms, like genetic programming, simulated annealing, etc.;</li>
+<li>Policy gradient methods.</li>
+</ol>
+<p>Approximate dynamic programming (ADP) focus on learning value functions, which predict how much reward the agent is going to receive.</p>
+<p>Finally, there are actor-critic methods that combine elements from both policy optimization and dynamic programming. These methods optimize a policy, but they use value functions to speed up this optimization, and often use ideas from approximate dynamic programming to fit the value functions.</p>
+<h1 id="Elements-of-Reinforcement-Learning"><a href="#Elements-of-Reinforcement-Learning" class="headerlink" title="Elements of Reinforcement Learning"></a>Elements of Reinforcement Learning</h1><ul>
+<li>a policy;</li>
+<li>a reward signal;</li>
+<li>a value function;</li>
+<li>(optionally) a model of the environment.</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/POMDP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1476,7 +1660,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
