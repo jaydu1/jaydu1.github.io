@@ -406,6 +406,8 @@
 <li>In a general sense, machine learning means that the computer can learn some ability without explicitly programming.</li>
 <li>From the perspective of engineering, given some task $T$, corresponding experience (training data) $E$ and performance measurement $P$, machine learning hopes to learn from $E$ so that the performance $P$ on task $T$ can be improved.</li>
 </ul>
+<img src="/en/machine-learning/IntroductionOfMachineLearning/overview.png" title="Overview">
+<p>Machine learning is a interdisciplinary field, which relates to computer science, statistics, mathematics and so on.</p>
 <h2 id="Basic-element"><a href="#Basic-element" class="headerlink" title="Basic element"></a>Basic element</h2><ul>
 <li>Data. Every insatcne is called <strong>sample</strong>. The set of training and testing data is called <strong>training set</strong> and <strong>testing set</strong>, respectively. Since for some algorithms, parameters are required to be tuned, we need to split a subset from the training set, which is called <strong>evaluation set</strong> and used for determining how good or bad the parameters are.</li>
 <li>Model. It can be viewed as a function $f$. Given an input $x$, one can get an output $y$. The model may rely on some changeable parameters $\theta$. The process of learning is to update $\theta$.</li>
@@ -432,12 +434,46 @@
 </ul>
 <img src="/en/machine-learning/IntroductionOfMachineLearning/4.png" title="Helping humen to learn">
 <h1 id="Types-of-machine-learning"><a href="#Types-of-machine-learning" class="headerlink" title="Types of machine learning"></a>Types of machine learning</h1><p>There are many categories for machine learning algorithms. Generally, we can classify them from the following perspectives.</p>
-<h2 id="Training-data"><a href="#Training-data" class="headerlink" title="Training data"></a>Training data</h2><ul>
-<li>Supervised learning.</li>
-<li>Unsupervised learning.</li>
-<li>Semi-supervised learning.</li>
-<li>Reinforcement learning.</li>
+<h2 id="Training-data"><a href="#Training-data" class="headerlink" title="Training data"></a>Training data</h2><h3 id="Supervised-learning"><a href="#Supervised-learning" class="headerlink" title="Supervised learning."></a>Supervised learning.</h3><ul>
+<li>Classification</li>
+<li>Regression</li>
+<li>Ranking</li>
 </ul>
+<p>Some common supervised learning algorithms are given below:</p>
+<ul>
+<li>k-Nearest Neighbors</li>
+<li>Linear Regression</li>
+<li>Logistic Regression</li>
+<li>Support Vector Machines (SVMs)</li>
+<li>Decision Trees and Random Forests</li>
+<li>Neural networks</li>
+</ul>
+<h3 id="Unsupervised-learning"><a href="#Unsupervised-learning" class="headerlink" title="Unsupervised learning."></a>Unsupervised learning.</h3><ul>
+<li>Clustering<ul>
+<li>K-Means </li>
+<li>DBSCAN </li>
+<li>Hierarchical Cluster Analysis (HCA)</li>
+</ul>
+</li>
+<li>Anomaly detection and novelty detection<ul>
+<li>One-class SVM </li>
+<li>Isolation Forest</li>
+</ul>
+</li>
+<li>Visualization and dimensionality reduction<ul>
+<li>Principal Component Analysis (PCA)</li>
+<li>Kernel PCA</li>
+<li>Locally-Linear Embedding (LLE)</li>
+<li>t-distributed Stochastic Neighbor Embedding (t-SNE)    </li>
+</ul>
+</li>
+<li>Association rule learning<ul>
+<li>Apriori</li>
+<li>Eclat</li>
+</ul>
+</li>
+</ul>
+<h3 id="Semi-supervised-learning"><a href="#Semi-supervised-learning" class="headerlink" title="Semi-supervised learning."></a>Semi-supervised learning.</h3><h3 id="Reinforcement-learning"><a href="#Reinforcement-learning" class="headerlink" title="Reinforcement learning."></a>Reinforcement learning.</h3>
 <h2 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h2><ul>
 <li>Offline learning/batch learning.</li>
 <li>Online learning.</li>
@@ -456,6 +492,9 @@
 <li>Overfitting of models on training data;</li>
 <li>Underfitting of models on training data.</li>
 </ul>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol>
+<li><a href="https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank" rel="noopener">Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</a></li>
+</ol>
 
           
         
@@ -1255,214 +1294,6 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UCB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/course/UCB/" itemprop="url">Course materials in UCB</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52+08:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/course/" itemprop="url" rel="index">
-                    <span itemprop="name">course</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/course/UCB/" class="leancloud_visitors" data-flag-title="Course materials in UCB">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MATH 118 - Fourier Analysis and Wavelets</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>STAT150 - Stochastic Processes</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Computer-Science"><a href="#Computer-Science" class="headerlink" title="Computer Science"></a>Computer Science</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CS189 - Machine Learning</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/SYSU/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1647,6 +1478,214 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 <td>Data Structure</td>
 <td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Computer%20Science/Data%20Structure" target="_blank" rel="noopener">link</a></td>
 <td><a href="https://pan.baidu.com/s/1s8Icgy-ehznvFg_vsWIzWg" target="_blank" rel="noopener">hdsk</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UCB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/course/UCB/" itemprop="url">Course materials in UCB</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52+08:00">
+                2019-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/course/" itemprop="url" rel="index">
+                    <span itemprop="name">course</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/course/UCB/" class="leancloud_visitors" data-flag-title="Course materials in UCB">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MATH 118 - Fourier Analysis and Wavelets</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STAT150 - Stochastic Processes</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Computer-Science"><a href="#Computer-Science" class="headerlink" title="Computer Science"></a>Computer Science</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS189 - Machine Learning</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
 </tr>
 </tbody>
 </table>
