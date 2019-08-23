@@ -92,7 +92,9 @@
 <meta property="og:image" content="http://yoursite.com/machine-learning/IntroductionOfMachineLearning/2.png">
 <meta property="og:image" content="http://yoursite.com/machine-learning/IntroductionOfMachineLearning/3.png">
 <meta property="og:image" content="http://yoursite.com/machine-learning/IntroductionOfMachineLearning/4.png">
-<meta property="og:updated_time" content="2019-08-23T06:44:47.033Z">
+<meta property="og:image" content="http://yoursite.com/machine-learning/IntroductionOfMachineLearning/5.png">
+<meta property="og:image" content="http://yoursite.com/machine-learning/IntroductionOfMachineLearning/6.png">
+<meta property="og:updated_time" content="2019-08-23T07:17:35.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习简介">
 <meta name="twitter:description" content="什么是机器学习？定义 从字面上看，“机器”表示编程机器/计算机，“学习”表示从数据中学习。 从更广义上看，机器学习能够让计算机不需要显示编程就可以学习到某种能力。 从工程的角度上看，给定某项任务$T$、对应的经验$E$（训练数据）以及任务执行的表现度量$P$，机器学习希望通过学习使得它在任务$T$的表现$P$可以借助已有的经验$E$进行提升。   人工智能是一个交叉领域，与计算机、统计学、数学等学">
@@ -439,10 +441,17 @@
 </ul>
 <img src="/machine-learning/IntroductionOfMachineLearning/4.png" title="帮助人类学习">
 <h1 id="机器学习算法类别"><a href="#机器学习算法类别" class="headerlink" title="机器学习算法类别"></a>机器学习算法类别</h1><p>对机器学习算法，有多种分类，总得来说，我们可以从以下几个角度进行分类。</p>
-<h2 id="根据训练数据分类"><a href="#根据训练数据分类" class="headerlink" title="根据训练数据分类"></a>根据训练数据分类</h2><h3 id="有监督学习"><a href="#有监督学习" class="headerlink" title="有监督学习"></a>有监督学习</h3><ul>
-<li>分类。</li>
-<li>回归。</li>
-<li>排序。</li>
+<h2 id="根据训练数据分类"><a href="#根据训练数据分类" class="headerlink" title="根据训练数据分类"></a>根据训练数据分类</h2><h3 id="有监督学习"><a href="#有监督学习" class="headerlink" title="有监督学习"></a>有监督学习</h3><p>在有监督学习中，每一个样本$x\in \mathscr{X}$都有一个标签$y\in\mathscr{Y}$.</p>
+<ul>
+<li>分类。标签集$\mathscr{Y}$包含了有限个元素，例如$\{0,1\}$，$\{\text{Yes}, \text{No}\}$等等。分类任务的目的是给出一个给定样本的类别。</li>
+</ul>
+<img src="/machine-learning/IntroductionOfMachineLearning/5.png" title="Classification">
+<ul>
+<li>回归。标签集$\mathscr{Y}$包含了一个区间或者含有更复杂的元素，例如$[0,1]$。回归任务的目的是寻找从$\mathscr{X}$到$\mathscr{Y}$的合适映射。</li>
+</ul>
+<img src="/machine-learning/IntroductionOfMachineLearning/6.png" title="Regression">
+<ul>
+<li>排序。样本呗划分为不同的组，标签集可以为离散或者连续的。这是一种特殊的任务，它常用于推荐系统，目的是对一个给定的组中所有样本进行排序。</li>
 </ul>
 <p>常见的有监督学习算法：</p>
 <ul>
@@ -478,7 +487,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h3><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><h2 id="根据学习方式分类"><a href="#根据学习方式分类" class="headerlink" title="根据学习方式分类"></a>根据学习方式分类</h2><ul>
+<h3 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h3><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><a href="/reinforcement-learning/IntroductionOfReinforcementLearning/" title="强化学习简介">强化学习简介</a>
+<h2 id="根据学习方式分类"><a href="#根据学习方式分类" class="headerlink" title="根据学习方式分类"></a>根据学习方式分类</h2><ul>
 <li>离线学习/批次学习。</li>
 <li>在线学习。</li>
 </ul>
