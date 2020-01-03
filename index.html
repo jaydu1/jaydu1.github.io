@@ -552,6 +552,206 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/POMDP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/reinforcement-learning/POMDP/" itemprop="url">部分可观测马尔科夫决策过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/reinforcement-learning/POMDP/" class="leancloud_visitors" data-flag-title="部分可观测马尔科夫决策过程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中</p>
+<ul>
+<li>$S$是状态集合； </li>
+<li>$A$是动作集合；</li>
+<li>$T$是转移概率函数；</li>
+<li>$R: S \times A \to \mathbb{R}$是报酬函数；</li>
+<li>$\Omega$是观测集合；</li>
+<li>$O$是条件观测概率函数；</li>
+<li>$\gamma \in [0, 1]$是折扣因子。</li>
+</ul>
+<p>在每个时间，环境处于某个状态$s\in S$。代理采取了行动$a\in A$，导致了环境以概率$T(s’\mid s,a)$转移到状态$s’$。同时，代理观测到的是$o\in \Omega$，$o$依赖于行动$a$以及新状态$s’$, 概率为$O(o\mid s’,a)$。最后，代理接收到报酬$r=R(s, a)$。这个过程一直重复下去。POMDP的目标是最大化未来的期望总报酬$\mathbb{E}\left[\sum _{t=0}^{\infty }\gamma^{t}r_{t}\right]$，其中$r_{t}$ 是时间$t$得到的报酬。折扣因子$\gamma$决定了对即时报酬与未来报酬的不同重视程度。</p>
+<p>当$\gamma =0$时，代理制关注会产生最大即时报酬的行动；当$\gamma =1$时，代理会着眼于最大化未来报酬之和。</p>
+<script type="math/tex; mode=display">\begin{align*}
+\text{Underlying Model}\qquad&s_0\rightarrow s_1\rightarrow \cdots \qquad\qquad\\
+&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
+\text{Observation}\qquad &o_0\rightarrow o_1\rightarrow \cdots \qquad\qquad\\ 
+&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
+\text{Belief}\qquad&b_0\rightarrow b_1\rightarrow \cdots \qquad\qquad
+\end{align*}</script><h1 id="信念马尔科夫决策过程"><a href="#信念马尔科夫决策过程" class="headerlink" title="信念马尔科夫决策过程"></a>信念马尔科夫决策过程</h1><p>代理的信念$b(s)$是一个描在某一时刻述处于状态$s$概率的函数。在采取行动$a$、观测到$o$之和，代理需要更新它的信念函数。因为状态转移服具有马尔科夫性，对于信念函数的计算只涉及前一时刻的信念、采取的动作以及目前的观测。更新的操作记为$b’ = \tau(b,a,o)$</p>
+<p>在到达$s’$之和，代理以概率$O(o\mid s’,a)$观测到$o\in \Omega$。令$b$为状态空间$S$上的概率分布。$b(s)$代表环境处于状态$s$的概率。给定$b(s)$，在采取行动$a$、观测到$o$之后，</p>
+<script type="math/tex; mode=display">b'(s')=\eta O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script><p>其中$\eta =\frac{1}{\mathbb{P}(o\mid b,a)}$是一个归一化常数，使得$\mathbb{P}(o\mid b,a)=\sum _{s’\in S}O(o\mid s’,a)\sum _{s\in S}T(s’\mid s,a)b(s)$。</p>
+<p>马尔科夫信念状态使得我们可以用MDP来描述POMDP。这个信念马尔科夫决策过程会定义到连续状态空间，因为有信念空间$B$是无限的。</p>
+<p>正式地，信念马尔科夫决策过程由元组$(B,A,\tau,r,\gamma)$定义，其中</p>
+<ul>
+<li>$B$是POMDP状态集上的信念空间；</li>
+<li>$A$是与原POMDP相同的动作集合；</li>
+<li>$\tau$是信念状态的转移函数；</li>
+<li>$r:B \times A \to \mathbb{R}$是信念状态上的保存函数；</li>
+<li>$\gamma$是与原POMDP相同的折扣因子。</li>
+</ul>
+<p>$\tau$和$r$需要从原POMDP中计算得到：</p>
+<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 </p>
+<script type="math/tex; mode=display">\begin{align*}
+\mathbb{P}(o\mid b,a)&=\sum_{s'\in S}O(o\mid s',a)\sum_{s\in S}T(s'\mid s,a)b(s)\\
+\mathbb{P}(b'|b,a,o)&=\begin{cases}
+1&\text{if the belief update with arguments }b,a,o\text{ returns }b'\\
+0&\text{otherwise }
+\end{cases}.
+\end{align*}</script><p>报酬函数$r$定义为：</p>
+<script type="math/tex; mode=display">r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>
+<h1 id="策略和价值函数"><a href="#策略和价值函数" class="headerlink" title="策略和价值函数"></a>策略和价值函数</h1><p>与原POMDP不同的是，信念马尔科夫决策过程的所有信念状态运行多种动作发生，因为信念函数的输出是一个概率分布。因此，$\pi$对任意信念$b$输出动作$a=\pi(b)$。</p>
+<p>这里我们假设目标函数是最大化无限阶段的期望总折扣报酬。当定义代价为$R$时，目标变为最小化期望代价。</p>
+<p>给定初始信念$b_{0}$，策略$\pi$的期望报酬定义为</p>
+<script type="math/tex; mode=display">V^\pi(b_0) = \sum_{t=0}^\infty  \gamma^t r(b_t, a_t) = \sum_{t=0}^\infty \gamma^t \mathbb{E}\Bigl[ R(s_t,a_t) \mid b_0, \pi \Bigr]</script><p>其中$\gamma&lt;1$是折扣因子。最优策略$\pi^\ast$是由优化长期报酬得到：</p>
+<script type="math/tex; mode=display">\pi^{\ast}=\underset{\pi }{\mbox{argmax}}\ V^{\pi}(b_{0})</script><p>最优策略$\pi^\ast$对每一个信念状态产生最高期望报酬，即最优值函数$V^{\ast}$。这个值函数是贝尔曼方程的解：</p>
+<script type="math/tex; mode=display">V^{\ast}(b)=\max _{a\in A}{\Bigl [}r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o)){\Bigr ]}</script><p>对有限阶段的POMDPs，最优值函数是分段线性、凸的。它可以用有限的向量集合表示。对无限阶段的POMDPs，最优值函数可以由有限向量集合任意逼近，并且保持凸性。值迭代应用动态规划更新，逐渐改善值函数，直到收敛到$\epsilon$-最优的值函数，保持分段线性和凸性。通过改善值函数，策略也间接得到改善。另外也可以用策略迭代直接改善策略。这与MDP的值迭代和策略迭代相同。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -735,7 +935,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/POMDP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/gre-sub-math/GreSubMathAdditionalTopics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -754,7 +954,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/reinforcement-learning/POMDP/" itemprop="url">部分可观测马尔科夫决策过程</a></h1>
+                <a class="post-title-link" href="/gre-sub-math/GreSubMathAdditionalTopics/" itemprop="url">Chapter 7 - Additional Topics</a></h1>
         
 
         <div class="post-meta">
@@ -789,8 +989,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
+                  <a href="/categories/gre-sub-math/" itemprop="url" rel="index">
+                    <span itemprop="name">gre-sub-math</span>
                   </a>
                 </span>
 
@@ -806,7 +1006,7 @@
 
           
           
-             <span id="/reinforcement-learning/POMDP/" class="leancloud_visitors" data-flag-title="部分可观测马尔科夫决策过程">
+             <span id="/gre-sub-math/GreSubMathAdditionalTopics/" class="leancloud_visitors" data-flag-title="Chapter 7 - Additional Topics">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -839,53 +1039,77 @@
       
         
           
-            <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>一个部分可观测马尔科夫决策过程（POMDP）描述一个代理与环境的关系，由一个7元组$(S,A,T,R,\Omega,O,\gamma)$表示，其中</p>
+            <h1 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a>Logic</h1><h1 id="Set-Theory"><a href="#Set-Theory" class="headerlink" title="Set Theory"></a>Set Theory</h1><h1 id="Graph-Theory"><a href="#Graph-Theory" class="headerlink" title="Graph Theory"></a>Graph Theory</h1><h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><ul>
+<li><p><strong>Definition</strong><br><em>A graph $G$ consists of a finite collection of vertices $V(G)$ and edges $E(G)$ where each edge connects a distinct pair of vertices.</em> </p>
 <ul>
-<li>$S$是状态集合； </li>
-<li>$A$是动作集合；</li>
-<li>$T$是转移概率函数；</li>
-<li>$R: S \times A \to \mathbb{R}$是报酬函数；</li>
-<li>$\Omega$是观测集合；</li>
-<li>$O$是条件观测概率函数；</li>
-<li>$\gamma \in [0, 1]$是折扣因子。</li>
+<li>We only discuss the <em>undirected graph</em>, which is the <em>simple graph</em> (at most one edge between any two vertices) and its edges have no orientation.</li>
+<li>The <em>order</em> of $G$ is $|V|$ and the <em>size</em> of $G$ is $|E|$. </li>
+<li>Two vertices are <em>adjacent vertices</em>  if they are connected by a edge. </li>
+<li>The <em>degree</em> of a vertice is the number of adjacent vertices of it. A vertex with an odd (even) degree is an odd (even) vertice.</li>
+<li>A graph is <em>complete</em> if every distinct pair of vertices is connected by an edge.</li>
 </ul>
-<p>在每个时间，环境处于某个状态$s\in S$。代理采取了行动$a\in A$，导致了环境以概率$T(s’\mid s,a)$转移到状态$s’$。同时，代理观测到的是$o\in \Omega$，$o$依赖于行动$a$以及新状态$s’$, 概率为$O(o\mid s’,a)$。最后，代理接收到报酬$r=R(s, a)$。这个过程一直重复下去。POMDP的目标是最大化未来的期望总报酬$\mathbb{E}\left[\sum _{t=0}^{\infty }\gamma^{t}r_{t}\right]$，其中$r_{t}$ 是时间$t$得到的报酬。折扣因子$\gamma$决定了对即时报酬与未来报酬的不同重视程度。</p>
-<p>当$\gamma =0$时，代理制关注会产生最大即时报酬的行动；当$\gamma =1$时，代理会着眼于最大化未来报酬之和。</p>
-<script type="math/tex; mode=display">\begin{align*}
-\text{Underlying Model}\qquad&s_0\rightarrow s_1\rightarrow \cdots \qquad\qquad\\
-&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
-\text{Observation}\qquad &o_0\rightarrow o_1\rightarrow \cdots \qquad\qquad\\ 
-&\downarrow\ \ \ \ \downarrow  \qquad\qquad\\ 
-\text{Belief}\qquad&b_0\rightarrow b_1\rightarrow \cdots \qquad\qquad
-\end{align*}</script><h1 id="信念马尔科夫决策过程"><a href="#信念马尔科夫决策过程" class="headerlink" title="信念马尔科夫决策过程"></a>信念马尔科夫决策过程</h1><p>代理的信念$b(s)$是一个描在某一时刻述处于状态$s$概率的函数。在采取行动$a$、观测到$o$之和，代理需要更新它的信念函数。因为状态转移服具有马尔科夫性，对于信念函数的计算只涉及前一时刻的信念、采取的动作以及目前的观测。更新的操作记为$b’ = \tau(b,a,o)$</p>
-<p>在到达$s’$之和，代理以概率$O(o\mid s’,a)$观测到$o\in \Omega$。令$b$为状态空间$S$上的概率分布。$b(s)$代表环境处于状态$s$的概率。给定$b(s)$，在采取行动$a$、观测到$o$之后，</p>
-<script type="math/tex; mode=display">b'(s')=\eta O(o\mid s',a)\sum _{s\in S}T(s'\mid s,a)b(s)</script><p>其中$\eta =\frac{1}{\mathbb{P}(o\mid b,a)}$是一个归一化常数，使得$\mathbb{P}(o\mid b,a)=\sum _{s’\in S}O(o\mid s’,a)\sum _{s\in S}T(s’\mid s,a)b(s)$。</p>
-<p>马尔科夫信念状态使得我们可以用MDP来描述POMDP。这个信念马尔科夫决策过程会定义到连续状态空间，因为有信念空间$B$是无限的。</p>
-<p>正式地，信念马尔科夫决策过程由元组$(B,A,\tau,r,\gamma)$定义，其中</p>
+</li>
+<li><p><strong>Properties</strong></p>
 <ul>
-<li>$B$是POMDP状态集上的信念空间；</li>
-<li>$A$是与原POMDP相同的动作集合；</li>
-<li>$\tau$是信念状态的转移函数；</li>
-<li>$r:B \times A \to \mathbb{R}$是信念状态上的保存函数；</li>
-<li>$\gamma$是与原POMDP相同的折扣因子。</li>
+<li>Graphs $F$ and $G$ are <em>isomorphic</em> if there exists a function $f:V(F)\rightarrow V(G)$ that is both one-to-one and onto, and all adjacencies are preserved.</li>
 </ul>
-<p>$\tau$和$r$需要从原POMDP中计算得到：</p>
-<script type="math/tex; mode=display">\tau(b,a,b') = \sum_{o\in \Omega} \mathbb{P}(b'|b,a,o) \mathbb{P}(o | a, b),</script><p>其中 </p>
-<script type="math/tex; mode=display">\begin{align*}
-\mathbb{P}(o\mid b,a)&=\sum_{s'\in S}O(o\mid s',a)\sum_{s\in S}T(s'\mid s,a)b(s)\\
-\mathbb{P}(b'|b,a,o)&=\begin{cases}
-1&\text{if the belief update with arguments }b,a,o\text{ returns }b'\\
-0&\text{otherwise }
-\end{cases}.
-\end{align*}</script><p>报酬函数$r$定义为：</p>
-<script type="math/tex; mode=display">r(b,a) = \sum_{s\in S} b(s) R(s,a).</script><p>信念马尔科夫决策过程不再是部分可观测，因为在任意时刻，代理知道它的信念状态。</p>
-<h1 id="策略和价值函数"><a href="#策略和价值函数" class="headerlink" title="策略和价值函数"></a>策略和价值函数</h1><p>与原POMDP不同的是，信念马尔科夫决策过程的所有信念状态运行多种动作发生，因为信念函数的输出是一个概率分布。因此，$\pi$对任意信念$b$输出动作$a=\pi(b)$。</p>
-<p>这里我们假设目标函数是最大化无限阶段的期望总折扣报酬。当定义代价为$R$时，目标变为最小化期望代价。</p>
-<p>给定初始信念$b_{0}$，策略$\pi$的期望报酬定义为</p>
-<script type="math/tex; mode=display">V^\pi(b_0) = \sum_{t=0}^\infty  \gamma^t r(b_t, a_t) = \sum_{t=0}^\infty \gamma^t \mathbb{E}\Bigl[ R(s_t,a_t) \mid b_0, \pi \Bigr]</script><p>其中$\gamma&lt;1$是折扣因子。最优策略$\pi^\ast$是由优化长期报酬得到：</p>
-<script type="math/tex; mode=display">\pi^{\ast}=\underset{\pi }{\mbox{argmax}}\ V^{\pi}(b_{0})</script><p>最优策略$\pi^\ast$对每一个信念状态产生最高期望报酬，即最优值函数$V^{\ast}$。这个值函数是贝尔曼方程的解：</p>
-<script type="math/tex; mode=display">V^{\ast}(b)=\max _{a\in A}{\Bigl [}r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o)){\Bigr ]}</script><p>对有限阶段的POMDPs，最优值函数是分段线性、凸的。它可以用有限的向量集合表示。对无限阶段的POMDPs，最优值函数可以由有限向量集合任意逼近，并且保持凸性。值迭代应用动态规划更新，逐渐改善值函数，直到收敛到$\epsilon$-最优的值函数，保持分段线性和凸性。通过改善值函数，策略也间接得到改善。另外也可以用策略迭代直接改善策略。这与MDP的值迭代和策略迭代相同。</p>
-
+</li>
+</ul>
+<h2 id="Path-Cycle-Forest-and-Tree"><a href="#Path-Cycle-Forest-and-Tree" class="headerlink" title="Path, Cycle, Forest and Tree"></a>Path, Cycle, Forest and Tree</h2><p>A <em>path</em> is a sequence of adjacent vertices and the connecting edges. A graph is <em>connected</em> if every pair of vertices can be connected by at least one path. A path that begins and ends at the same vertex is a <em>cycle</em>. A graph with no cycles is a <em>forest</em>, and if such a graph is connected, it is a <em>tree</em>.</p>
+<h2 id="Subgraph-Spanning-Graph-And-Spanning-Tree"><a href="#Subgraph-Spanning-Graph-And-Spanning-Tree" class="headerlink" title="Subgraph, Spanning Graph And Spanning Tree"></a>Subgraph, Spanning Graph And Spanning Tree</h2><p>Let $G$ be a graph with vertex and edge sets $V(G)$ and $E(G)$. $H$ is a subgraph of $G$ if</p>
+<ol>
+<li>$V( H) \subseteq V(G)$;</li>
+<li>$E(H)\subseteq E(H)$;</li>
+<li>every edge of $H$ connects two vertices of $H$,<br>which means that the vertices of $H$ are a subset of the vertices of $G$, and every pair of adjacent vertices in $H$ also appears in $G$.</li>
+</ol>
+<p>Furthermore, if $V(H)=V(G)$, then $H$ is a <em>spanning subgraph</em> of $G$. In addition, if $H$ is a tree, then $H$ is a <em>spanning tree</em> of $G$.</p>
+<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Continuous-Functions"><a href="#Continuous-Functions" class="headerlink" title="Continuous Functions"></a>Continuous Functions</h2><h3 id="Continuous-Functions-between-Topological-Spaces"><a href="#Continuous-Functions-between-Topological-Spaces" class="headerlink" title="Continuous Functions between Topological Spaces"></a>Continuous Functions between Topological Spaces</h3><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
+<li><strong>Definition</strong><br><em>A map $f:X_1\rightarrow X_2$ is open if the image of every open set in $X_1$ is open in $X_2$.</em></li>
+</ul>
+<h3 id="Homeomorphisms"><a href="#Homeomorphisms" class="headerlink" title="Homeomorphisms"></a>Homeomorphisms</h3><ul>
+<li><strong>Definition</strong><br><em>If a map $f:X_1\rightarrow X_2$ is a bijection, and both $f$ and $f^{-1}$ are continuous (or equivalently, $f$ is a continuous and open map), then $f$ is a homeomorphism.</em></li>
+</ul>
+<p>Homeomorphism is similar to isomorphism between groups or rings, in the sense that it preserves topological structure including the cardinal number of topology, connectedness and compactness.</p>
+<ul>
+<li><strong>Properties</strong><ul>
+<li><em>Let $f:X_1\rightarrow X_2$ be a bijective, continuous map of topological spaces. If $X_1$ is compact and $X_2$ is Huasdorff, then $f$ is a homeomorphism.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><h1 id="Real-Analysis"><a href="#Real-Analysis" class="headerlink" title="Real Analysis"></a>Real Analysis</h1><h1 id="Complex-Variables"><a href="#Complex-Variables" class="headerlink" title="Complex Variables"></a>Complex Variables</h1><h2 id="Complex-Numbers"><a href="#Complex-Numbers" class="headerlink" title="Complex Numbers"></a>Complex Numbers</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Thre <em>complex numbers</em> $\mathbb{C}$ is a set of all order pairs of real numbers $(x,y)$. The <em>imaginary unit</em> $i$ is a complex number such that $i^2=-1$. Then each complex number can be expressed as $z=x+yi$ where $x\in\mathbb{R}$ and $y\in\mathbb{R}$  are called the <em>real part</em> and <em>imaginary part</em> of $z$, denoted by $\text{Re} z$ and $\text{Im} z$ respectively. The <em>(complex) conjugate</em> of $z$ is the number $\overline{z}=x-yi$.</p>
+<p>The complex numbers can be graphed on the <em>complex plane</em> ($xy$-plane). The horizontal $x$-axis is called the <em>real axis</em> and the vertical $y$-axis is called the <em>imaginary axis</em>.</p>
+<p>The <em>modulus</em>, <em>magnitude</em> or <em>absolute value</em> of $z$ is given by $|z|=\sqrt{x^2+y^2}$. The absolute value of $z$ satisfies $|z|^2=z\overline{z}$.</p>
+<h3 id="The-Polar-Form"><a href="#The-Polar-Form" class="headerlink" title="The Polar Form"></a>The Polar Form</h3><p>The angle $\theta$ that the vector (from the origin to $z$) makes with the positive real axis is called an <em>argument</em> of $z$, denoted by $\text{arg} z$. We can add any integer multiple of $2n\pi$ to an argument of $z$, and the result is another argument of $z$. Therefore, we define the <em>principal argument</em> of $z$, denoted by $\text{Arg} z$ as the unique value of the argument that lies in the interval $-\pi&lt;\theta\leq \pi$.</p>
+<p>Let $r=|z|$, $x=r\cos\theta$ and $y=r\sin\theta$, then the polar form of $z$ is given by</p>
+<script type="math/tex; mode=display">z=r(\cos\theta+i\sin\theta).</script><h3 id="The-Exponential-Form"><a href="#The-Exponential-Form" class="headerlink" title="The Exponential Form"></a>The Exponential Form</h3><p>From the <em>Euler’s Formula</em> <script type="math/tex">e^{i\theta}=\cos\theta+i\sin\theta,</script><br>the exponential form of $z$ is given by <script type="math/tex">z=re^{i\theta}.</script><br>A useful result that follows from Euler’s Formula is <script type="math/tex">(\cos\theta+i\sin\theta)^n=\cos(n\theta)+i\sin(n\theta).</script></p>
+<h2 id="Complex-Functions"><a href="#Complex-Functions" class="headerlink" title="Complex Functions"></a>Complex Functions</h2><h3 id="Complex-Roots"><a href="#Complex-Roots" class="headerlink" title="Complex Roots"></a>Complex Roots</h3><p>If $n$ is a positive number, we can solve the equation $z^n=1$ and the solutions are called <em>$n^{\text{th}}$ roots of unity</em>. The equation can be expressed as $r^ne^{in\theta}=e^{i2k\pi}$ for $k\in \mathbb{Z}$. So $r=1$, $\theta= \frac{2k\pi}{n}$ and $z=e^{i\frac{2k\pi}{n}}$ for $k=0,1,\ldots,n-1$.</p>
+<p>More generally, if we want to solve the equation $z^n=w$, or equivalently, $r^ne^{i\theta}=Re^{i(\Theta+2k\pi)}$ for $k\in\mathbb{Z}$. Then the solution is given by $R^{\frac{1}{n}}e^{i\frac{\Theta+2k\pi}{n}}$ for $k=0,1,\ldots,n-1$.</p>
+<h3 id="Complex-Logarithms"><a href="#Complex-Logarithms" class="headerlink" title="Complex Logarithms"></a>Complex Logarithms</h3><p>If we write $z=re^{i(\theta+2k\pi)}$ for $k\in\mathbb{Z}$, then the logarithms of $z$ is given by $\log z=\log r+i(\theta+2k\pi)$. The principal logarithm of $z$ is gievn by $\\text{Log}z=\log|z|+i\text{Arg}z.$</p>
+<h3 id="Complex-Powers"><a href="#Complex-Powers" class="headerlink" title="Complex Powers"></a>Complex Powers</h3><p>For complex numbers $z$ and $w$, the complex power is given by $z^w=e^{w\log z}$ and the principal value of $z^w$ is equal to $z^w=e^{w\text{Log} z}$.</p>
+<h3 id="The-Trigonometric-Functions"><a href="#The-Trigonometric-Functions" class="headerlink" title="The Trigonometric Functions"></a>The Trigonometric Functions</h3><p>The cosine and sine of a complex number are defined as </p>
+<script type="math/tex; mode=display">\cos z=\frac{e^{iz}+e^{-iz}}{2}\qquad \sin z=\frac{e^{iz}-e^{-iz}}{2i}.</script><h3 id="The-Hyperbolic-Functions"><a href="#The-Hyperbolic-Functions" class="headerlink" title="The Hyperbolic Functions"></a>The Hyperbolic Functions</h3><p>The hyperbolic cosin and the hyperbolic sine are defined as </p>
+<script type="math/tex; mode=display">\cosh z=\frac{e^z+e^{-z}}{2}\qquad \sinh z=\frac{e^{z}-e^{-z}}{2}.</script><h2 id="Differentiability-of-Complex-Functions"><a href="#Differentiability-of-Complex-Functions" class="headerlink" title="Differentiability of Complex Functions"></a>Differentiability of Complex Functions</h2><h3 id="The-Derivative-of-A-Function-of-A-Complex-Variable"><a href="#The-Derivative-of-A-Function-of-A-Complex-Variable" class="headerlink" title="The Derivative of A Function of A Complex Variable"></a>The Derivative of A Function of A Complex Variable</h3><p>The function $f$ can be expressed as $f(z)=f(x+yi)=u(x,y)+iv(x,y)$. A function $f(z)$ is said to be <em>differentiable</em> at the point $z_0$ if $\lim\limits_{z\rightarrow z_0}\frac{f(z)-f(z_0)}{z-z_0}$ exists. The nonzero complex number $z$ can approach the origin from infinitely many directions, which is a very strong condition.</p>
+<h3 id="The-Cauchy-Riemann-Equations"><a href="#The-Cauchy-Riemann-Equations" class="headerlink" title="The Cauchy-Riemann Equations"></a>The Cauchy-Riemann Equations</h3><p>If $f$ is differentiable at $z_0$, then the limit <script type="math/tex">\lim\limits_{z\rightarrow z_0}\frac{f(z)-f(z_0)}{z-z_0}=\lim\limits_{z\rightarrow z_0}\frac{u(x,y)-u(x_0,y_0)}{z-z_0}+\lim\limits_{z\rightarrow z_0}i\frac{v(x,y)-v(x_0,y_0)}{z-z_0}</script> exists. If we let $z$ approach the origin along the real axis, then <script type="math/tex">\lim\limits_{z\rightarrow z_0}\frac{f(z)-f(z_0)}{z-z_0}=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}.</script> If we let $z$ approach the origin along the imaginary axis, then <script type="math/tex">\lim\limits_{z\rightarrow z_0}\frac{f(z)-f(z_0)}{z-z_0}=\frac{1}{i}\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}.</script><br>Therefore, <script type="math/tex">\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\qquad \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y},</script> which is called the <em>Cauchy-Riemann equations</em>. Conversely, if the Cauchy-Riemann equations are satisfied and the four partial derivatives are continuous throughout an open set containing $z_0$, then the function $f$ is differentiable at the point $z_0$.</p>
+<h3 id="Analytic-Functions"><a href="#Analytic-Functions" class="headerlink" title="Analytic Functions"></a>Analytic Functions</h3><p>If $f(z)$ is differentiable at $z_0$ and at every point throughout some open set in the complex plane containing $z_0$, then we say that $f(z)$ is <em>analytic</em> at the point $z_0$. In general, if $f(z)$ is differentiable throughout some open set $O$ in the complex plane, then $f(z)$ is said to be analytic in $O$. If $f(z)$ is analytic everywhere in the complex plane, then $f(z)$ is said to be an <em>entire function</em>.</p>
+<h3 id="Singularities-And-Poles"><a href="#Singularities-And-Poles" class="headerlink" title="Singularities And Poles"></a>Singularities And Poles</h3><ul>
+<li>If a function $f(z)$ is not analytic at $z_0$, but is analytic at some point in every punctured disk center at $z_0$, then $z_0$ is said to be a <em>singularity</em> of $f(z)$. </li>
+<li>If $z_0$ is a singularity of $f(z)$ and $f(z)$ is analytic at every point in some puctured open disk centered at $z_0$, then we call $z_0$ an <em>isolated singularity</em>. If there is a positive number $n$ such that $f(z)=\frac{g(z)}{(z-z_0)^n}$ with $g(z)$ analytic in a nonpunctured open disk centered at $z_0$ and $g(z_0)\neq 0$, then the isolated singularity $z_0$ of $f$ is called a <em>pole of order $n$</em>. Otherwise, $z_0$ is called an <em>essential singularity</em> if we canot write $f(z)$ in this form for any positive number $n$.</li>
+<li><em>Nonisolated singularities</em> can be cluster points or natural boundaries.</li>
+</ul>
+<h2 id="Complex-Line-Integrals"><a href="#Complex-Line-Integrals" class="headerlink" title="Complex Line Integrals"></a>Complex Line Integrals</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>Let $C$ be a smooth path in the complex plane, which is given parametrically by the equation $z(t) = x(t) + iy(t)$, from $t = a$ to $t = b$ (where $t$ is real). If $f(z )$ is a continuous function along $C$, then we have: <script type="math/tex">\int_C f(z)\mathrm{d}z=\int_a^b f(z(t))\cdot z'(t)\mathrm{d}t.</script><br>Alternatively, we could have invoked the fundamental theorem of calculus abd written <script type="math/tex">\int_Cf(z)\mathrm{d}z=F(z(b))-F(z(a)),</script>where $F(z)$ is an antiderivative of $f( z )$.</p>
+<h3 id="Complex-Line-Integrals-of-Analytic-Functions"><a href="#Complex-Line-Integrals-of-Analytic-Functions" class="headerlink" title="Complex Line Integrals of Analytic Functions"></a>Complex Line Integrals of Analytic Functions</h3><ul>
+<li><em>Cauchy’s Theorem</em>: If $f(z)$ is analytic throughout a simply connected, open set $O$, then for every closed path $C$ in $O$, we have:<script type="math/tex">\oint_C f(z）\mathrm{d}z=0.</script> In particular, if $f(z)$ is an entire function, then $\oint_C f(z）\mathrm{d}z=0$ for any closed path in the plane.</li>
+<li><em>Morera’s Theorem</em>: If $f(z)$ is continuous throughout an open, connected set $O$ in the complex plane, and $\oint_C f(z)\mathrm{d}z = 0$ for every closed curve $C$ in $O$, then $f (z)$ is analytic in $O$.</li>
+<li><em>Cauchy’s Integral Formulas</em>: If $f(z)$ is analytic at all points within and on a simple, closed path, $C$, that surrounds the point $z_0$, then:<script type="math/tex">f(z_0)=\frac{1}{2\pi i}\oint_C\frac{f(z)}{z-z_0}\mathrm{d}z.</script> Furthermore, the $n$th derivative, $f^{(n)}(z)$, is also analytic at $z_0$ for all positive integers $n$, and:<script type="math/tex">f^{(n)}(z_0)=\frac{1}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}z.</script></li>
+</ul>
+<h3 id="The-Residue-Theorem"><a href="#The-Residue-Theorem" class="headerlink" title="The Residue Theorem"></a>The Residue Theorem</h3><p>If $z_0$ is the only singularity in a connected open set $O$, and $C\in O$ is a simple, closed, positively oriented curve in the annulus where the Laurent series expansion of $f(z)$ is valid, then <script type="math/tex">a_{-1}=\frac{1}{2\pi i}\oint_Cf(z)\mathrm{d}z.</script><br>The number $a_{-1}$, which is the coefficient of $(z-z_0)^{-1}$ in the Laurent series of $$f(z)$, called the <em>residue</em> of $f(z)$ at the singularity $z_0$, denoted by $\text{Res}(z_0,f)$. </p>
+<p>Furthermore, if $z_0$ is a pole of order $k$, then <script type="math/tex">\text{Res}(z_0,f)=\frac{1}{k!}\lim\limits_{z\rightarrow z_0}\frac{\mathrm{d^{k-1}}}{\mathrm{d}z^{k-1}}[(z-z_0)^kf(z)].</script></p>
+<p>If the curve $C$ surrounds more than one singularity of $f(z)$, the <em>residue theorem</em> says that if $f(z)$ is analytic throughout the interior of $C$, except at a finite number of singularity $z_1,\ldots,z_n$ inside $C$, then <script type="math/tex">\oint_Cf(z)\mathrm{d}z=2\pi i\cdot\sum\limits_{i=1}^n\text{Res}(z_n,f).</script></p>
+<h2 id="Series-Expansion"><a href="#Series-Expansion" class="headerlink" title="Series Expansion"></a>Series Expansion</h2><h3 id="Taylor-Series"><a href="#Taylor-Series" class="headerlink" title="Taylor Series"></a>Taylor Series</h3><h3 id="Laurent-Series"><a href="#Laurent-Series" class="headerlink" title="Laurent Series"></a>Laurent Series</h3><p>If $f(z)$ is analytic in an annulus $R_1&lt;|z-z_0|&lt;R_2$ where $R_1\in[0,\infty)$, $R_2\in(0,\infty]$ and $R_1&lt;R_2$, then it can be expanded in a <em>Laurent series</em>,</p>
+<script type="math/tex; mode=display">f(z)=\underbrace{\sum\limits_{n=1}^{\infty}a_{-n}(z-z_0)^{-n}}_{\text{singular part}}+\underbrace{\sum\limits_{n=0}^{\infty}a_{n}(z-z_0)^{n}}_{\text{analytic part}}.</script><p>The coefficients can be calculated as</p>
+<script type="math/tex; mode=display">a_n=\frac{f^{(n)}(z_0)}{n!}</script><script type="math/tex; mode=display">a_{-n}=\frac{1}{2\pi i}\oint\frac{f(z)}{(z-z_0)^{-n+1}}\mathrm{d}z</script><p>for $n\geq0$.</p>
+<p>In practice, we don’t usually figure out the Laurent coefficients from this formula; instead, we derive them by algebraic manipulations of the Taylor series.</p>
+<h1 id="Numerical-Analysis"><a href="#Numerical-Analysis" class="headerlink" title="Numerical Analysis"></a>Numerical Analysis</h1>
           
         
       
@@ -1581,6 +1805,188 @@ for i in range(epis):
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UChicago/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/course/UChicago/" itemprop="url">课程材料（UChicago）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52-05:00">
+                2019-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/course/" itemprop="url" rel="index">
+                    <span itemprop="name">course</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/course/UChicago/" class="leancloud_visitors" data-flag-title="课程材料（UChicago）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>课程名称</th>
+<th>Github</th>
+<th>百度云盘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STAT30400 - Distribution Theory</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
+</tr>
+<tr>
+<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
+</tr>
+<tr>
+<td>STAT34300 - Applied Linear Statistical Model</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UCB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1735,188 +2141,6 @@ for i in range(epis):
 <td>CS189 - Machine Learning</td>
 <td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
 <td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UChicago/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/course/UChicago/" itemprop="url">课程材料（UChicago）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52-05:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/course/" itemprop="url" rel="index">
-                    <span itemprop="name">course</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/course/UChicago/" class="leancloud_visitors" data-flag-title="课程材料（UChicago）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>课程名称</th>
-<th>Github</th>
-<th>百度云盘</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>STAT30400 - Distribution Theory</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
-</tr>
-<tr>
-<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
-</tr>
-<tr>
-<td>STAT34300 - Applied Linear Statistical Model</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
 </tr>
 </tbody>
 </table>
@@ -2139,7 +2363,7 @@ for i in range(epis):
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2150,7 +2374,7 @@ for i in range(epis):
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2161,7 +2385,7 @@ for i in range(epis):
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2214,7 +2438,7 @@ for i in range(epis):
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
