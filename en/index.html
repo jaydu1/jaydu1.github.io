@@ -521,6 +521,242 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAbstractAlgebra/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/gre-sub-math/GreSubMathAbstractAlgebra/" itemprop="url">Chapter 6 - Number Theory and Abstract Algebra</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T11:00:00-06:00">
+                2020-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/gre-sub-math/" itemprop="url" rel="index">
+                    <span itemprop="name">gre-sub-math</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/gre-sub-math/GreSubMathAbstractAlgebra/" class="leancloud_visitors" data-flag-title="Chapter 6 - Number Theory and Abstract Algebra">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Number-Theory"><a href="#Number-Theory" class="headerlink" title="Number Theory"></a>Number Theory</h1><h2 id="Divisibility"><a href="#Divisibility" class="headerlink" title="Divisibility"></a>Divisibility</h2><h3 id="The-Euclidean-Algorithm"><a href="#The-Euclidean-Algorithm" class="headerlink" title="The Euclidean Algorithm"></a>The Euclidean Algorithm</h3><h3 id="The-Diophantine-Equation"><a href="#The-Diophantine-Equation" class="headerlink" title="The Diophantine Equation"></a>The Diophantine Equation</h3><h2 id="Congruences"><a href="#Congruences" class="headerlink" title="Congruences"></a>Congruences</h2><p>Let $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible by $n$, which is written $a\equiv b(\text{mod}\  n)$. </p>
+<ul>
+<li>If $a\equiv b(\text{mod}\  n)$ and $b\equiv c(\text{mod}\  n)$, then $a\equiv c(\text{mod}\  n)$.</li>
+<li>If $a\equiv b(\text{mod}\  n)$, then for any $c$, $a\pm c\equiv b\pm c(\text{mod}\  n)$ and $ac\equiv bc(\text{mod}\  n)$.</li>
+<li>If $a_1\equiv b_1(\text{mod}\  n)$ and $a_2\equiv b_2(\text{mod}\  n)$, then $a_1\pm a_2\equiv b_1\pm b_2(\text{mod}\  n)$ and <script type="math/tex">a_1a_2\equiv b_1b_2(\text{mod}\  n)</script>.</li>
+<li>For any positive integer $c$, the statement $a\equiv b(\text{mod}\  n)$ is equivalent to the congruences $a\equiv b,b+n,\ldots,b+(c-1)n\ (\text{mod}\  n)$.</li>
+<li>If $ab\equiv ac(\text{mod}\  n)$, then $b\equiv c(\text{mod}\  n)$ if $\text{gcd}(a,n)=1$ or $b\equiv c(\text{mod}\  \frac{n}{d})$ if $d=\text{gcd}(a,n)&gt;1$.</li>
+<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $o$ does not divide $a$.</li>
+</ul>
+<h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a<em>b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a </em>binary structure*.</p>
+<p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a*b)*c=a*(b*c)</script> is called a <em>semigroup</em>.</p>
+<p>The element $e$ of $S$ with the property that <script type="math/tex">a*e=e*a=a,</script> for every $a\in S$ is called the <em>identity</em>. The identity may not exist for some binary structures. A semigroup that has an identity is called a <em>monoid</em>.</p>
+<p>Let $(S,<em>)$ be a monoid, if $\forall\ a\in S$, $\exists\ a^{-1}\in S$ being the inverse of $a$, such that <script type="math/tex">aa^{-1}=a^{-1}a=e,</script><br>then $(S,</em>)$ is a <em>group</em>. </p>
+<p>A semigroup, monoid, or group whose binary operation is <em>commutative</em>, i.e. <script type="math/tex">a*b=b*a,</script> is said <em>Abelian</em>.</p>
+<p><strong>Common notations.</strong> We usually just write $ab$, instead of $a * b$, even if the operation isn’t ordinary multiplication. Also, if the binary operation is commutative, it’s common to see it denoted by $+$, even if the operation isn’t ordinary addition.</p>
+<p>A group $G$ with the property that there’s an element $a$ in $G$ such that <script type="math/tex">G=\{a^n:n=0,1,2,\ldots\}</script><br>is said to be <em>cyclic</em>, and the element $a$ is a <em>generator</em> of the group.</p>
+<ul>
+<li>The integer $m$ is a generator of $(\mathbb{Z}_n,\oplus)$ if and only if $m$ is relatively prime to $n$.</li>
+<li>Let $G$ be a cyclic group with generator $a$. The element $a^m$ is a generator of $G$ if and only if $m$ is relatively prime to $n$.</li>
+</ul>
+<p>If a pair of groups are <em>isomorphic</em>, then all their structural properties are identical.</p>
+<h2 id="Subgroup"><a href="#Subgroup" class="headerlink" title="Subgroup"></a>Subgroup</h2><p>Let $(G, <em> )$ be a group. If there’s a subset $H$ of $G$ such that $(H, </em>)$ is also a group, then we say that $H$ is a <em>subgroup</em> of $G$, and write $H \leq G$. If $H\neq G$, then $H$ is a <em>proper subgroup</em> of $G$, denoted by $H&lt;G$. The <em>trivial subgroups</em> of $G$ are $\{e\}$ and $G$.</p>
+<p>The <em>cyclic subgroup</em> generated by $a\in G$ is given by $\langle a\rangle=\{a^n:n\in\mathbb{Z}\}$. The order of an element of a group is the order of $\langle a\rangle$.</p>
+<p>For some groups, particularly large ones, it’s often more economical to specify a set of generators and a set of equations connecting them-called <em>relations</em>-that can be used to reconstruct the entire group table. Together, the set of generators and set of relations is called a <em>presentation</em> of the group.</p>
+<ul>
+<li><strong>Lagrange’s Theorem.</strong> Let $G$ be a finite group. If $H$ is a subgroup of $G$, then the order of $H$ divides the order of $G$.</li>
+<li>Let $G$ be a finite, Abelian group of order $n$. Then $G$ has at least one subgroup of order $d$ for every (positive) divisor $d$ of $n$.</li>
+<li>Let $G$ be a finite, cyclic group of order $n$. Then $G$ has exactly one subgroup-a cyclic subgroup-of order $d$ for every (positive) divisor $d$ of $n$. If $G$ is generated by $a$, then the subgroup generated by the element $b=a^m$ has order $d = \frac{n}{\text{gcd}(m, n )}$. [If $m = 0$, then we’ll agree that $\text{gcd}(m, n) = n$.]</li>
+<li><strong>Cauchy’s Theorem.</strong> Let $G$ be a finite group of order $n$, and let $p$ be a prime that divides $n$. Then $G$ has at least one subgroup of order $p$.</li>
+<li><strong>Sylow’s First Theorem.</strong> Let $G$ be a finite group of order $n=p^km$, where $p$ is a prime that does not divide $m$.Then $G$ has at least one subgroup of order $p^i$ for every integer $i$ from $0$ to $k$.</li>
+</ul>
+<h2 id="Group-Homomorphisms"><a href="#Group-Homomorphisms" class="headerlink" title="Group Homomorphisms"></a>Group Homomorphisms</h2><p>Let $(G,\cdot)$ and $(G’,<em>)$ be groups. A function $\phi:G\rightarrow G’$ with the property that $$\phi(a\cdot b)=\phi(a)</em>\phi(b)$$<br>for all elements $a$ and $b$ in $G$, is called a group <em>homomorphism</em>.</p>
+<ul>
+<li>If $e$ is the identity in $G$, then $\phi(e)$ is the identity in $G’$.</li>
+<li>If $g\in G$ has finite order $m$, then $\phi(g)\in G’$ also has order $m$.</li>
+<li>If $a^{-1}$ is the inverse of $a$ in $G$, then $\phi(a^{-1 })$ is the inverse of $\phi(a)$ in $G’$.</li>
+<li>If $H$ is a subgroup of $G$, then $\phi(H)$ is a subgroup of $G’$, where $\phi(H)=\{\phi(h):h\in H\}$.</li>
+<li>If $G$ is finite, then the order of $\phi(G)$ divides the order of $G$; if $G’$ is finite, then the order of $\phi(G)$ also divides the order of $G’$.</li>
+<li>If $H’$ is a subgroup of $G’$, then $\phi^{-1} (H’)$ is a subgroup of $G$, where $\phi^{-1}(H’)=\{h\in G:\phi(h)\in H’\}$.</li>
+</ul>
+<p>A homomorphism that’s one-to-one (injective) is called a <em>monomorphism</em>; if it’s onto (surjective), it’s called an <em>epimorphism</em>; and if it’s one-to-one and onto (bijective), it’s called an <em>isomorphism</em>. A homomorphism from a group to itself is called an <em>endomorphism</em>, and an isomorphism from a group to itself is called an <em>automorphism</em>.</p>
+<ul>
+<li>A homomorphism is a monomorphism if and only if its kernel $\text{ker}\phi=\{g\in G:\phi(g)=e’\}$ is trivial.</li>
+<li>The kernel of a group homomorphism $\phi: G\rightarrow G’$ is always a subgroup of $G$.</li>
+</ul>
+<h2 id="Direct-Product-And-Direct-Sum"><a href="#Direct-Product-And-Direct-Sum" class="headerlink" title="Direct Product And Direct Sum"></a>Direct Product And Direct Sum</h2><p>The <em>direct product</em> of the groups $(G_1,<em>_1)$ and $(G_2,</em>_2)$ is  the group $(G_1\times G_2,<em>)$ where <script type="math/tex">G_1\times G_2=\{(a,b):a\in G_1,b\in G_2\}</script> and $</em>$ is the defined binary operation such that <script type="math/tex">(a_1,a_2)*(b_1,b_2)=(a_1*_1 b_1,a_2*_2 b_2).</script></p>
+<p>For Abelian groups, we use the notation $G_1\oplus G_2$ and call it as <em>direct sum</em>.</p>
+<ul>
+<li>The direct sum $\mathbb{Z}_m\oplus \mathbb{Z}_n$ is cyclic if and only if $\text{gcd}(m, n) = 1$. If this is the case, then, $\mathbb{Z}_m\oplus \mathbb{Z}_n$ is isomorphic to $\mathbb{Z}_{mn}$.</li>
+<li>The direct sum $\mathbb{Z}_{m_1}\oplus \cdots \oplus\mathbb{Z}_{m_k}$ is cyclic if and only if $\text{gcd}(m_i , m_j) = 1$ for every distinct pair $m_i$ and $m_j$. If this is the case, then $\mathbb{Z}_{m_1}\oplus \cdots \oplus\mathbb{Z}_{m_k}$ is isomorphic to $\mathbb{Z}_{m_1m_2\cdots m_k}.$</li>
+<li>Every finite Abelian group $G$ is isomorphic to a direct sum of the form <script type="math/tex">\mathbb{Z}_{p_1^{k_1}}\oplus\cdots\oplus \mathbb{Z}_{p_r^{k_r}}</script> where the $p_i$ are (not necessarily distinct) primes and $k$ are (not necessarily distinct) positive integers. The collection of prime powers $p_i^{k_i}$ for a given representation of $G$, are known as the <em>elementary divisors</em> of $G$.</li>
+<li>Every finite Abelian group G is isomorphic to a direct sum of the form <script type="math/tex">\mathbb{Z}_{m_1}\oplus\cdots\oplus \mathbb{Z}_{m_t}</script> where $m_1\geq 2$, $m_{i-1}$ divides $m_{i}$ for $i=1,\ldots,t.$ The distinct list $m_1,\cdots,m_t$ is called the <em>invariant factors</em> of $G$.</li>
+</ul>
+<h2 id="Rings"><a href="#Rings" class="headerlink" title="Rings"></a>Rings</h2><p>A set $R$, together with two binary operations (we’ll use addition, $+$, and multiplication, $\cdot$), is called a <em>ring</em> if the following conditions are satisfied:</p>
+<ol>
+<li>$(R,+)$ is a Abelian group;</li>
+<li>$(R,\cdot)$ is a semigroup;</li>
+<li>the distributive laws hold; that is, for every $a$, $b$, and $c$ in $R$, we have:<script type="math/tex">a*(b+c)=a*b+a*c\qquad (a+d)*c=a*c+d*c.</script></li>
+</ol>
+<p>The smallest positive integer $n$ such that $na = 0$ for every $a$ in R (if such an $n$ exists) is called the <em>characteristic</em> of the ring, and we write $\text{char} R = n$.</p>
+<p>If the multiplicative semigroup $(R, \cdot )$ is a monoid-that is, if there’s a multiplicative identity-then $R$ is called a <em>ring with unity</em>. The identity of the additive abelian group $(R, +)$ is usually denoted by $0$ and, in a ring with unity, the identity of the multiplicative monoid $(R, \cdot )$ is usually denoted by 1.</p>
+<p>If the operation of multiplication is commutative, then we call $R$ a commutative ring. (The term abelian is generally not used to describe a ring in which multiplication is commutative.)</p>
+<p>If $S$ is a subset of $R$, and $S$ satisfies the ring requirements with the same operations as $R$, then we say that $(S, +, \cdot )$ is a subring of $(R, +, \cdot)$.</p>
+<ul>
+<li><strong>ring of polynomial.</strong> The ring of polynomials with coefficients in a ring $R$ is usually denoted by $R[x_1,\cdots,x_n]$ or $R[x]$ where $x$ refer to the set of variables $\{x_1,\cdots,x_n\}$. An element $f(x)\in \mathbb{R}[x]$ can be written as a finite sum <script type="math/tex">f(x)=\sum\limits_b b_{\alpha} x^{\alpha},</script><br>where $\alpha=(\alpha_1,\cdots,\alpha_d)$ is a multi-index and $\alpha_i\in \mathbb{R}$.</li>
+</ul>
+<h2 id="Ring-Homomorphisms"><a href="#Ring-Homomorphisms" class="headerlink" title="Ring Homomorphisms"></a>Ring Homomorphisms</h2><p>Let $(R, +, \times)$ and $(R’, \oplus,\otimes)$ be rings. A function $\phi: R \rightarrow R’$ is called a <em>ring homomorphism</em> if both of the following conditions hold for be every $a$ and $b$ in $R$:</p>
+<ol>
+<li>$\phi(a+b)=\phi(a)\oplus\phi(b).$</li>
+<li>$\phi(a\times b)=\phi(a)\otimes\phi(b).$</li>
+</ol>
+<ul>
+<li>The kernel of a ring homomorphism is the set $\text{ker}\phi=\{a \in R : \phi(a) = 0’\}$, where $0’ $ is the additive identity in $R’$ and is always a subring of $R$.</li>
+<li>The image of $R$, $\phi(R)=\{\phi(r):r\in R\}$ is a subring of $R’$.</li>
+<li>The image of $0$, the additive identity in $R$, must be $0’$.</li>
+</ul>
+<!--## Ideal
+An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
+<dd>(a) $I$ is closed under addition;<br> (b) If $s\in I$ and $r\in R$, then $rs\in I$. Thus, $0\in I$.
+</dd>-->
+<p>A commutative ring with unity ($1\neq 0$) that contains no zero divisors is called an <em>integral domain</em>. The <em>cancellation law</em> holds for integral domains.</p>
+<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^<em>,\cdot)$ is a group, then $R$ is called a </em>divison ring<em>. A commutative division ring is called a </em>field*.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/machine-learning/IntroductionOfMachineLearning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2144,143 +2380,13 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 
        
     
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/uncategorized/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/uncategorized/hello-world/" itemprop="url">Welcome</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-24T07:08:48-05:00">
-                2019-04-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/uncategorized/hello-world/" class="leancloud_visitors" data-flag-title="Welcome">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to my blog! </p>
-<h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><p>I am a currently senior student in Sen Yat-sen University and also an incoming Statistics master student in University of Chicago. </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/en/page/2/">2</a><a class="extend next" rel="next" href="/en/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2326,7 +2432,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
