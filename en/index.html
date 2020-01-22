@@ -757,6 +757,176 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathDifferentialEquations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/gre-sub-math/GreSubMathDifferentialEquations/" itemprop="url">Chapter 3 - Calculus II</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T09:00:00-06:00">
+                2020-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/gre-sub-math/" itemprop="url" rel="index">
+                    <span itemprop="name">gre-sub-math</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/gre-sub-math/GreSubMathDifferentialEquations/" class="leancloud_visitors" data-flag-title="Chapter 3 - Calculus II">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Separable-Equations"><a href="#Separable-Equations" class="headerlink" title="Separable Equations"></a>Separable Equations</h1><p>A differential equation of the form <script type="math/tex">\frac{\mathrm{d} y }{\mathrm{d}x}=\frac{f(x)}{g(x)}</script> is called <em>separable</em> because its variables can be separated. The solution to it is given by <script type="math/tex">\int g(y)\mathrm{d}y=\int f(x)\mathrm{d}x.</script></p>
+<h1 id="Homogeneous-Equations"><a href="#Homogeneous-Equations" class="headerlink" title="Homogeneous Equations"></a>Homogeneous Equations</h1><p>A function of two variables, $f(x, y)$, is said to be homogeneous of degree $n$ if there is a constant $n$ such that <script type="math/tex">f(tx,ty)=t^nf(x,y)</script> for all $t,x$ and $y$ for which both sides are defined. A differential equation of the form <script type="math/tex">M(x,y)\mathrm{d}x+N(x,y)\mathrm{d}y=0</script> is <em>homogeneous</em> if $M$ and $N$ are both homogeneous functions of the same degree.</p>
+<p>To solve this equation, let $y=xv$, $\mathrm{d}y=x\mathrm{d}v+v\mathrm{d}x$, then the equation will become separable. After solving for solution concerning $v$ and $x$, replace $v$ by $\frac{y}{x}$ and we can get the solution to the original equation.</p>
+<h1 id="Exact-Equations"><a href="#Exact-Equations" class="headerlink" title="Exact Equations"></a>Exact Equations</h1><p>Given a function $f(x, y)$, its total differential, $\mathrm{d}f$, is defined as: <script type="math/tex">\mathrm{d}f=\frac{\partial f}{\partial x}\mathrm{d}x + \frac{\partial f}{\partial x}\mathrm{d}y.</script> Then the family of curves $f(x, y) = c$ satisfies the differential equation, <script type="math/tex">\mathrm{d}f=\frac{\partial f}{\partial x}\mathrm{d}x + \frac{\partial f}{\partial x}\mathrm{d}y=0.</script> So, if there exists a function $f(x, y)$ such that $M(x,y)=\frac{\partial f}{\partial x}$ and $N(x,y)=\frac{\partial f}{\partial y}$, then $M(x,y)\mathrm{d}x+N(x,y)\mathrm{d}y$ is called an <em>exact differential</em> and the equation $M(x,y)\mathrm{d}x+N(x,y)\mathrm{d}y=0$ is said to be an <em>exact equation</em> whose solution is the family $f(x,y)=c$.</p>
+<p>If $\frac{\partial M}{\partial y}$ and $\frac{\partial N}{\partial x}$ are continuous, then the sufficient and necessary condition for the equation to be exact is that $\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$</p>
+<h1 id="Nonexact-Equations-And-Itegreating-Factors"><a href="#Nonexact-Equations-And-Itegreating-Factors" class="headerlink" title="Nonexact Equations And Itegreating Factors"></a>Nonexact Equations And Itegreating Factors</h1><p>If a nonexact equation has a solution, then an <em>integrating factor</em> $\mu(x,y)$ is guaranteed to exist such that $\mu(x,y)M(x,y)\mathrm{d}x+\mu(x,y)N(x,y)\mathrm{d}y=0$ is an exact equation.</p>
+<p>If $\xi(x)=\frac{M_y-N_x}{N}$ is a function of $x$ alone, then $\mu(x)=e^{\int\xi(x)\mathrm{d}x}$.</p>
+<p>If $\phi(y)=\frac{M_y-N_x}{-M}$ is a function of $y$ alone, then $\mu(x)=e^{\int\phi(y)\mathrm{d}y}$.</p>
+<h1 id="First-Order-Linear-Equations"><a href="#First-Order-Linear-Equations" class="headerlink" title="First-Order Linear Equations"></a>First-Order Linear Equations</h1><p>A <em>first-order linear equation</em> is defined as a differential equation of the form: <script type="math/tex">\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)\mathrm{d}y=Q(x).</script> The integrating factor for this equation is $\mu(x)=e^{\int P(x)\mathrm{d}x}$. Then $\frac{\mathrm{d}(\mu y)}{\mathrm{d}x}=\mu Q$. Integrating both sides gives the general solution <script type="math/tex">y=\frac{1}{\mu}\int \mu Q \mathrm{d}x.</script></p>
+<h1 id="Higher-Order-Linear-Equations-With-constant-Coefficients"><a href="#Higher-Order-Linear-Equations-With-constant-Coefficients" class="headerlink" title="Higher-Order Linear Equations With constant Coefficients"></a>Higher-Order Linear Equations With constant Coefficients</h1><p>The linear homogeneous differential equation of the<br>$n$th order with constant coefficients can be written as <script type="math/tex">y^{(n)}+ a_1 y^{(n-1)}+\cdots + a_n y=0,</script><br>where $a_1,\ldots,a_n\in \mathbb{C}$. For each differential operator with constant coefficients, we can introduce the <em>characteristic polynomial</em> <script type="math/tex">L(\lambda)=\lambda^n+a_1\lambda^{n-1}+\cdots+a_n.</script><br>The algebraic equation <script type="math/tex">L(\lambda)=0</script> is called the <em>characteristic equation</em> of the differential equation.</p>
+<ul>
+<li>If all roots of the characteristic equation are real and distinct, then the general solution is of the form <script type="math/tex">y=C_1e^{\lambda_1 x}+\cdots +C_ne^{\lambda_n x}</script> where $\lambda_1,\ldots,\lambda_n\in \mathbb{R}$ are distinct roots and $C_1,\ldots,C_n\in\mathbb{C}$ are constants.</li>
+<li>If all roots of the characteristic equation are real and multiple, then the general solution is of the form <script type="math/tex">y=\sum\limits_{i=1}^m\sum\limits_{j=1}^{k_i}C_{ij}x^{j-1}e^{\lambda_i x}</script><br>where $\lambda_1,\ldots,\lambda_m\in \mathbb{R}$ are roots with multiplicity $k_1,\ldots,k_m$ and $\sum\limits_{i=1}^mk_i=n$, and $C_{ij}\in\mathbb{C}$ are constants.</li>
+<li>If all roots of the characteristic equation are complex and distinct, then the general solution is of the form <script type="math/tex">y=\sum\limits_{j=1}^{\frac{n}{2}}e^{\alpha_j x}[C_{j1}\cos(\beta_j x)+C_{j2}\sin(\beta_j x)]</script> where $\alpha_j\pm i\beta_j\in \mathbb{C}$ are distinct complex roots and $C_{j1},C_{j2}\in\mathbb{C}$ are constants.</li>
+<li>If all roots of the characteristic equation are complex and multiple, then the general solution is of the form <script type="math/tex">y=\sum\limits_{j=1}^{\frac{n}{2}}\sum\limits_{l=1}^{k_j}e^{\alpha_j x}x^{l-1}[C_{j1}\cos(\beta_j x)+C_{j2}\sin(\beta_j x)]</script> where $\alpha_j\pm i\beta_j\in \mathbb{C}$ are complex roots with multiplicity $k_j$ and $C_{j1},C_{j2}\in\mathbb{C}$ are constants.</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathCalculusII/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -788,7 +958,7 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T10:00:00-06:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T08:00:00-06:00">
                 2020-01-03
               </time>
             
@@ -2154,214 +2324,6 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 
        
     
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UCB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/course/UCB/" itemprop="url">Course materials in UCB</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52-05:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/course/" itemprop="url" rel="index">
-                    <span itemprop="name">course</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/course/UCB/" class="leancloud_visitors" data-flag-title="Course materials in UCB">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MATH 118 - Fourier Analysis and Wavelets</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>STAT150 - Stochastic Processes</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Computer-Science"><a href="#Computer-Science" class="headerlink" title="Computer Science"></a>Computer Science</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CS189 - Machine Learning</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
   </section>
 
   
@@ -2414,7 +2376,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
