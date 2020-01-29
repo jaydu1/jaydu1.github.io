@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="jaydu1">
 <meta property="og:description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-05T02:21:32.948Z">
+<meta property="og:updated_time" content="2020-01-29T05:01:14.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 6 - Number Theory and Abstract Algebra">
 <meta name="twitter:description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
@@ -409,19 +409,19 @@
 <li>If $ab\equiv ac(\text{mod}\  n)$, then $b\equiv c(\text{mod}\  n)$ if $\text{gcd}(a,n)=1$ or $b\equiv c(\text{mod}\  \frac{n}{d})$ if $d=\text{gcd}(a,n)&gt;1$.</li>
 <li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $o$ does not divide $a$.</li>
 </ul>
-<h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a<em>b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a </em>binary structure*.</p>
-<p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a*b)*c=a*(b*c)</script> is called a <em>semigroup</em>.</p>
-<p>The element $e$ of $S$ with the property that <script type="math/tex">a*e=e*a=a,</script> for every $a\in S$ is called the <em>identity</em>. The identity may not exist for some binary structures. A semigroup that has an identity is called a <em>monoid</em>.</p>
-<p>Let $(S,<em>)$ be a monoid, if $\forall\ a\in S$, $\exists\ a^{-1}\in S$ being the inverse of $a$, such that <script type="math/tex">aa^{-1}=a^{-1}a=e,</script><br>then $(S,</em>)$ is a <em>group</em>. </p>
-<p>A semigroup, monoid, or group whose binary operation is <em>commutative</em>, i.e. <script type="math/tex">a*b=b*a,</script> is said <em>Abelian</em>.</p>
-<p><strong>Common notations.</strong> We usually just write $ab$, instead of $a * b$, even if the operation isn’t ordinary multiplication. Also, if the binary operation is commutative, it’s common to see it denoted by $+$, even if the operation isn’t ordinary addition.</p>
+<h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a\ast b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a <em>binary structure</em>.</p>
+<p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a\ast b)\ast c=a\ast (b\ast c)</script> is called a <em>semigroup</em>.</p>
+<p>The element $e$ of $S$ with the property that <script type="math/tex">a\ast e=e\ast a=a,</script> for every $a\in S$ is called the <em>identity</em>. The identity may not exist for some binary structures. A semigroup that has an identity is called a <em>monoid</em>.</p>
+<p>Let $(S,\ast )$ be a monoid, if $\forall\ a\in S$, $\exists\ a^{-1}\in S$ being the inverse of $a$, such that <script type="math/tex">aa^{-1}=a^{-1}a=e,</script><br>then $(S,\ast )$ is a <em>group</em>. </p>
+<p>A semigroup, monoid, or group whose binary operation is <em>commutative</em>, i.e. <script type="math/tex">a\ast b=b\ast a,</script> is said <em>Abelian</em>.</p>
+<p><strong>Common notations.</strong> We usually just write $ab$, instead of $a \ast  b$, even if the operation isn’t ordinary multiplication. Also, if the binary operation is commutative, it’s common to see it denoted by $+$, even if the operation isn’t ordinary addition.</p>
 <p>A group $G$ with the property that there’s an element $a$ in $G$ such that <script type="math/tex">G=\{a^n:n=0,1,2,\ldots\}</script><br>is said to be <em>cyclic</em>, and the element $a$ is a <em>generator</em> of the group.</p>
 <ul>
 <li>The integer $m$ is a generator of $(\mathbb{Z}_n,\oplus)$ if and only if $m$ is relatively prime to $n$.</li>
 <li>Let $G$ be a cyclic group with generator $a$. The element $a^m$ is a generator of $G$ if and only if $m$ is relatively prime to $n$.</li>
 </ul>
 <p>If a pair of groups are <em>isomorphic</em>, then all their structural properties are identical.</p>
-<h2 id="Subgroup"><a href="#Subgroup" class="headerlink" title="Subgroup"></a>Subgroup</h2><p>Let $(G, <em> )$ be a group. If there’s a subset $H$ of $G$ such that $(H, </em>)$ is also a group, then we say that $H$ is a <em>subgroup</em> of $G$, and write $H \leq G$. If $H\neq G$, then $H$ is a <em>proper subgroup</em> of $G$, denoted by $H&lt;G$. The <em>trivial subgroups</em> of $G$ are $\{e\}$ and $G$.</p>
+<h2 id="Subgroup"><a href="#Subgroup" class="headerlink" title="Subgroup"></a>Subgroup</h2><p>Let $(G, \ast  )$ be a group. If there’s a subset $H$ of $G$ such that $(H, \ast )$ is also a group, then we say that $H$ is a <em>subgroup</em> of $G$, and write $H \leq G$. If $H\neq G$, then $H$ is a <em>proper subgroup</em> of $G$, denoted by $H&lt;G$. The <em>trivial subgroups</em> of $G$ are $\{e\}$ and $G$.</p>
 <p>The <em>cyclic subgroup</em> generated by $a\in G$ is given by $\langle a\rangle=\{a^n:n\in\mathbb{Z}\}$. The order of an element of a group is the order of $\langle a\rangle$.</p>
 <p>For some groups, particularly large ones, it’s often more economical to specify a set of generators and a set of equations connecting them-called <em>relations</em>-that can be used to reconstruct the entire group table. Together, the set of generators and set of relations is called a <em>presentation</em> of the group.</p>
 <ul>
@@ -431,7 +431,7 @@
 <li><strong>Cauchy’s Theorem.</strong> Let $G$ be a finite group of order $n$, and let $p$ be a prime that divides $n$. Then $G$ has at least one subgroup of order $p$.</li>
 <li><strong>Sylow’s First Theorem.</strong> Let $G$ be a finite group of order $n=p^km$, where $p$ is a prime that does not divide $m$.Then $G$ has at least one subgroup of order $p^i$ for every integer $i$ from $0$ to $k$.</li>
 </ul>
-<h2 id="Group-Homomorphisms"><a href="#Group-Homomorphisms" class="headerlink" title="Group Homomorphisms"></a>Group Homomorphisms</h2><p>Let $(G,\cdot)$ and $(G’,<em>)$ be groups. A function $\phi:G\rightarrow G’$ with the property that $$\phi(a\cdot b)=\phi(a)</em>\phi(b)$$<br>for all elements $a$ and $b$ in $G$, is called a group <em>homomorphism</em>.</p>
+<h2 id="Group-Homomorphisms"><a href="#Group-Homomorphisms" class="headerlink" title="Group Homomorphisms"></a>Group Homomorphisms</h2><p>Let $(G,\cdot)$ and $(G’,\ast )$ be groups. A function $\phi:G\rightarrow G’$ with the property that <script type="math/tex">\phi(a\cdot b)=\phi(a)\ast \phi(b)</script><br>for all elements $a$ and $b$ in $G$, is called a group <em>homomorphism</em>.</p>
 <ul>
 <li>If $e$ is the identity in $G$, then $\phi(e)$ is the identity in $G’$.</li>
 <li>If $g\in G$ has finite order $m$, then $\phi(g)\in G’$ also has order $m$.</li>
@@ -457,7 +457,7 @@
 <ol>
 <li>$(R,+)$ is a Abelian group;</li>
 <li>$(R,\cdot)$ is a semigroup;</li>
-<li>the distributive laws hold; that is, for every $a$, $b$, and $c$ in $R$, we have:<script type="math/tex">a*(b+c)=a*b+a*c\qquad (a+d)*c=a*c+d*c.</script></li>
+<li>the distributive laws hold; that is, for every $a$, $b$, and $c$ in $R$, we have:<script type="math/tex">a*(b+c)=a\ast b+a\ast c\qquad (a+d)\ast c=a\ast c+d\ast c.</script></li>
 </ol>
 <p>The smallest positive integer $n$ such that $na = 0$ for every $a$ in R (if such an $n$ exists) is called the <em>characteristic</em> of the ring, and we write $\text{char} R = n$.</p>
 <p>If the multiplicative semigroup $(R, \cdot )$ is a monoid-that is, if there’s a multiplicative identity-then $R$ is called a <em>ring with unity</em>. The identity of the additive abelian group $(R, +)$ is usually denoted by $0$ and, in a ring with unity, the identity of the multiplicative monoid $(R, \cdot )$ is usually denoted by 1.</p>
@@ -481,7 +481,7 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
 <dd>(a) $I$ is closed under addition;<br> (b) If $s\in I$ and $r\in R$, then $rs\in I$. Thus, $0\in I$.
 </dd>-->
 <p>A commutative ring with unity ($1\neq 0$) that contains no zero divisors is called an <em>integral domain</em>. The <em>cancellation law</em> holds for integral domains.</p>
-<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^<em>,\cdot)$ is a group, then $R$ is called a </em>divison ring<em>. A commutative division ring is called a </em>field*.</p>
+<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^{\ast },\cdot)$ is a group, then $R$ is called a <em>divison ring</em>. A commutative division ring is called a <em>field</em>.</p>
 
       
     </div>
