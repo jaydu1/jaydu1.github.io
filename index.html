@@ -467,7 +467,8 @@
 <h3 id="The-Residue-Theorem"><a href="#The-Residue-Theorem" class="headerlink" title="The Residue Theorem"></a>The Residue Theorem</h3><p>If $z_0$ is the only singularity in a connected open set $O$, and $C\in O$ is a simple, closed, positively oriented curve in the annulus where the Laurent series expansion of $f(z)$ is valid, then <script type="math/tex">a_{-1}=\frac{1}{2\pi i}\oint_Cf(z)\mathrm{d}z.</script><br>The number $a_{-1}$, which is the coefficient of $(z-z_0)^{-1}$ in the Laurent series of $f(z)$, called the <em>residue</em> of $f(z)$ at the singularity $z_0$, denoted by $\text{Res}(z_0,f)$. </p>
 <p>Furthermore, if $z_0$ is a pole of order $k$, then <script type="math/tex">\text{Res}(z_0,f)=\frac{1}{k!}\lim\limits_{z\rightarrow z_0}\frac{\mathrm{d^{k-1}}}{\mathrm{d}z^{k-1}}[(z-z_0)^kf(z)].</script></p>
 <p>If the curve $C$ surrounds more than one singularity of $f(z)$, the <em>residue theorem</em> says that if $f(z)$ is analytic throughout the interior of $C$, except at a finite number of singularity $z_1,\ldots,z_n$ inside $C$, then <script type="math/tex">\oint_Cf(z)\mathrm{d}z=2\pi i\cdot\sum\limits_{i=1}^n\text{Res}(z_n,f).</script></p>
-<h2 id="Series-Expansion"><a href="#Series-Expansion" class="headerlink" title="Series Expansion"></a>Series Expansion</h2><h3 id="Taylor-Series"><a href="#Taylor-Series" class="headerlink" title="Taylor Series"></a>Taylor Series</h3><h3 id="Laurent-Series"><a href="#Laurent-Series" class="headerlink" title="Laurent Series"></a>Laurent Series</h3><p>If $f(z)$ is analytic in an annulus $R_1&lt;|z-z_0|&lt;R_2$ where $R_1\in[0,\infty)$, $R_2\in(0,\infty]$ and $R_1&lt;R_2$, then it can be expanded in a <em>Laurent series</em>,</p>
+<h2 id="Series-Expansion"><a href="#Series-Expansion" class="headerlink" title="Series Expansion"></a>Series Expansion</h2><h3 id="Taylor-Series"><a href="#Taylor-Series" class="headerlink" title="Taylor Series"></a>Taylor Series</h3><p>List of Maclaurin series of some common functions is given by<br>$\begin{align<em>}<br> e^{x}&amp;=\sum _{n=0}^{\infty }{\frac {x^{n}}{n!}}&amp;&amp;=1+x+{\frac {x^{2}}{2!}}+{\frac {x^{3}}{3!}}+\cdots\\<br>\ln(1-x)&amp;=-\sum _{n=1}^{\infty }{\frac {x^{n}}{n}}&amp;&amp;=-x-{\frac {x^{2}}{2}}-{\frac {x^{3}}{3}}-\cdots \\\ln(1+x)&amp;=\sum _{n=1}^{\infty }(-1)^{n+1}{\frac {x^{n}}{n}}&amp;&amp;=x-{\frac {x^{2}}{2}}+{\frac {x^{3}}{3}}-\cdots \\<br>{\frac {1}{1-x}}&amp;=\sum _{n=0}^{\infty }x^{n}\\{\frac {1}{(1-x)^{2}}}&amp;=\sum _{n=1}^{\infty }nx^{n-1}\\{\frac {1}{(1-x)^{3}}}&amp;=\sum _{n=2}^{\infty }{\frac {(n-1)n}{2}}x^{n-2}\\<br>(1+x)^{\alpha }&amp;=\sum _{n=0}^{\infty }{\binom {\alpha }{n}}x^{n}\\<br>\sin x&amp;=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{(2n+1)!}}x^{2n+1}&amp;&amp;=x-{\frac {x^{3}}{3!}}+{\frac {x^{5}}{5!}}-\cdots &amp;&amp;{\text{for all }}x\[6pt]\cos x&amp;=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{(2n)!}}x^{2n}&amp;&amp;=1-{\frac {x^{2}}{2!}}+{\frac {x^{4}}{4!}}-\cdots &amp;&amp;{\text{for all }}x\[6pt]\tan x&amp;=\sum _{n=1}^{\infty }{\frac {B_{2n}(-4)^{n}\left(1-4^{n}\right)}{(2n)!}}x^{2n-1}&amp;&amp;=x+{\frac {x^{3}}{3}}+{\frac {2x^{5}}{15}}+\cdots &amp;&amp;{\text{for }}|x|&lt;{\frac {\pi }{2}}\[6pt]\sec x&amp;=\sum _{n=0}^{\infty }{\frac {(-1)^{n}E_{2n}}{(2n)!}}x^{2n}&amp;&amp;=1+{\frac {x^{2}}{2}}+{\frac {5x^{4}}{24}}+\cdots &amp;&amp;{\text{for }}|x|&lt;{\frac {\pi }{2}}\[6pt]\arcsin x&amp;=\sum _{n=0}^{\infty }{\frac {(2n)!}{4^{n}(n!)^{2}(2n+1)}}x^{2n+1}&amp;&amp;=x+{\frac {x^{3}}{6}}+{\frac {3x^{5}}{40}}+\cdots &amp;&amp;{\text{for }}|x|\leq 1\[6pt]\arccos x&amp;={\frac {\pi }{2}}-\arcsin x\\&amp;={\frac {\pi }{2}}-\sum _{n=0}^{\infty }{\frac {(2n)!}{4^{n}(n!)^{2}(2n+1)}}x^{2n+1}&amp;&amp;={\frac {\pi }{2}}-x-{\frac {x^{3}}{6}}-{\frac {3x^{5}}{40}}-\cdots &amp;&amp;{\text{for }}|x|\leq 1\[6pt]\arctan x&amp;=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{2n+1}}x^{2n+1}&amp;&amp;=x-{\frac {x^{3}}{3}}+{\frac {x^{5}}{5}}-\cdots &amp;&amp;{\text{for }}|x|\leq 1,\ x\neq \pm i<br>\end{align</em>}$</p>
+<h3 id="Laurent-Series"><a href="#Laurent-Series" class="headerlink" title="Laurent Series"></a>Laurent Series</h3><p>If $f(z)$ is analytic in an annulus $R_1&lt;|z-z_0|&lt;R_2$ where $R_1\in[0,\infty)$, $R_2\in(0,\infty]$ and $R_1&lt;R_2$, then it can be expanded in a <em>Laurent series</em>,</p>
 <script type="math/tex; mode=display">f(z)=\underbrace{\sum\limits_{n=1}^{\infty}a_{-n}(z-z_0)^{-n}}_{\text{singular part}}+\underbrace{\sum\limits_{n=0}^{\infty}a_{n}(z-z_0)^{n}}_{\text{analytic part}}.</script><p>The coefficients can be calculated as</p>
 <script type="math/tex; mode=display">a_n=\frac{f^{(n)}(z_0)}{n!}</script><script type="math/tex; mode=display">a_{-n}=\frac{1}{2\pi i}\oint\frac{f(z)}{(z-z_0)^{-n+1}}\mathrm{d}z</script><p>for $n\geq0$.</p>
 <p>In practice, we don’t usually figure out the Laurent coefficients from this formula; instead, we derive them by algebraic manipulations of the Taylor series.</p>
@@ -2194,7 +2195,7 @@ for i in range(epis):
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UCB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UChicago/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -2213,7 +2214,7 @@ for i in range(epis):
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/course/UCB/" itemprop="url">课程材料（UCB）</a></h1>
+                <a class="post-title-link" href="/course/UChicago/" itemprop="url">课程材料（UChicago）</a></h1>
         
 
         <div class="post-meta">
@@ -2265,7 +2266,7 @@ for i in range(epis):
 
           
           
-             <span id="/course/UCB/" class="leancloud_visitors" data-flag-title="课程材料（UCB）">
+             <span id="/course/UChicago/" class="leancloud_visitors" data-flag-title="课程材料（UChicago）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2298,7 +2299,7 @@ for i in range(epis):
       
         
           
-            <h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><div class="table-container">
+            <h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2309,45 +2310,19 @@ for i in range(epis):
 </thead>
 <tbody>
 <tr>
-<td>MATH 118 - Fourier Analysis and Wavelets</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
+<td>STAT30400 - Distribution Theory</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
 </tr>
-</tbody>
-</table>
-</div>
-<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
-<table>
-<thead>
 <tr>
-<th>课程名称</th>
-<th>Github</th>
-<th>百度云盘</th>
+<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td>STAT150 - Stochastic Processes</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="计算机科学"><a href="#计算机科学" class="headerlink" title="计算机科学"></a>计算机科学</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>课程名称</th>
-<th>Github</th>
-<th>百度云盘</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CS189 - Machine Learning</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
+<td>STAT34300 - Applied Linear Statistical Model</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
 </tr>
 </tbody>
 </table>
