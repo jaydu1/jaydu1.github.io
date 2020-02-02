@@ -425,7 +425,17 @@
 <li>every edge of $H$ connects two vertices of $H$,<br>which means that the vertices of $H$ are a subset of the vertices of $G$, and every pair of adjacent vertices in $H$ also appears in $G$.</li>
 </ol>
 <p>Furthermore, if $V(H)=V(G)$, then $H$ is a <em>spanning subgraph</em> of $G$. In addition, if $H$ is a tree, then $H$ is a <em>spanning tree</em> of $G$.</p>
-<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Continuous-Functions"><a href="#Continuous-Functions" class="headerlink" title="Continuous Functions"></a>Continuous Functions</h2><h3 id="Continuous-Functions-between-Topological-Spaces"><a href="#Continuous-Functions-between-Topological-Spaces" class="headerlink" title="Continuous Functions between Topological Spaces"></a>Continuous Functions between Topological Spaces</h3><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
+<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h2><ul>
+<li><strong>Definition</strong><br>Let $X$ be a nonempty set. A <em>topology</em> on $X$, denoted by $T$, is a family of subsets of $X$ such that </li>
+</ul>
+<ol>
+<li>$\varnothing\in T$ and $X\in T$;</li>
+<li>If $O_1,O_1\in T$, then $O_1\cap O_2\in T$;</li>
+<li>For $\{O_i\in T\}_{i\in I}$, $\bigcup\limits_{i\in I}O_i\in T$.</li>
+</ol>
+<p>The sets in $T$ are known as <em>open sets</em>. The complement $O^C=X\setminus O$ for $O\in T$ is a <em>closed set</em>. </p>
+<p>A set $X$ together with a topology $T$ on $X$, $(X,T)$, is called a <em>topological space</em>. $(X,T)$ is a <em>Hausdorff space</em> if $\forall\ x,y\in X$, $x\neq y$, $\exists\ O_x,O_y\in T$, $O_x\cap O_y=\varnothing$, such that $x\in O_x$ and $y\in O_y$.</p>
+<h2 id="Continuous-Functions"><a href="#Continuous-Functions" class="headerlink" title="Continuous Functions"></a>Continuous Functions</h2><h3 id="Continuous-Functions-between-Topological-Spaces"><a href="#Continuous-Functions-between-Topological-Spaces" class="headerlink" title="Continuous Functions between Topological Spaces"></a>Continuous Functions between Topological Spaces</h3><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
 <li><strong>Definition</strong><br><em>A map $f:X_1\rightarrow X_2$ is open if the image of every open set in $X_1$ is open in $X_2$.</em></li>
 </ul>
 <h3 id="Homeomorphisms"><a href="#Homeomorphisms" class="headerlink" title="Homeomorphisms"></a>Homeomorphisms</h3><ul>
@@ -438,7 +448,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><h1 id="Real-Analysis"><a href="#Real-Analysis" class="headerlink" title="Real Analysis"></a>Real Analysis</h1><h1 id="Complex-Variables"><a href="#Complex-Variables" class="headerlink" title="Complex Variables"></a>Complex Variables</h1><h2 id="Complex-Numbers"><a href="#Complex-Numbers" class="headerlink" title="Complex Numbers"></a>Complex Numbers</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Thre <em>complex numbers</em> $\mathbb{C}$ is a set of all order pairs of real numbers $(x,y)$. The <em>imaginary unit</em> $i$ is a complex number such that $i^2=-1$. Then each complex number can be expressed as $z=x+yi$ where $x\in\mathbb{R}$ and $y\in\mathbb{R}$  are called the <em>real part</em> and <em>imaginary part</em> of $z$, denoted by $\text{Re} z$ and $\text{Im} z$ respectively. The <em>(complex) conjugate</em> of $z$ is the number $\overline{z}=x-yi$.</p>
+<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><p>Let $(X, T)$ be a topological space. A <em>covering</em> of $X$ is a collection of subsets of $X$ whose union is $X$; an <em>open covering</em> is a covering that consists entirely of open sets. If every open covering of $X$ contains a finite subcollection that also covers $X$, then $X$ is said to be a <em>compact space</em>.</p>
+<h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><h1 id="Real-Analysis"><a href="#Real-Analysis" class="headerlink" title="Real Analysis"></a>Real Analysis</h1><h1 id="Complex-Variables"><a href="#Complex-Variables" class="headerlink" title="Complex Variables"></a>Complex Variables</h1><h2 id="Complex-Numbers"><a href="#Complex-Numbers" class="headerlink" title="Complex Numbers"></a>Complex Numbers</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Thre <em>complex numbers</em> $\mathbb{C}$ is a set of all order pairs of real numbers $(x,y)$. The <em>imaginary unit</em> $i$ is a complex number such that $i^2=-1$. Then each complex number can be expressed as $z=x+yi$ where $x\in\mathbb{R}$ and $y\in\mathbb{R}$  are called the <em>real part</em> and <em>imaginary part</em> of $z$, denoted by $\text{Re} z$ and $\text{Im} z$ respectively. The <em>(complex) conjugate</em> of $z$ is the number $\overline{z}=x-yi$.</p>
 <p>The complex numbers can be graphed on the <em>complex plane</em> ($xy$-plane). The horizontal $x$-axis is called the <em>real axis</em> and the vertical $y$-axis is called the <em>imaginary axis</em>.</p>
 <p>The <em>modulus</em>, <em>magnitude</em> or <em>absolute value</em> of $z$ is given by $|z|=\sqrt{x^2+y^2}$. The absolute value of $z$ satisfies $|z|^2=z\overline{z}$.</p>
 <h3 id="The-Polar-Form"><a href="#The-Polar-Form" class="headerlink" title="The Polar Form"></a>The Polar Form</h3><p>The angle $\theta$ that the vector (from the origin to $z$) makes with the positive real axis is called an <em>argument</em> of $z$, denoted by $\text{arg} z$. We can add any integer multiple of $2n\pi$ to an argument of $z$, and the result is another argument of $z$. Therefore, we define the <em>principal argument</em> of $z$, denoted by $\text{Arg} z$ as the unique value of the argument that lies in the interval $-\pi&lt;\theta\leq \pi$.</p>
@@ -2164,7 +2175,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UChicago/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UCB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -2183,7 +2194,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/en/course/UChicago/" itemprop="url">Course materials in UChicago</a></h1>
+                <a class="post-title-link" href="/en/course/UCB/" itemprop="url">Course materials in UCB</a></h1>
         
 
         <div class="post-meta">
@@ -2235,7 +2246,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 
           
           
-             <span id="/en/course/UChicago/" class="leancloud_visitors" data-flag-title="Course materials in UChicago">
+             <span id="/en/course/UCB/" class="leancloud_visitors" data-flag-title="Course materials in UCB">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2268,7 +2279,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
       
         
           
-            <h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+            <h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2279,19 +2290,45 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 </thead>
 <tbody>
 <tr>
-<td>STAT30400 - Distribution Theory</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
+<td>MATH 118 - Fourier Analysis and Wavelets</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
 </tr>
+</tbody>
+</table>
+</div>
+<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+<table>
+<thead>
 <tr>
-<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>STAT34300 - Applied Linear Statistical Model</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
+<td>STAT150 - Stochastic Processes</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Computer-Science"><a href="#Computer-Science" class="headerlink" title="Computer Science"></a>Computer Science</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS189 - Machine Learning</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
 </tr>
 </tbody>
 </table>
