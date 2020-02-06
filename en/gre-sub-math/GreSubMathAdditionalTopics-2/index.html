@@ -83,11 +83,11 @@
 <meta name="keywords" content="gre-sub-math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chapter 7 - Additional Topics">
-<meta property="og:url" content="http://yoursite.com/gre-sub-math/GreSubMathAdditionalTopics/index.html">
+<meta property="og:url" content="http://yoursite.com/gre-sub-math/GreSubMathAdditionalTopics-2/index.html">
 <meta property="og:site_name" content="jaydu1">
 <meta property="og:description" content="LogicSet TheoryGraph TheoryGraph DefinitionA graph $G$ consists of a finite collection of vertices $V(G)$ and edges $E(G)$ where each edge connects a distinct pair of vertices.   We only discuss the u">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-02T21:22:10.946Z">
+<meta property="og:updated_time" content="2020-01-03T18:01:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 7 - Additional Topics">
 <meta name="twitter:description" content="LogicSet TheoryGraph TheoryGraph DefinitionA graph $G$ consists of a finite collection of vertices $V(G)$ and edges $E(G)$ where each edge connects a distinct pair of vertices.   We only discuss the u">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/gre-sub-math/GreSubMathAdditionalTopics/">
+  <link rel="canonical" href="http://yoursite.com/gre-sub-math/GreSubMathAdditionalTopics-2/">
 
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAdditionalTopics/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAdditionalTopics-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -369,7 +369,7 @@
 
           
           
-             <span id="/en/gre-sub-math/GreSubMathAdditionalTopics/" class="leancloud_visitors" data-flag-title="Chapter 7 - Additional Topics">
+             <span id="/en/gre-sub-math/GreSubMathAdditionalTopics-2/" class="leancloud_visitors" data-flag-title="Chapter 7 - Additional Topics">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -463,17 +463,10 @@
 <li><em>Morera’s Theorem</em>: If $f(z)$ is continuous throughout an open, connected set $O$ in the complex plane, and $\oint_C f(z)\mathrm{d}z = 0$ for every closed curve $C$ in $O$, then $f (z)$ is analytic in $O$.</li>
 <li><em>Cauchy’s Integral Formulas</em>: If $f(z)$ is analytic at all points within and on a simple, closed path, $C$, that surrounds the point $z_0$, then:<script type="math/tex">f(z_0)=\frac{1}{2\pi i}\oint_C\frac{f(z)}{z-z_0}\mathrm{d}z.</script> Furthermore, the $n$th derivative, $f^{(n)}(z)$, is also analytic at $z_0$ for all positive integers $n$, and:<script type="math/tex">f^{(n)}(z_0)=\frac{1}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}\mathrm{d}z.</script></li>
 </ul>
-<h3 id="The-Residue-Theorem"><a href="#The-Residue-Theorem" class="headerlink" title="The Residue Theorem"></a>The Residue Theorem</h3><p>If $z_0$ is the only singularity in a connected open set $O$, and $C\in O$ is a simple, closed, positively oriented curve in the annulus where the Laurent series expansion of $f(z)$ is valid, then <script type="math/tex">a_{-1}=\frac{1}{2\pi i}\oint_Cf(z)\mathrm{d}z.</script><br>The number $a_{-1}$, which is the coefficient of $(z-z_0)^{-1}$ in the Laurent series of $f(z)$, called the <em>residue</em> of $f(z)$ at the singularity $z_0$, denoted by $\text{Res}(z_0,f)$. </p>
+<h3 id="The-Residue-Theorem"><a href="#The-Residue-Theorem" class="headerlink" title="The Residue Theorem"></a>The Residue Theorem</h3><p>If $z_0$ is the only singularity in a connected open set $O$, and $C\in O$ is a simple, closed, positively oriented curve in the annulus where the Laurent series expansion of $f(z)$ is valid, then <script type="math/tex">a_{-1}=\frac{1}{2\pi i}\oint_Cf(z)\mathrm{d}z.</script><br>The number $a_{-1}$, which is the coefficient of $(z-z_0)^{-1}$ in the Laurent series of $$f(z)$, called the <em>residue</em> of $f(z)$ at the singularity $z_0$, denoted by $\text{Res}(z_0,f)$. </p>
 <p>Furthermore, if $z_0$ is a pole of order $k$, then <script type="math/tex">\text{Res}(z_0,f)=\frac{1}{k!}\lim\limits_{z\rightarrow z_0}\frac{\mathrm{d^{k-1}}}{\mathrm{d}z^{k-1}}[(z-z_0)^kf(z)].</script></p>
 <p>If the curve $C$ surrounds more than one singularity of $f(z)$, the <em>residue theorem</em> says that if $f(z)$ is analytic throughout the interior of $C$, except at a finite number of singularity $z_1,\ldots,z_n$ inside $C$, then <script type="math/tex">\oint_Cf(z)\mathrm{d}z=2\pi i\cdot\sum\limits_{i=1}^n\text{Res}(z_n,f).</script></p>
-<h2 id="Series-Expansion"><a href="#Series-Expansion" class="headerlink" title="Series Expansion"></a>Series Expansion</h2><h3 id="Taylor-Series"><a href="#Taylor-Series" class="headerlink" title="Taylor Series"></a>Taylor Series</h3><p>List of Maclaurin series of some common functions is given by</p>
-<script type="math/tex; mode=display">\begin{align*}
- e^{x}&=\sum _{n=0}^{\infty }{\frac {x^{n}}{n!}}&&=1+x+{\frac {x^{2}}{2!}}+{\frac {x^{3}}{3!}}+\cdots\\
-\ln(1-x)&=-\sum _{n=1}^{\infty }{\frac {x^{n}}{n}}&&=-x-{\frac {x^{2}}{2}}-{\frac {x^{3}}{3}}-\cdots \\\ln(1+x)&=\sum _{n=1}^{\infty }(-1)^{n+1}{\frac {x^{n}}{n}}&&=x-{\frac {x^{2}}{2}}+{\frac {x^{3}}{3}}-\cdots \\
-{\frac {1}{1-x}}&=\sum _{n=0}^{\infty }x^{n}\\{\frac {1}{(1-x)^{2}}}&=\sum _{n=1}^{\infty }nx^{n-1}\\{\frac {1}{(1-x)^{3}}}&=\sum _{n=2}^{\infty }{\frac {(n-1)n}{2}}x^{n-2}\\
-(1+x)^{\alpha }&=\sum _{n=0}^{\infty }{\binom {\alpha }{n}}x^{n}\\
-\sin x&=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{(2n+1)!}}x^{2n+1}&&=x-{\frac {x^{3}}{3!}}+{\frac {x^{5}}{5!}}-\cdots &&{\text{for all }}x\\[6pt]\cos x&=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{(2n)!}}x^{2n}&&=1-{\frac {x^{2}}{2!}}+{\frac {x^{4}}{4!}}-\cdots &&{\text{for all }}x\\[6pt]\tan x&=\sum _{n=1}^{\infty }{\frac {B_{2n}(-4)^{n}\left(1-4^{n}\right)}{(2n)!}}x^{2n-1}&&=x+{\frac {x^{3}}{3}}+{\frac {2x^{5}}{15}}+\cdots &&{\text{for }}|x|<{\frac {\pi }{2}}\\[6pt]\sec x&=\sum _{n=0}^{\infty }{\frac {(-1)^{n}E_{2n}}{(2n)!}}x^{2n}&&=1+{\frac {x^{2}}{2}}+{\frac {5x^{4}}{24}}+\cdots &&{\text{for }}|x|<{\frac {\pi }{2}}\\[6pt]\arcsin x&=\sum _{n=0}^{\infty }{\frac {(2n)!}{4^{n}(n!)^{2}(2n+1)}}x^{2n+1}&&=x+{\frac {x^{3}}{6}}+{\frac {3x^{5}}{40}}+\cdots &&{\text{for }}|x|\leq 1\\[6pt]\arccos x&={\frac {\pi }{2}}-\arcsin x\\&={\frac {\pi }{2}}-\sum _{n=0}^{\infty }{\frac {(2n)!}{4^{n}(n!)^{2}(2n+1)}}x^{2n+1}&&={\frac {\pi }{2}}-x-{\frac {x^{3}}{6}}-{\frac {3x^{5}}{40}}-\cdots &&{\text{for }}|x|\leq 1\\[6pt]\arctan x&=\sum _{n=0}^{\infty }{\frac {(-1)^{n}}{2n+1}}x^{2n+1}&&=x-{\frac {x^{3}}{3}}+{\frac {x^{5}}{5}}-\cdots &&{\text{for }}|x|\leq 1,\ x\neq \pm i
-\end{align*}</script><h3 id="Laurent-Series"><a href="#Laurent-Series" class="headerlink" title="Laurent Series"></a>Laurent Series</h3><p>If $f(z)$ is analytic in an annulus $R_1&lt;|z-z_0|&lt;R_2$ where $R_1\in[0,\infty)$, $R_2\in(0,\infty]$ and $R_1&lt;R_2$, then it can be expanded in a <em>Laurent series</em>,</p>
+<h2 id="Series-Expansion"><a href="#Series-Expansion" class="headerlink" title="Series Expansion"></a>Series Expansion</h2><h3 id="Taylor-Series"><a href="#Taylor-Series" class="headerlink" title="Taylor Series"></a>Taylor Series</h3><h3 id="Laurent-Series"><a href="#Laurent-Series" class="headerlink" title="Laurent Series"></a>Laurent Series</h3><p>If $f(z)$ is analytic in an annulus $R_1&lt;|z-z_0|&lt;R_2$ where $R_1\in[0,\infty)$, $R_2\in(0,\infty]$ and $R_1&lt;R_2$, then it can be expanded in a <em>Laurent series</em>,</p>
 <script type="math/tex; mode=display">f(z)=\underbrace{\sum\limits_{n=1}^{\infty}a_{-n}(z-z_0)^{-n}}_{\text{singular part}}+\underbrace{\sum\limits_{n=0}^{\infty}a_{n}(z-z_0)^{n}}_{\text{analytic part}}.</script><p>The coefficients can be calculated as</p>
 <script type="math/tex; mode=display">a_n=\frac{f^{(n)}(z_0)}{n!}</script><script type="math/tex; mode=display">a_{-n}=\frac{1}{2\pi i}\oint\frac{f(z)}{(z-z_0)^{-n+1}}\mathrm{d}z</script><p>for $n\geq0$.</p>
 <p>In practice, we don’t usually figure out the Laurent coefficients from this formula; instead, we derive them by algebraic manipulations of the Taylor series.</p>
@@ -536,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/en/gre-sub-math/GreSubMathAdditionalTopics-2/" rel="next" title="Chapter 7 - Additional Topics">
-                <i class="fa fa-chevron-left"></i> Chapter 7 - Additional Topics
+              <a href="/en/gre-sub-math/GreSubMathAbstractAlgebra/" rel="next" title="Chapter 6 - Number Theory and Abstract Algebra">
+                <i class="fa fa-chevron-left"></i> Chapter 6 - Number Theory and Abstract Algebra
               </a>
             
           </div>
@@ -546,7 +539,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/en/gre-sub-math/GreSubMathAdditionalTopics-3/" rel="prev" title="Chapter 7 - Additional Topics">
+              <a href="/en/gre-sub-math/GreSubMathAdditionalTopics/" rel="prev" title="Chapter 7 - Additional Topics">
                 Chapter 7 - Additional Topics <i class="fa fa-chevron-right"></i>
               </a>
             

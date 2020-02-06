@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="reinforcement-learning,">
+  <meta name="keywords" content="gre-sub-math,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="IntroductionQ-leaning is a model-free (no need to build a model of environment) reinforcement learning method. The goal of Q-leaning is to learn a policy, which can be used to guide a agent to take co">
-<meta name="keywords" content="reinforcement-learning">
+<meta name="description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
+<meta name="keywords" content="gre-sub-math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Q-learning">
-<meta property="og:url" content="http://yoursite.com/reinforcement-learning/Q-learning/index.html">
+<meta property="og:title" content="Chapter 6 - Number Theory and Abstract Algebra">
+<meta property="og:url" content="http://yoursite.com/gre-sub-math/GreSubMathAbstractAlgebra-2/index.html">
 <meta property="og:site_name" content="jaydu1">
-<meta property="og:description" content="IntroductionQ-leaning is a model-free (no need to build a model of environment) reinforcement learning method. The goal of Q-leaning is to learn a policy, which can be used to guide a agent to take co">
+<meta property="og:description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-05T15:24:25.527Z">
+<meta property="og:updated_time" content="2020-02-02T20:50:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Q-learning">
-<meta name="twitter:description" content="IntroductionQ-leaning is a model-free (no need to build a model of environment) reinforcement learning method. The goal of Q-leaning is to learn a policy, which can be used to guide a agent to take co">
+<meta name="twitter:title" content="Chapter 6 - Number Theory and Abstract Algebra">
+<meta name="twitter:description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/reinforcement-learning/Q-learning/">
+  <link rel="canonical" href="http://yoursite.com/gre-sub-math/GreSubMathAbstractAlgebra-2/">
 
 
 
 
 
-  <title>Q-learning | jaydu1</title>
+  <title>Chapter 6 - Number Theory and Abstract Algebra | jaydu1</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/Q-learning/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAbstractAlgebra-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Q-learning</h1>
+          <h1 class="post-title" itemprop="name headline">Chapter 6 - Number Theory and Abstract Algebra</h1>
         
 
         <div class="post-meta">
@@ -329,8 +329,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-27T10:51:23-05:00">
-                2019-04-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T11:00:00-06:00">
+                2020-01-03
               </time>
             
 
@@ -352,8 +352,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
+                  <a href="/en/categories/gre-sub-math/" itemprop="url" rel="index">
+                    <span itemprop="name">gre-sub-math</span>
                   </a>
                 </span>
 
@@ -369,7 +369,7 @@
 
           
           
-             <span id="/en/reinforcement-learning/Q-learning/" class="leancloud_visitors" data-flag-title="Q-learning">
+             <span id="/en/gre-sub-math/GreSubMathAbstractAlgebra-2/" class="leancloud_visitors" data-flag-title="Chapter 6 - Number Theory and Abstract Algebra">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,20 +400,88 @@
       
 
       
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Q-leaning is a model-free (no need to build a model of environment) reinforcement learning method. The goal of Q-leaning is to learn a policy, which can be used to guide a agent to take corresponding action in different states. For any finite Markov Decision Process, Q-learning can find the optimal policy that miximizes the expected total reward.</p>
-<h1 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h1><p>Reinforcement learning includes a agent, a state set $S$ and an action set $A$. When the state $s_t\in S$ is observed, the agent will choose an action $a_t\in A$. Then it will get a reward $r_t$ and goes to the next state $s_{t+1}$.</p>
-<p>Our goal is to maximize the future total reward, i.e., the expection of total reward given the current state. In practice, we usually use weighted sum, e.g., discount criterion to compute the expected total reward.</p>
-<p>Q-learning is used to learn a function $Q:S\times A\mapsto \mathbb{R}$. At any state $s_t$, the agent can choose an action $a_t$ such that $Q(s_t,a_t)$ is maximized。</p>
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>To use Q-learning, wehave to find a way to learn the $Q$ function. The simplest way is to maintain a table with size $|S|\times |A|$, and use value iteration to update the Q-table. The update rule is given by</p>
-<script type="math/tex; mode=display">Q^{new}(s_{t},a_{t})\leftarrow (1-\alpha )\cdot  Q(s_{t},a_{t})+\alpha \cdot  \left( r_t + \gamma \cdot \max_a Q(s_{t+1},a) \right)</script><p>whick requires $s_t$, $r_t$ and $s_{t+1}$ at each update step.</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gym</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="comment"># 1. Load Environment and Q-table structure</span></span><br><span class="line">env = gym.make(<span class="string">'FrozenLake8x8-v0'</span>)</span><br><span class="line">Q = np.zeros([env.observation_space.n,env.action_space.n])</span><br><span class="line"><span class="comment"># env.obeservation.n, env.action_space.n gives number of states and action in env loaded</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># 2. Parameters of Q-leanring</span></span><br><span class="line">eta = <span class="number">.628</span></span><br><span class="line">gma = <span class="number">.9</span></span><br><span class="line">epis = <span class="number">100</span></span><br><span class="line">rev_list = [] <span class="comment"># reward per episode calculate</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># 3. Q-learning Algorithm</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epis):</span><br><span class="line">    <span class="comment"># Reset environment</span></span><br><span class="line">    s = env.reset()</span><br><span class="line">    rAll = <span class="number">0</span></span><br><span class="line">    d = <span class="literal">False</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># The Q-Table learning algorithm</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; <span class="number">99</span>:</span><br><span class="line">        env.render()</span><br><span class="line">        j+=<span class="number">1</span></span><br><span class="line">        <span class="comment"># Choose action from Q table</span></span><br><span class="line">        a = np.argmax(Q[s,:] + np.random.randn(<span class="number">1</span>,env.action_space.n)*(<span class="number">1.</span>/(i+<span class="number">1</span>)))</span><br><span class="line">        <span class="comment"># Get new state &amp; reward from environment</span></span><br><span class="line">        s1,r,d,_ = env.step(a)</span><br><span class="line">        <span class="comment"># Update Q-Table with new knowledge</span></span><br><span class="line">        Q[s,a] = Q[s,a] + eta*(r + gma*np.max(Q[s1,:]) - Q[s,a])</span><br><span class="line">        rAll += r</span><br><span class="line">        s = s1</span><br><span class="line">        <span class="keyword">if</span> d == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    rev_list.append(rAll)</span><br><span class="line">    env.render()</span><br></pre></td></tr></table></figure>
-<h2 id="Variants"><a href="#Variants" class="headerlink" title="Variants"></a>Variants</h2><ol>
-<li>Deep Q-learning</li>
-<li>Double Q-learning</li>
-<li>Double Deep Q-learning</li>
-<li>Delayed Q-learning</li>
-<li>Greedly GQ</li>
+        <h1 id="Number-Theory"><a href="#Number-Theory" class="headerlink" title="Number Theory"></a>Number Theory</h1><h2 id="Divisibility"><a href="#Divisibility" class="headerlink" title="Divisibility"></a>Divisibility</h2><h3 id="The-Euclidean-Algorithm"><a href="#The-Euclidean-Algorithm" class="headerlink" title="The Euclidean Algorithm"></a>The Euclidean Algorithm</h3><h3 id="The-Diophantine-Equation"><a href="#The-Diophantine-Equation" class="headerlink" title="The Diophantine Equation"></a>The Diophantine Equation</h3><h2 id="Congruences"><a href="#Congruences" class="headerlink" title="Congruences"></a>Congruences</h2><p>Let $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible by $n$, which is written $a\equiv b(\text{mod}\  n)$. </p>
+<ul>
+<li>If $a\equiv b(\text{mod}\  n)$ and $b\equiv c(\text{mod}\  n)$, then $a\equiv c(\text{mod}\  n)$.</li>
+<li>If $a\equiv b(\text{mod}\  n)$, then for any $c$, $a\pm c\equiv b\pm c(\text{mod}\  n)$ and $ac\equiv bc(\text{mod}\  n)$.</li>
+<li>If $a_1\equiv b_1(\text{mod}\  n)$ and $a_2\equiv b_2(\text{mod}\  n)$, then $a_1\pm a_2\equiv b_1\pm b_2(\text{mod}\  n)$ and <script type="math/tex">a_1a_2\equiv b_1b_2(\text{mod}\  n)</script>.</li>
+<li>For any positive integer $c$, the statement $a\equiv b(\text{mod}\  n)$ is equivalent to the congruences $a\equiv b,b+n,\ldots,b+(c-1)n\ (\text{mod}\  n)$.</li>
+<li>If $ab\equiv ac(\text{mod}\  n)$, then $b\equiv c(\text{mod}\  n)$ if $\text{gcd}(a,n)=1$ or $b\equiv c(\text{mod}\  \frac{n}{d})$ if $d=\text{gcd}(a,n)&gt;1$.</li>
+<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $o$ does not divide $a$.</li>
+</ul>
+<h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a\ast b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a <em>binary structure</em>.</p>
+<p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a\ast b)\ast c=a\ast (b\ast c)</script> is called a <em>semigroup</em>.</p>
+<p>The element $e$ of $S$ with the property that <script type="math/tex">a\ast e=e\ast a=a,</script> for every $a\in S$ is called the <em>identity</em>. The identity may not exist for some binary structures. A semigroup that has an identity is called a <em>monoid</em>.</p>
+<p>Let $(S,\ast )$ be a monoid, if $\forall\ a\in S$, $\exists\ a^{-1}\in S$ being the inverse of $a$, such that <script type="math/tex">aa^{-1}=a^{-1}a=e,</script> then $(S,\ast )$ is a <em>group</em>. </p>
+<p>A semigroup, monoid, or group whose binary operation is <em>commutative</em>, i.e. <script type="math/tex">a\ast b=b\ast a,</script> is said <em>Abelian</em>.</p>
+<p><strong>Common notations.</strong> We usually just write $ab$, instead of $a \ast  b$, even if the operation isn’t ordinary multiplication. Also, if the binary operation is commutative, it’s common to see it denoted by $+$, even if the operation isn’t ordinary addition.</p>
+<p>A group $G$ with the property that there’s an element $a$ in $G$ such that <script type="math/tex">G=\{a^n:n=0,1,2,\ldots\}</script><br>is said to be <em>cyclic</em>, and the element $a$ is a <em>generator</em> of the group.</p>
+<ul>
+<li>The integer $m$ is a generator of $(\mathbb{Z}_n,\oplus)$ if and only if $m$ is relatively prime to $n$.</li>
+<li>Let $G$ be a cyclic group with generator $a$. The element $a^m$ is a generator of $G$ if and only if $m$ is relatively prime to $n$.</li>
+</ul>
+<p>If a pair of groups are <em>isomorphic</em>, then all their structural properties are identical.</p>
+<h2 id="Subgroup"><a href="#Subgroup" class="headerlink" title="Subgroup"></a>Subgroup</h2><p>Let $(G, \ast  )$ be a group. If there’s a subset $H$ of $G$ such that $(H, \ast )$ is also a group, then we say that $H$ is a <em>subgroup</em> of $G$, and write $H \leq G$. If $H\neq G$, then $H$ is a <em>proper subgroup</em> of $G$, denoted by $H&lt;G$. The <em>trivial subgroups</em> of $G$ are $\{e\}$ and $G$.</p>
+<p>The <em>cyclic subgroup</em> generated by $a\in G$ is given by $\langle a\rangle=\{a^n:n\in\mathbb{Z}\}$. The order of an element of a group is the order of $\langle a\rangle$.</p>
+<p>For some groups, particularly large ones, it’s often more economical to specify a set of generators and a set of equations connecting them-called <em>relations</em>-that can be used to reconstruct the entire group table. Together, the set of generators and set of relations is called a <em>presentation</em> of the group.</p>
+<ul>
+<li><strong>Lagrange’s Theorem.</strong> Let $G$ be a finite group. If $H$ is a subgroup of $G$, then the order of $H$ divides the order of $G$.</li>
+<li>Let $G$ be a finite, Abelian group of order $n$. Then $G$ has at least one subgroup of order $d$ for every (positive) divisor $d$ of $n$.</li>
+<li>Let $G$ be a finite, cyclic group of order $n$. Then $G$ has exactly one subgroup-a cyclic subgroup-of order $d$ for every (positive) divisor $d$ of $n$. If $G$ is generated by $a$, then the subgroup generated by the element $b=a^m$ has order $d = \frac{n}{\text{gcd}(m, n )}$. [If $m = 0$, then we’ll agree that $\text{gcd}(m, n) = n$.]</li>
+<li><strong>Cauchy’s Theorem.</strong> Let $G$ be a finite group of order $n$, and let $p$ be a prime that divides $n$. Then $G$ has at least one subgroup of order $p$.</li>
+<li><strong>Sylow’s First Theorem.</strong> Let $G$ be a finite group of order $n=p^km$, where $p$ is a prime that does not divide $m$.Then $G$ has at least one subgroup of order $p^i$ for every integer $i$ from $0$ to $k$.</li>
+</ul>
+<h2 id="Group-Homomorphisms"><a href="#Group-Homomorphisms" class="headerlink" title="Group Homomorphisms"></a>Group Homomorphisms</h2><p>Let $(G,\cdot)$ and $(G’,\ast )$ be groups. A function $\phi:G\rightarrow G’$ with the property that <script type="math/tex">\phi(a\cdot b)=\phi(a)\ast \phi(b)</script><br>for all elements $a$ and $b$ in $G$, is called a group <em>homomorphism</em>.</p>
+<ul>
+<li>If $e$ is the identity in $G$, then $\phi(e)$ is the identity in $G’$.</li>
+<li>If $g\in G$ has finite order $m$, then $\phi(g)\in G’$ also has order $m$.</li>
+<li>If $a^{-1}$ is the inverse of $a$ in $G$, then $\phi(a^{-1 })$ is the inverse of $\phi(a)$ in $G’$.</li>
+<li>If $H$ is a subgroup of $G$, then $\phi(H)$ is a subgroup of $G’$, where $\phi(H)=\{\phi(h):h\in H\}$.</li>
+<li>If $G$ is finite, then the order of $\phi(G)$ divides the order of $G$; if $G’$ is finite, then the order of $\phi(G)$ also divides the order of $G’$.</li>
+<li>If $H’$ is a subgroup of $G’$, then $\phi^{-1} (H’)$ is a subgroup of $G$, where $\phi^{-1}(H’)=\{h\in G:\phi(h)\in H’\}$.</li>
+</ul>
+<p>A homomorphism that’s one-to-one (injective) is called a <em>monomorphism</em>; if it’s onto (surjective), it’s called an <em>epimorphism</em>; and if it’s one-to-one and onto (bijective), it’s called an <em>isomorphism</em>. A homomorphism from a group to itself is called an <em>endomorphism</em>, and an isomorphism from a group to itself is called an <em>automorphism</em>.</p>
+<ul>
+<li>A homomorphism is a monomorphism if and only if its kernel $\text{ker}\phi=\{g\in G:\phi(g)=e’\}$ is trivial.</li>
+<li>The kernel of a group homomorphism $\phi: G\rightarrow G’$ is always a subgroup of $G$.</li>
+</ul>
+<h2 id="Direct-Product-And-Direct-Sum"><a href="#Direct-Product-And-Direct-Sum" class="headerlink" title="Direct Product And Direct Sum"></a>Direct Product And Direct Sum</h2><p>The <em>direct product</em> of the groups $(G_1,\ast_1)$ and $(G_2,\ast_2)$ is  the group $(G_1\times G_2,\ast)$ where <script type="math/tex">G_1\times G_2=\{(a,b):a\in G_1,b\in G_2\}</script> and $*$ is the defined binary operation such that <script type="math/tex">(a_1,a_2)\ast(b_1,b_2)=(a_1\ast_1 b_1,a_2\ast_2 b_2).</script></p>
+<p>For Abelian groups, we use the notation $G_1\oplus G_2$ and call it as <em>direct sum</em>.</p>
+<ul>
+<li>The direct sum $\mathbb{Z}_m\oplus \mathbb{Z}_n$ is cyclic if and only if $\text{gcd}(m, n) = 1$. If this is the case, then, $\mathbb{Z}_m\oplus \mathbb{Z}_n$ is isomorphic to $\mathbb{Z}_{mn}$.</li>
+<li>The direct sum $\mathbb{Z}_{m_1}\oplus \cdots \oplus\mathbb{Z}_{m_k}$ is cyclic if and only if $\text{gcd}(m_i , m_j) = 1$ for every distinct pair $m_i$ and $m_j$. If this is the case, then $\mathbb{Z}_{m_1}\oplus \cdots \oplus\mathbb{Z}_{m_k}$ is isomorphic to $\mathbb{Z}_{m_1m_2\cdots m_k}.$</li>
+<li>Every finite Abelian group $G$ is isomorphic to a direct sum of the form <script type="math/tex">\mathbb{Z}_{p_1^{k_1}}\oplus\cdots\oplus \mathbb{Z}_{p_r^{k_r}}</script> where the $p_i$ are (not necessarily distinct) primes and $k$ are (not necessarily distinct) positive integers. The collection of prime powers $p_i^{k_i}$ for a given representation of $G$, are known as the <em>elementary divisors</em> of $G$.</li>
+<li>Every finite Abelian group G is isomorphic to a direct sum of the form <script type="math/tex">\mathbb{Z}_{m_1}\oplus\cdots\oplus \mathbb{Z}_{m_t}</script> where $m_1\geq 2$, $m_{i-1}$ divides $m_{i}$ for $i=1,\ldots,t.$ The distinct list $m_1,\cdots,m_t$ is called the <em>invariant factors</em> of $G$.</li>
+</ul>
+<h2 id="Rings"><a href="#Rings" class="headerlink" title="Rings"></a>Rings</h2><p>A set $R$, together with two binary operations (we’ll use addition, $+$, and multiplication, $\cdot$), is called a <em>ring</em> if the following conditions are satisfied:</p>
+<ol>
+<li>$(R,+)$ is a Abelian group;</li>
+<li>$(R,\cdot)$ is a semigroup;</li>
+<li>the distributive laws hold; that is, for every $a$, $b$, and $c$ in $R$, we have:<script type="math/tex">a*(b+c)=a\ast b+a\ast c\qquad (a+d)\ast c=a\ast c+d\ast c.</script></li>
 </ol>
+<p>The smallest positive integer $n$ such that $na = 0$ for every $a$ in R (if such an $n$ exists) is called the <em>characteristic</em> of the ring, and we write $\text{char} R = n$.</p>
+<p>If the multiplicative semigroup $(R, \cdot )$ is a monoid-that is, if there’s a multiplicative identity-then $R$ is called a <em>ring with unity</em>. The identity of the additive abelian group $(R, +)$ is usually denoted by $0$ and, in a ring with unity, the identity of the multiplicative monoid $(R, \cdot )$ is usually denoted by 1.</p>
+<p>If the operation of multiplication is commutative, then we call $R$ a commutative ring. (The term abelian is generally not used to describe a ring in which multiplication is commutative.)</p>
+<p>If $S$ is a subset of $R$, and $S$ satisfies the ring requirements with the same operations as $R$, then we say that $(S, +, \cdot )$ is a subring of $(R, +, \cdot)$.</p>
+<ul>
+<li><strong>ring of polynomial.</strong> The ring of polynomials with coefficients in a ring $R$ is usually denoted by $R[x_1,\cdots,x_n]$ or $R[x]$ where $x$ refer to the set of variables $\{x_1,\cdots,x_n\}$. An element $f(x)\in \mathbb{R}[x]$ can be written as a finite sum <script type="math/tex">f(x)=\sum\limits_b b_{\alpha} x^{\alpha},</script><br>where $\alpha=(\alpha_1,\cdots,\alpha_d)$ is a multi-index and $\alpha_i\in \mathbb{R}$.</li>
+</ul>
+<h2 id="Ring-Homomorphisms"><a href="#Ring-Homomorphisms" class="headerlink" title="Ring Homomorphisms"></a>Ring Homomorphisms</h2><p>Let $(R, +, \times)$ and $(R’, \oplus,\otimes)$ be rings. A function $\phi: R \rightarrow R’$ is called a <em>ring homomorphism</em> if both of the following conditions hold for be every $a$ and $b$ in $R$:</p>
+<ol>
+<li>$\phi(a+b)=\phi(a)\oplus\phi(b).$</li>
+<li>$\phi(a\times b)=\phi(a)\otimes\phi(b).$</li>
+</ol>
+<ul>
+<li>The kernel of a ring homomorphism is the set $\text{ker}\phi=\{a \in R : \phi(a) = 0’\}$, where $0’ $ is the additive identity in $R’$ and is always a subring of $R$.</li>
+<li>The image of $R$, $\phi(R)=\{\phi(r):r\in R\}$ is a subring of $R’$.</li>
+<li>The image of $0$, the additive identity in $R$, must be $0’$.</li>
+</ul>
+<!--## Ideal
+An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
+<dd>(a) $I$ is closed under addition;<br> (b) If $s\in I$ and $r\in R$, then $rs\in I$. Thus, $0\in I$.
+</dd>-->
+<p>A commutative ring with unity ($1\neq 0$) that contains no zero divisors is called an <em>integral domain</em>. The <em>cancellation law</em> holds for integral domains.</p>
+<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^{\ast },\cdot)$ is a group, then $R$ is called a <em>divison ring</em>. A commutative division ring is called a <em>field</em>.</p>
 
       
     </div>
@@ -460,7 +528,7 @@
       
         <div class="post-tags">
           
-            <a href="/en/tags/reinforcement-learning/" rel="tag"># reinforcement-learning</a>
+            <a href="/en/tags/gre-sub-math/" rel="tag"># gre-sub-math</a>
           
         </div>
       
@@ -473,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/en/course/SYSU/" rel="next" title="Course materials in SYSU">
-                <i class="fa fa-chevron-left"></i> Course materials in SYSU
+              <a href="/en/gre-sub-math/GreSubMathDifferentialEquations/" rel="next" title="Chapter 4 - Differential Equations">
+                <i class="fa fa-chevron-left"></i> Chapter 4 - Differential Equations
               </a>
             
           </div>
@@ -483,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/en/reinforcement-learning/MDP/" rel="prev" title="Markov Decision Process">
-                Markov Decision Process <i class="fa fa-chevron-right"></i>
+              <a href="/en/gre-sub-math/GreSubMathAbstractAlgebra/" rel="prev" title="Chapter 6 - Number Theory and Abstract Algebra">
+                Chapter 6 - Number Theory and Abstract Algebra <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -638,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Preliminaries"><span class="nav-number">2.</span> <span class="nav-text">Preliminaries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">3.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variants"><span class="nav-number">3.2.</span> <span class="nav-text">Variants</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Number-Theory"><span class="nav-number">1.</span> <span class="nav-text">Number Theory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Divisibility"><span class="nav-number">1.1.</span> <span class="nav-text">Divisibility</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Euclidean-Algorithm"><span class="nav-number">1.1.1.</span> <span class="nav-text">The Euclidean Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Diophantine-Equation"><span class="nav-number">1.1.2.</span> <span class="nav-text">The Diophantine Equation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Congruences"><span class="nav-number">1.2.</span> <span class="nav-text">Congruences</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract-Algebra"><span class="nav-number">2.</span> <span class="nav-text">Abstract Algebra</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Groups"><span class="nav-number">2.1.</span> <span class="nav-text">Groups</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subgroup"><span class="nav-number">2.2.</span> <span class="nav-text">Subgroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-Homomorphisms"><span class="nav-number">2.3.</span> <span class="nav-text">Group Homomorphisms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Direct-Product-And-Direct-Sum"><span class="nav-number">2.4.</span> <span class="nav-text">Direct Product And Direct Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rings"><span class="nav-number">2.5.</span> <span class="nav-text">Rings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ring-Homomorphisms"><span class="nav-number">2.6.</span> <span class="nav-text">Ring Homomorphisms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fields"><span class="nav-number">2.7.</span> <span class="nav-text">Fields</span></a></li></ol></li></ol></div>
             
 
           </div>
