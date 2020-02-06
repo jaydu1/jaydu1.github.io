@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="jaydu1">
 <meta property="og:description" content="Analytic Geometry Of $\mathbb{R}^3$Vector ProductsThe Dot ProductThe dot product is give by A\cdot B=|A||B|\cos\thetawhere $\theta$ is the angle between $A$ and $B$. The Cross ProductThe corss product">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-06T17:53:23.285Z">
+<meta property="og:updated_time" content="2020-02-06T22:06:51.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 3 - Calculus II">
 <meta name="twitter:description" content="Analytic Geometry Of $\mathbb{R}^3$Vector ProductsThe Dot ProductThe dot product is give by A\cdot B=|A||B|\cos\thetawhere $\theta$ is the angle between $A$ and $B$. The Cross ProductThe corss product">
@@ -411,8 +411,11 @@ b_1&b_2&b_3\end{matrix}\right|,</script><br>where $i,j,k$ are the standard coord
 a_1&a_2&a_3\\
 b_1&b_2&b_3\\
 c_1&c_2&c_3\end{matrix}\right|.</script></p>
-<h2 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a>Geometry</h2><h3 id="Lines"><a href="#Lines" class="headerlink" title="Lines"></a>Lines</h3><p>The distance $d$ from a point $({ x }_{ 0 },{ y }_{ 0 })$ to the line $Ax+By+C=0$ is given by <script type="math/tex">d=\frac{|Ax_0+Bx_0+C|}{\sqrt{A^2+B^2}}.</script></p>
-<h3 id="Planes"><a href="#Planes" class="headerlink" title="Planes"></a>Planes</h3><p>The nearest point to the origin in the plane $Ax+By+Cz=D$ is given by <script type="math/tex">\left(\frac{AD}{A^2+B^2+C^2},\frac{BD}{A^2+B^2+C^2},\frac{CD}{A^2+B^2+C^2}\right),</script><br>and the distance $d$ from the origin to this plane is given by <script type="math/tex">d=\frac{\sqrt{(AD)^2+(BD)^2+(CD)^2}}{A^2+B^2+C^2},</script></p>
+<h2 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a>Geometry</h2><h3 id="Lines"><a href="#Lines" class="headerlink" title="Lines"></a>Lines</h3><p>The distance $d$ from a point $({ x }_{ 0 },{ y }_{ 0 })$ to the line $Ax+By=C$ is given by <script type="math/tex">d=\frac{|Ax_0+By_0-C|}{\sqrt{A^2+B^2}}.</script></p>
+<p>The nearest point to the origin in the line $Ax+By=C$ is given by <script type="math/tex">\left(\frac{AC}{A^2+B^2},\frac{BC}{A^2+B^2}\right),</script> and the corresponding distance is <script type="math/tex">d=\frac{\sqrt{(AC)^2+(BC)^2}}{A^2+B^2}=\frac{|C|}{\sqrt{A^2+B^2}}.</script></p>
+<p>If we want to find the nearest point in the line to a point $(x_0,y_0)$, we can first transform to a new coordinate system by setting $x’=x-x_0$ and $y’=y-y_0$. The line becomes $Ax’+By’=C-Ax_0-By_0$. Then the nearest point in the new coordinate system is given by <script type="math/tex">\left(\frac{A(C-Ax_0-By_0)}{A^2+B^2},\frac{B(C-Ax_0-By_0)}{A^2+B^2}\right).</script><br>By transforming it back to the original system, we have</p>
+<script type="math/tex; mode=display">\left(\frac{A(C-Ax_0-By_0)}{A^2+B^2}+x_0,\frac{B(C-Ax_0-By_0)}{A^2+B^2}+y_0\right).</script><h3 id="Planes"><a href="#Planes" class="headerlink" title="Planes"></a>Planes</h3><p>The nearest point to the origin in the plane $Ax+By+Cz=D$ is given by <script type="math/tex">\left(\frac{AD}{A^2+B^2+C^2},\frac{BD}{A^2+B^2+C^2},\frac{CD}{A^2+B^2+C^2}\right),</script><br>and the distance $d$ from the origin to this plane is given by <script type="math/tex">d=\frac{\sqrt{(AD)^2+(BD)^2+(CD)^2}}{A^2+B^2+C^2}.</script></p>
+<p>If we want to find the nearest point in the plane to a point $(x_0,y_0)$, we can apply similar method as for a line to obtain similar results.</p>
 <h3 id="The-Tangent-Plane-To-A-Surface"><a href="#The-Tangent-Plane-To-A-Surface" class="headerlink" title="The Tangent Plane To A Surface"></a>The Tangent Plane To A Surface</h3><p>The equation of the tangent plane to the surface $z=f(x,y)$ at $P=(x_0,y_0,z_0)$ is <script type="math/tex">z-z_0=f_x|_P\cdot (x-x_0)+f_y|_P\cdot (y-y_0).</script></p>
 <h3 id="Cylinders"><a href="#Cylinders" class="headerlink" title="Cylinders"></a>Cylinders</h3><h3 id="Surfaces-Of-Revolution"><a href="#Surfaces-Of-Revolution" class="headerlink" title="Surfaces Of Revolution"></a>Surfaces Of Revolution</h3><div class="table-container">
 <table>
@@ -541,8 +544,8 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/en/gre-sub-math/GreSubMathDifferentialEquations/" rel="prev" title="Chapter 4 - Differential Equations">
-                Chapter 4 - Differential Equations <i class="fa fa-chevron-right"></i>
+              <a href="/en/gre-sub-math/GreSubMathCalculusII-2/" rel="prev" title="Chapter 3 - Calculus II">
+                Chapter 3 - Calculus II <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -625,7 +628,7 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
