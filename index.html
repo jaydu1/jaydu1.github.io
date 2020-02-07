@@ -1106,7 +1106,7 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
 <h2 id="Coordinates"><a href="#Coordinates" class="headerlink" title="Coordinates"></a>Coordinates</h2><h3 id="Cylindrical-Coordinates"><a href="#Cylindrical-Coordinates" class="headerlink" title="Cylindrical Coordinates"></a>Cylindrical Coordinates</h3><p>The cylindrical coordinates are given by $(r,\theta,z)$ where $r=\sqrt{x^2+y^2}$ and $\theta=\arctan\frac{y}{x}$.</p>
 <h3 id="Spherical-Coordinates"><a href="#Spherical-Coordinates" class="headerlink" title="Spherical Coordinates"></a>Spherical Coordinates</h3><p>The spherical coordinates are given by $(\rho,\phi,\theta)$ where $\rho=\sqrt{x^2+y^2+z^2}$, $\theta=\arctan\frac{y}{x}$ and $\phi=\arctan\frac{\sqrt{x^2+y^2}}{z}$.</p>
 <h1 id="Derivatives"><a href="#Derivatives" class="headerlink" title="Derivatives"></a>Derivatives</h1><h2 id="Partial-Derivatives"><a href="#Partial-Derivatives" class="headerlink" title="Partial Derivatives"></a>Partial Derivatives</h2><h2 id="Gradients"><a href="#Gradients" class="headerlink" title="Gradients"></a>Gradients</h2><p>Consider the surface $z = f(x, y)$, and let $P = (x_0, y_0)$ be a point in the domain of $f$. The <em>gradient</em> of $f$ is the vector $\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right)$.</p>
-<h2 id="Directional-Derivatives"><a href="#Directional-Derivatives" class="headerlink" title="Directional Derivatives"></a>Directional Derivatives</h2><p>The rate of change of $f$ at the point $P$ in the direction of a unit vector $\mathbf{u}$, is given by $D_{\mathbf{u}}f|_P=\nabla f|_P\cdot \mathbf{u}.$</p>
+<h2 id="Directional-Derivatives"><a href="#Directional-Derivatives" class="headerlink" title="Directional Derivatives"></a>Directional Derivatives</h2><p>The rate of change of $f$ at the point $P$ in the direction of a <strong>unit vector</strong> $\mathbf{u}$, is given by $D_{\mathbf{u}}f|_P=\nabla f|_P\cdot \mathbf{u}.$</p>
 <p>The vector $\nabla f$ points in the direction in which $f$ increases most rapidly, and the magnitude of $\nabla f$ gives the maximum rate of increase.</p>
 <p>For a function $f (x, y, z)$, the vector $\nabla f|_P$ is perpendicular (normal) to the level curve off that contains $P$.</p>
 <p>Similar definitions and results can be given for $\mathbb{R}^3$.</p>
@@ -1435,6 +1435,189 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">强化学习简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="强化学习简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。</p>
+<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="强化学习">
+<ul>
+<li>试错搜索；</li>
+<li>延时报酬。</li>
+</ul>
+<p>我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。</p>
+<p>强化学习中的一个特有的挑战是如何权衡新知识的探索（<strong>exploration</strong>）与旧知识的利用（<strong>exploitation</strong>）。代理需要利用已有的经验来取得报酬，但它也要探索以便在以后可以采取更好的行动选择。</p>
+<p>主流的方法，例如搜索和学习，是被称为弱方法；而基于特点知识的方法被称为强方法。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>在强化学习中，我们需要选择：待优化目标函数的类型（策略、值函数、动力模型）以及函数近似器的类型。</p>
+<p>首先，我们有两种算法：</p>
+<ul>
+<li>基于模型的强化学习算法：基于动力学模型，预测下一阶段的状态和下一步的报酬；</li>
+<li>模型无关的强化学习算法：不基于动力学模型。<br>然后，对于模型无关的强化学习算法，下图展示了进一步的分类：</li>
+</ul>
+<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
+<p>策略优化方法围绕策略函数$\pi:S\mapsto A$。这些方法将强化学习视为一个数值优化问题，最大化与策略参数有关的期望总报酬。这里有两种方式来优化策略：</p>
+<ol>
+<li>导数无关（Derivative free optimization， DFO）的优化算法，包括进化算法，例如基因编程、模拟退火等等；</li>
+<li>策略梯度方法。</li>
+</ol>
+<p>近似动态规划（Approximate dynamic programming， ADP）着眼于学习值函数$V:S\mapsto\mathbb{R}$，用来预测在一个状态下代理会接受到的报酬。</p>
+<p>最后，actor-critic方法结合了策略优化和动态规划。这些方法优化一个策略，但他们用值函数来假设优化过程。通常它是通过近似动态规划的方法来计算值函数的。</p>
+<h1 id="强化学习的基本元素"><a href="#强化学习的基本元素" class="headerlink" title="强化学习的基本元素"></a>强化学习的基本元素</h1><ul>
+<li>一个策略$\pi$；</li>
+<li>一个报酬信号$r_t$；</li>
+<li>一个值函数$V(s)$；</li>
+<li>（可选）一个描述环境的模型。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/POMDP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1585,189 +1768,6 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
 <script type="math/tex; mode=display">V^\pi(b_0) = \sum_{t=0}^\infty  \gamma^t r(b_t, a_t) = \sum_{t=0}^\infty \gamma^t \mathbb{E}\Bigl[ R(s_t,a_t) \mid b_0, \pi \Bigr]</script><p>其中$\gamma&lt;1$是折扣因子。最优策略$\pi^\ast$是由优化长期报酬得到：</p>
 <script type="math/tex; mode=display">\pi^{\ast}=\underset{\pi }{\mbox{argmax}}\ V^{\pi}(b_{0})</script><p>最优策略$\pi^\ast$对每一个信念状态产生最高期望报酬，即最优值函数$V^{\ast}$。这个值函数是贝尔曼方程的解：</p>
 <script type="math/tex; mode=display">V^{\ast}(b)=\max _{a\in A}{\Bigl [}r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o)){\Bigr ]}</script><p>对有限阶段的POMDPs，最优值函数是分段线性、凸的。它可以用有限的向量集合表示。对无限阶段的POMDPs，最优值函数可以由有限向量集合任意逼近，并且保持凸性。值迭代应用动态规划更新，逐渐改善值函数，直到收敛到$\epsilon$-最优的值函数，保持分段线性和凸性。通过改善值函数，策略也间接得到改善。另外也可以用策略迭代直接改善策略。这与MDP的值迭代和策略迭代相同。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">强化学习简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
-                2019-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="强化学习简介">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。</p>
-<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="强化学习">
-<ul>
-<li>试错搜索；</li>
-<li>延时报酬。</li>
-</ul>
-<p>我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。</p>
-<p>强化学习中的一个特有的挑战是如何权衡新知识的探索（<strong>exploration</strong>）与旧知识的利用（<strong>exploitation</strong>）。代理需要利用已有的经验来取得报酬，但它也要探索以便在以后可以采取更好的行动选择。</p>
-<p>主流的方法，例如搜索和学习，是被称为弱方法；而基于特点知识的方法被称为强方法。</p>
-<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>在强化学习中，我们需要选择：待优化目标函数的类型（策略、值函数、动力模型）以及函数近似器的类型。</p>
-<p>首先，我们有两种算法：</p>
-<ul>
-<li>基于模型的强化学习算法：基于动力学模型，预测下一阶段的状态和下一步的报酬；</li>
-<li>模型无关的强化学习算法：不基于动力学模型。<br>然后，对于模型无关的强化学习算法，下图展示了进一步的分类：</li>
-</ul>
-<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
-<p>策略优化方法围绕策略函数$\pi:S\mapsto A$。这些方法将强化学习视为一个数值优化问题，最大化与策略参数有关的期望总报酬。这里有两种方式来优化策略：</p>
-<ol>
-<li>导数无关（Derivative free optimization， DFO）的优化算法，包括进化算法，例如基因编程、模拟退火等等；</li>
-<li>策略梯度方法。</li>
-</ol>
-<p>近似动态规划（Approximate dynamic programming， ADP）着眼于学习值函数$V:S\mapsto\mathbb{R}$，用来预测在一个状态下代理会接受到的报酬。</p>
-<p>最后，actor-critic方法结合了策略优化和动态规划。这些方法优化一个策略，但他们用值函数来假设优化过程。通常它是通过近似动态规划的方法来计算值函数的。</p>
-<h1 id="强化学习的基本元素"><a href="#强化学习的基本元素" class="headerlink" title="强化学习的基本元素"></a>强化学习的基本元素</h1><ul>
-<li>一个策略$\pi$；</li>
-<li>一个报酬信号$r_t$；</li>
-<li>一个值函数$V(s)$；</li>
-<li>（可选）一个描述环境的模型。</li>
-</ul>
 
           
         
