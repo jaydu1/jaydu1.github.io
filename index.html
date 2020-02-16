@@ -714,6 +714,7 @@
 <ul>
 <li><strong>ring of polynomial.</strong> The ring of polynomials with coefficients in a ring $R$ is usually denoted by $R[x_1,\cdots,x_n]$ or $R[x]$ where $x$ refer to the set of variables $\{x_1,\cdots,x_n\}$. An element $f(x)\in \mathbb{R}[x]$ can be written as a finite sum <script type="math/tex">f(x)=\sum\limits_b b_{\alpha} x^{\alpha},</script><br>where $\alpha=(\alpha_1,\cdots,\alpha_d)$ is a multi-index and $\alpha_i\in \mathbb{R}$.</li>
 </ul>
+<p>Let $I$ be a subring of a ring $R$. If $\forall\ r\in R,x\in I$, $rx\in I$ and $xr\in I$, then $I$ is called an <em>idela</em> on $R$. Every ring $R$ has at least two ideals, $\{ 0 \}$ and $R$.</p>
 <h2 id="Ring-Homomorphisms"><a href="#Ring-Homomorphisms" class="headerlink" title="Ring Homomorphisms"></a>Ring Homomorphisms</h2><p>Let $(R, +, \times)$ and $(R’, \oplus,\otimes)$ be rings. A function $\phi: R \rightarrow R’$ is called a <em>ring homomorphism</em> if both of the following conditions hold for be every $a$ and $b$ in $R$:</p>
 <ol>
 <li>$\phi(a+b)=\phi(a)\oplus\phi(b).$</li>
@@ -729,8 +730,9 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
 <dd>(a) $I$ is closed under addition;<br> (b) If $s\in I$ and $r\in R$, then $rs\in I$. Thus, $0\in I$.
 </dd>-->
 <p>A commutative ring with unity ($1\neq 0$) that contains no zero divisors is called an <em>integral domain</em>. The <em>cancellation law</em> holds for integral domains.</p>
-<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^{\ast },\cdot)$ is a group, then $R$ is called a <em>divison ring</em>. A commutative division ring is called a <em>field</em>.</p>
+<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^{\ast },\cdot)$ is a group, then $R$ is called a <em>divison ring</em>. A division ring is a ring with exactly two ideals. A commutative division ring is called a <em>field</em>.</p>
 <p>The ring $\mathbb{Z}_n$ is a field if and only if $n$ is a prime.</p>
+<p>The field has no zero divisors since a zero divisor is not invertible.</p>
 
           
         
@@ -1062,15 +1064,17 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
 <p>Also, we have <script type="math/tex">A\times B=\left|\begin{matrix}i & j & k\\
 a_1&a_2&a_3\\
 b_1&b_2&b_3\end{matrix}\right|,</script><br>where $i,j,k$ are the standard coordinate unit basis.</p>
-<h3 id="The-Triple-Scalar-Product"><a href="#The-Triple-Scalar-Product" class="headerlink" title="The Triple Scalar Product"></a>The Triple Scalar Product</h3><p>The <em>triple scalar product</em> is $(A\times B)\cdot C$. $|(A\times B)\cdot B|$ is the volume of parallelepiped formed by $A$, $B$ and $C$. Also, <script type="math/tex">(A\times B)\cdot C=\left|\begin{matrix}
+<h3 id="The-Triple-Scalar-Product"><a href="#The-Triple-Scalar-Product" class="headerlink" title="The Triple Scalar Product"></a>The Triple Scalar Product</h3><p>The <em>triple scalar product</em> is $(A\times B)\cdot C$. $|(A\times B)\cdot C|$ is the volume of parallelepiped formed by $A$, $B$ and $C$. Also, <script type="math/tex">(A\times B)\cdot C=\left|\begin{matrix}
 a_1&a_2&a_3\\
 b_1&b_2&b_3\\
 c_1&c_2&c_3\end{matrix}\right|.</script></p>
 <h2 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a>Geometry</h2><h3 id="Lines"><a href="#Lines" class="headerlink" title="Lines"></a>Lines</h3><p>The distance $d$ from a point $({ x }_{ 0 },{ y }_{ 0 })$ to the line $Ax+By=C$ is given by <script type="math/tex">d=\frac{|Ax_0+By_0-C|}{\sqrt{A^2+B^2}}.</script></p>
 <p>The nearest point to the origin in the line $Ax+By=C$ is given by <script type="math/tex">\left(\frac{AC}{A^2+B^2},\frac{BC}{A^2+B^2}\right),</script> and the corresponding distance is <script type="math/tex">d=\frac{\sqrt{(AC)^2+(BC)^2}}{A^2+B^2}=\frac{|C|}{\sqrt{A^2+B^2}}.</script></p>
 <p>If we want to find the nearest point in the line to a point $(x_0,y_0)$, we can first transform to a new coordinate system by setting $x’=x-x_0$ and $y’=y-y_0$. The line becomes $Ax’+By’=C-Ax_0-By_0$. Then the nearest point in the new coordinate system is given by <script type="math/tex">\left(\frac{A(C-Ax_0-By_0)}{A^2+B^2},\frac{B(C-Ax_0-By_0)}{A^2+B^2}\right).</script><br>By transforming it back to the original system, we have</p>
-<script type="math/tex; mode=display">\left(\frac{A(C-Ax_0-By_0)}{A^2+B^2}+x_0,\frac{B(C-Ax_0-By_0)}{A^2+B^2}+y_0\right).</script><h3 id="Planes"><a href="#Planes" class="headerlink" title="Planes"></a>Planes</h3><p>The nearest point to the origin in the plane $Ax+By+Cz=D$ is given by <script type="math/tex">\left(\frac{AD}{A^2+B^2+C^2},\frac{BD}{A^2+B^2+C^2},\frac{CD}{A^2+B^2+C^2}\right),</script><br>and the distance $d$ from the origin to this plane is given by <script type="math/tex">d=\frac{\sqrt{(AD)^2+(BD)^2+(CD)^2}}{A^2+B^2+C^2}.</script></p>
+<script type="math/tex; mode=display">\left(\frac{A(C-Ax_0-By_0)}{A^2+B^2}+x_0,\frac{B(C-Ax_0-By_0)}{A^2+B^2}+y_0\right).</script><h3 id="Planes"><a href="#Planes" class="headerlink" title="Planes"></a>Planes</h3><p>A convinient way to represent the equation for a plane is by $\mathbf{n}\cdot (\mathbf{x} − \mathbf{p}) = 0$, where $\mathbf{p}$ is the vector to a point in the plane, and $\mathbf{n}$ is a normal vector to the plane.</p>
+<p>The nearest point to the origin in the plane $Ax+By+Cz=D$ is given by <script type="math/tex">\left(\frac{AD}{A^2+B^2+C^2},\frac{BD}{A^2+B^2+C^2},\frac{CD}{A^2+B^2+C^2}\right),</script><br>and the distance $d$ from the origin to this plane is given by <script type="math/tex">d=\frac{\sqrt{(AD)^2+(BD)^2+(CD)^2}}{A^2+B^2+C^2}.</script></p>
 <p>If we want to find the nearest point in the plane to a point $(x_0,y_0)$, we can apply similar method as for a line to obtain similar results.</p>
+<h3 id="The-Intercept-of-Two-Planes"><a href="#The-Intercept-of-Two-Planes" class="headerlink" title="The Intercept of Two Planes"></a>The Intercept of Two Planes</h3><p>Two planes in $\mathbb{R}^3$ are parallel, coincide, or intersect in a line. To calculate the intercept line, we need to eliminate $x$, $y$ or $z$ to get relationship between each two of them.</p>
 <h3 id="The-Tangent-Plane-To-A-Surface"><a href="#The-Tangent-Plane-To-A-Surface" class="headerlink" title="The Tangent Plane To A Surface"></a>The Tangent Plane To A Surface</h3><p>The equation of the tangent plane to the surface $z=f(x,y)$ at $P=(x_0,y_0,z_0)$ is <script type="math/tex">z-z_0=f_x|_P\cdot (x-x_0)+f_y|_P\cdot (y-y_0).</script></p>
 <h3 id="Cylinders"><a href="#Cylinders" class="headerlink" title="Cylinders"></a>Cylinders</h3><h3 id="Surfaces-Of-Revolution"><a href="#Surfaces-Of-Revolution" class="headerlink" title="Surfaces Of Revolution"></a>Surfaces Of Revolution</h3><div class="table-container">
 <table>
@@ -2221,7 +2225,7 @@ for i in range(epis):
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UChicago/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UCB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -2240,7 +2244,7 @@ for i in range(epis):
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/course/UChicago/" itemprop="url">课程材料（UChicago）</a></h1>
+                <a class="post-title-link" href="/course/UCB/" itemprop="url">课程材料（UCB）</a></h1>
         
 
         <div class="post-meta">
@@ -2292,7 +2296,7 @@ for i in range(epis):
 
           
           
-             <span id="/course/UChicago/" class="leancloud_visitors" data-flag-title="课程材料（UChicago）">
+             <span id="/course/UCB/" class="leancloud_visitors" data-flag-title="课程材料（UCB）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2325,7 +2329,7 @@ for i in range(epis):
       
         
           
-            <h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
+            <h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2336,19 +2340,45 @@ for i in range(epis):
 </thead>
 <tbody>
 <tr>
-<td>STAT30400 - Distribution Theory</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
+<td>MATH 118 - Fourier Analysis and Wavelets</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
 </tr>
+</tbody>
+</table>
+</div>
+<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
+<table>
+<thead>
 <tr>
-<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
+<th>课程名称</th>
+<th>Github</th>
+<th>百度云盘</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>STAT34300 - Applied Linear Statistical Model</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
+<td>STAT150 - Stochastic Processes</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="计算机科学"><a href="#计算机科学" class="headerlink" title="计算机科学"></a>计算机科学</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>课程名称</th>
+<th>Github</th>
+<th>百度云盘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS189 - Machine Learning</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
 </tr>
 </tbody>
 </table>
