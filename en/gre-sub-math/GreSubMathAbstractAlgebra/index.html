@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="jaydu1">
 <meta property="og:description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-06T15:27:19.492Z">
+<meta property="og:updated_time" content="2020-03-06T23:10:47.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 6 - Number Theory and Abstract Algebra">
 <meta name="twitter:description" content="Number TheoryDivisibilityThe Euclidean AlgorithmThe Diophantine EquationCongruencesLet $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible">
@@ -407,7 +407,19 @@
 <li>If $a_1\equiv b_1(\text{mod}\  n)$ and $a_2\equiv b_2(\text{mod}\  n)$, then $a_1\pm a_2\equiv b_1\pm b_2(\text{mod}\  n)$ and <script type="math/tex">a_1a_2\equiv b_1b_2(\text{mod}\  n)</script>.</li>
 <li>For any positive integer $c$, the statement $a\equiv b(\text{mod}\  n)$ is equivalent to the congruences $a\equiv b,b+n,\ldots,b+(c-1)n\ (\text{mod}\  n)$.</li>
 <li>If $ab\equiv ac(\text{mod}\  n)$, then $b\equiv c(\text{mod}\  n)$ if $\text{gcd}(a,n)=1$ or $b\equiv c(\text{mod}\  \frac{n}{d})$ if $d=\text{gcd}(a,n)&gt;1$.</li>
-<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $o$ does not divide $a$.</li>
+<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $p$ does not divide $a$.</li>
+</ul>
+<p>Related problems:</p>
+<ul>
+<li>What is the value of $a$ modulo $b$?</li>
+<li>$19^{2015}$ mod $5=$? (Fermat’s Little Theorem.)</li>
+<li>Solve $ax\equiv b(\text{mod})$ for $x,y\in\mathbb{Z}$.</li>
+<li>Given $ax+by$ divisible by $n$, which of the following must be divisble by $n$? Choose $x=y=0$ to eliminate some options.</li>
+<li>Solve $ax+by=c$ for $x,y\in\mathbb{Z}$.<ul>
+<li>Solution for $ax+by=c$ exists in $\mathbb{Z}$ if and only if $gcd(a,b)|c$.</li>
+<li>Find a private solution and the homogeneous solution.</li>
+</ul>
+</li>
 </ul>
 <h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a\ast b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a <em>binary structure</em>.</p>
 <p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a\ast b)\ast c=a\ast (b\ast c)</script> is called a <em>semigroup</em>.</p>

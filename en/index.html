@@ -657,7 +657,19 @@
 <li>If $a_1\equiv b_1(\text{mod}\  n)$ and $a_2\equiv b_2(\text{mod}\  n)$, then $a_1\pm a_2\equiv b_1\pm b_2(\text{mod}\  n)$ and <script type="math/tex">a_1a_2\equiv b_1b_2(\text{mod}\  n)</script>.</li>
 <li>For any positive integer $c$, the statement $a\equiv b(\text{mod}\  n)$ is equivalent to the congruences $a\equiv b,b+n,\ldots,b+(c-1)n\ (\text{mod}\  n)$.</li>
 <li>If $ab\equiv ac(\text{mod}\  n)$, then $b\equiv c(\text{mod}\  n)$ if $\text{gcd}(a,n)=1$ or $b\equiv c(\text{mod}\  \frac{n}{d})$ if $d=\text{gcd}(a,n)&gt;1$.</li>
-<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $o$ does not divide $a$.</li>
+<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $p$ does not divide $a$.</li>
+</ul>
+<p>Related problems:</p>
+<ul>
+<li>What is the value of $a$ modulo $b$?</li>
+<li>$19^{2015}$ mod $5=$? (Fermat’s Little Theorem.)</li>
+<li>Solve $ax\equiv b(\text{mod})$ for $x,y\in\mathbb{Z}$.</li>
+<li>Given $ax+by$ divisible by $n$, which of the following must be divisble by $n$? Choose $x=y=0$ to eliminate some options.</li>
+<li>Solve $ax+by=c$ for $x,y\in\mathbb{Z}$.<ul>
+<li>Solution for $ax+by=c$ exists in $\mathbb{Z}$ if and only if $gcd(a,b)|c$.</li>
+<li>Find a private solution and the homogeneous solution.</li>
+</ul>
+</li>
 </ul>
 <h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a\ast b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a <em>binary structure</em>.</p>
 <p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a\ast b)\ast c=a\ast (b\ast c)</script> is called a <em>semigroup</em>.</p>
@@ -1476,190 +1488,6 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/IntroductionOfReinforcementLearning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">Introduction Of Reinforcement Learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
-                2019-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="Introduction Of Reinforcement Learning">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Reinforcement learning is a computational goal-directed approach to learning from interaction with environment.</p>
-<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="Reinforcement Learning">
-<ul>
-<li>trial-and-error search </li>
-<li>delayed reward</li>
-</ul>
-<p>We can use ideas from dynamical systems theory to formulate a reinforcement learning problem, specifically, as the optimal control of incompletely-known Markov decision processes. A learning agent must be able to sense the state of its environment to some extent and must be able to take actions that affect the state. The agent also must have a goal or goals relating to the state of the environment.</p>
-<p>One of the challenges that arise in reinforcement learning, and not in other kinds of learning, is the trade-off between <strong>exploration</strong> and <strong>exploitation</strong>. The agent has to exploit what it has already experienced in order to obtain reward, but it also has to explore in order to make better action selections in the future.</p>
-<p>Methods based on general principles, such as search or learning, were characterized as “weak methods,” whereas those based on speciﬁc knowledge were called “strong methods.”</p>
-<h1 id="Taxonomy"><a href="#Taxonomy" class="headerlink" title="Taxonomy"></a>Taxonomy</h1><p>In reinforcement learning, we have two orthogonal choices: what kind of objective to optimize (involving a policy, value function, or dynamics model), and what kind of function approximators to use.</p>
-<p>First, we have two kinds of algorithms:</p>
-<ul>
-<li>Model-based RL algorithms: based on dynamics model that tends to predict the next state and the reward at the next step;</li>
-<li>Model-free RL algorithms: not based on a dynamics model.</li>
-</ul>
-<p>Then, for model-free RL algorithms, the figure below shows a taxonomy:</p>
-<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
-<p>Policy optimization methods are centered around the policy, the function that maps the agent’s state to its next action. These methods view reinforcement learning as a numerical optimization problem where we optimize the expected reward with respect to the policy’s parameters. There are two ways to optimize a policy. </p>
-<ol>
-<li>Derivative free optimization (DFO) algorithms, including evolutionary algorithms, like genetic programming, simulated annealing, etc.;</li>
-<li>Policy gradient methods.</li>
-</ol>
-<p>Approximate dynamic programming (ADP) focus on learning value functions, which predict how much reward the agent is going to receive.</p>
-<p>Finally, there are actor-critic methods that combine elements from both policy optimization and dynamic programming. These methods optimize a policy, but they use value functions to speed up this optimization, and often use ideas from approximate dynamic programming to fit the value functions.</p>
-<h1 id="Elements-of-Reinforcement-Learning"><a href="#Elements-of-Reinforcement-Learning" class="headerlink" title="Elements of Reinforcement Learning"></a>Elements of Reinforcement Learning</h1><ul>
-<li>a policy;</li>
-<li>a reward signal;</li>
-<li>a value function;</li>
-<li>(optionally) a model of the environment.</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/POMDP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1808,6 +1636,190 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
 <script type="math/tex; mode=display">\pi ^{\ast}=\underset  {\pi }{\mbox{argmax}}\ V^{\pi }(b_{0})</script><p>where $b_{0}$ is the initial belief.</p>
 <p>The optimal policy, denoted by $\pi^\ast$, yields the highest expected reward value for each belief state, compactly represented by the optimal value function $V^{\ast}$. This value function is solution to the Bellman optimality equation:</p>
 <script type="math/tex; mode=display">V^{\ast}(b)=\max_{a\in A}\Bigl[ r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o))\Bigr]</script><p>For finite-horizon POMDPs, the optimal value function is piecewise-linear and convex. It can be represented as a finite set of vectors. In the infinite-horizon formulation, a finite vector set can approximate $V^{\ast}$ arbitrarily closely, whose shape remains convex. Value iteration applies dynamic programming update to gradually improve on the value until convergence to an $\epsilon$-optimal value function, and preserves its piecewise linearity and convexity. By improving the value, the policy is implicitly improved. Another dynamic programming technique called policy iteration explicitly represents and improves the policy instead. These are the same as value iteration and policy iteration MDP.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/IntroductionOfReinforcementLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">Introduction Of Reinforcement Learning</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="Introduction Of Reinforcement Learning">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Reinforcement learning is a computational goal-directed approach to learning from interaction with environment.</p>
+<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="Reinforcement Learning">
+<ul>
+<li>trial-and-error search </li>
+<li>delayed reward</li>
+</ul>
+<p>We can use ideas from dynamical systems theory to formulate a reinforcement learning problem, specifically, as the optimal control of incompletely-known Markov decision processes. A learning agent must be able to sense the state of its environment to some extent and must be able to take actions that affect the state. The agent also must have a goal or goals relating to the state of the environment.</p>
+<p>One of the challenges that arise in reinforcement learning, and not in other kinds of learning, is the trade-off between <strong>exploration</strong> and <strong>exploitation</strong>. The agent has to exploit what it has already experienced in order to obtain reward, but it also has to explore in order to make better action selections in the future.</p>
+<p>Methods based on general principles, such as search or learning, were characterized as “weak methods,” whereas those based on speciﬁc knowledge were called “strong methods.”</p>
+<h1 id="Taxonomy"><a href="#Taxonomy" class="headerlink" title="Taxonomy"></a>Taxonomy</h1><p>In reinforcement learning, we have two orthogonal choices: what kind of objective to optimize (involving a policy, value function, or dynamics model), and what kind of function approximators to use.</p>
+<p>First, we have two kinds of algorithms:</p>
+<ul>
+<li>Model-based RL algorithms: based on dynamics model that tends to predict the next state and the reward at the next step;</li>
+<li>Model-free RL algorithms: not based on a dynamics model.</li>
+</ul>
+<p>Then, for model-free RL algorithms, the figure below shows a taxonomy:</p>
+<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
+<p>Policy optimization methods are centered around the policy, the function that maps the agent’s state to its next action. These methods view reinforcement learning as a numerical optimization problem where we optimize the expected reward with respect to the policy’s parameters. There are two ways to optimize a policy. </p>
+<ol>
+<li>Derivative free optimization (DFO) algorithms, including evolutionary algorithms, like genetic programming, simulated annealing, etc.;</li>
+<li>Policy gradient methods.</li>
+</ol>
+<p>Approximate dynamic programming (ADP) focus on learning value functions, which predict how much reward the agent is going to receive.</p>
+<p>Finally, there are actor-critic methods that combine elements from both policy optimization and dynamic programming. These methods optimize a policy, but they use value functions to speed up this optimization, and often use ideas from approximate dynamic programming to fit the value functions.</p>
+<h1 id="Elements-of-Reinforcement-Learning"><a href="#Elements-of-Reinforcement-Learning" class="headerlink" title="Elements of Reinforcement Learning"></a>Elements of Reinforcement Learning</h1><ul>
+<li>a policy;</li>
+<li>a reward signal;</li>
+<li>a value function;</li>
+<li>(optionally) a model of the environment.</li>
+</ul>
 
           
         
@@ -2225,7 +2237,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UChicago/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UCB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -2244,7 +2256,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/en/course/UChicago/" itemprop="url">Course materials in UChicago</a></h1>
+                <a class="post-title-link" href="/en/course/UCB/" itemprop="url">Course materials in UCB</a></h1>
         
 
         <div class="post-meta">
@@ -2296,7 +2308,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 
           
           
-             <span id="/en/course/UChicago/" class="leancloud_visitors" data-flag-title="Course materials in UChicago">
+             <span id="/en/course/UCB/" class="leancloud_visitors" data-flag-title="Course materials in UCB">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2329,7 +2341,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
       
         
           
-            <h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+            <h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2340,19 +2352,45 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 </thead>
 <tbody>
 <tr>
-<td>STAT30400 - Distribution Theory</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
+<td>MATH 118 - Fourier Analysis and Wavelets</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Math/MATH%20118%20-%20Fourier%20Analysis%20and%20Wavelets" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1l6xyYaTNdwFcpPknA83U8A" target="_blank" rel="noopener">2xx9</a></td>
 </tr>
+</tbody>
+</table>
+</div>
+<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+<table>
+<thead>
 <tr>
-<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>STAT34300 - Applied Linear Statistical Model</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
+<td>STAT150 - Stochastic Processes</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Statistics/STAT150%20-%20Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1GeGEzIt5OqPUDSd-DRmImg" target="_blank" rel="noopener">bsx2</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Computer-Science"><a href="#Computer-Science" class="headerlink" title="Computer Science"></a>Computer Science</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS189 - Machine Learning</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UCB/Computer%20Science/CS189%20-%20Machine%20Learning" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1pxQKfwChBQZHlQXgIWV11w" target="_blank" rel="noopener">yoqg</a></td>
 </tr>
 </tbody>
 </table>
