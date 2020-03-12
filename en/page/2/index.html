@@ -297,6 +297,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/MDP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/reinforcement-learning/MDP/" itemprop="url">Markov Decision Process</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T21:39:54-05:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/reinforcement-learning/MDP/" class="leancloud_visitors" data-flag-title="Markov Decision Process">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h1><p>A Markov decision process is a $5$-tuple $(S,A,P_{\cdot}(\cdot,\cdot),R_{\cdot}(\cdot,\cdot),\gamma)$, where</p>
+<ul>
+<li><p>$S$ is a finite set of states.</p>
+</li>
+<li><p>$A$ is a finite set of actions (alternatively, $A(s)$ is the finite set of actions available from state $s$).</p>
+</li>
+<li><p>$R_{a}(s,s’)$ is the immediate reward (or expected immediate reward) received after transitioning from state $s$ to state $s’$, due to $a$. It can also be like $R(s)$ or $R(s,a)$.</p>
+</li>
+<li><p>$P_a(s,s’)=P(s_{t+1}=s’|s_t=s,a_t=a)$ is the probability that action $a$ in state $s$ at time $t$ will lead to state $s’$ at time $t+1$. </p>
+</li>
+<li><p>$\gamma\in[0,1]$ is a discount factor, which represents the difference in importance between future rewards and present rewards.</p>
+</li>
+</ul>
+<p>The solution to the MDP is the policy $\pi(s)\rightarrow a$, which maximizes the long-term expected reward. In reinforcement learning domains, we simply assume the policy is deterministic and history-independent.</p>
+<h1 id="Total-Reward"><a href="#Total-Reward" class="headerlink" title="Total Reward"></a>Total Reward</h1><p>$V(s)$, the state value function, is the total discounted reward from time-step $t$,</p>
+<script type="math/tex; mode=display">\begin{align*}V(s_t)&=R(s_t)+\gamma R(s_{t+1})+\cdots\\
+\qquad\qquad&=\sum\limits_{i=t}^{\infty}\gamma^iR(s_{i})\qquad 0\leqslant\gamma\leqslant 1
+\end{align*}</script><p>We can show that </p>
+<script type="math/tex; mode=display">V<\infty</script><h1 id="Policies"><a href="#Policies" class="headerlink" title="Policies"></a>Policies</h1><script type="math/tex; mode=display">\begin{align*}\pi^*&=\mathop{\arg\max}_{\pi}\mathbb{E}V^{\pi}\\
+&=\mathop{\arg\max}_{a}\sum\limits_{s'\in S}P_a(s,s')V(s')
+\end{align*}</script><p>The long term and delayed reward is given by</p>
+<script type="math/tex; mode=display">V^{\pi}(s)=\mathbb{E}[V(s_0)|\pi,s_0=s]</script><p>which is not equal to the immediate reward $R(s)$.</p>
+<p>From <strong>Bellman Equation</strong>, the value function can be decomposed into two parts:immediate reward $R(s)$ and discounted value of successor state $\gamma V(S_{t+1})$.</p>
+<script type="math/tex; mode=display">\begin{align*}
+V(s) &=\mathbb{E}[V|S_t=s]\\
+&=\mathbb{E}\left[\sum\limits_{i=0}^{\infty}\gamma^iR_{i}|S_t=s\right]\\
+&=\mathbb{E}[R(s)+V(s)|S_t=s]\\
+&=\mathbb{E}[R(s)+\gamma V(S_{t+1})|S_t=s]\\
+&= R(s)+ \gamma\sum\limits_{s'\in S}P_a(s,s')V(s')
+\end{align*}</script><p>Similar result holds for $V^{\pi}(s)$.</p>
+<h1 id="Policy-Iterated-RL"><a href="#Policy-Iterated-RL" class="headerlink" title="Policy-Iterated RL"></a>Policy-Iterated RL</h1><p>Policy iteration tries to evaluate and improve the policy in turn. Once a policy $\pi$ has been improved by using $V^{\pi}$ to yield a better policy $\pi’$, we can then compute $V^{\pi’}$ and improve it again to yield an even better policy. We can thus obtain a sequence of monotonically improving policies and value functions: <script type="math/tex">\pi_0\xrightarrow{E}V^{\pi_0}\xrightarrow{I}\pi_1\xrightarrow{E}\cdots \xrightarrow{I}V^{\pi^{\ast}}\xrightarrow{E}V^{\ast}</script><br>where $\xrightarrow{E}$ denotes a policy evaluation and $\xrightarrow{I}$ denotes a policy improvement. Each policy is guaranteed to be a strict improvement over the previous one (unless it is already optimal). Because a finite MDP has only a finite number of policies, this process must converge to an optimal policy and optimal value function in a finite number of iterations.</p>
+<img src="/en/reinforcement-learning/MDP/MDP_algo_1.png" title="Policy Iteration">
+<h1 id="Value-Iterated-RL"><a href="#Value-Iterated-RL" class="headerlink" title="Value-Iterated RL"></a>Value-Iterated RL</h1><p>One drawback to policy iteration is that each of its iterations involves policy evaluation, which may itself be a protracted iterative computation requiring multiple sweeps through the state set. If policy evaluation is done iteratively, then convergence exactly to  occurs only in the limit. </p>
+<p>In fact, the policy evaluation step of policy iteration can be truncated in several ways without losing the convergence guarantees of policy iteration. One important special case is when policy evaluation is stopped after just one sweep (one backup of each state). This algorithm is called value iteration. It can be written as a particularly simple backup operation that combines the policy improvement and truncated policy evaluation steps: </p>
+<script type="math/tex; mode=display">\begin{align*}V_{k+1}(s)&=\max\limits_a \mathbb{E}[ r_{t+1}+\gamma V_k(s_{t+1})]|s_t=s, a_t=a)\\
+&=\max\limits_a \sum\limits_{s'} P_a(s,s')[ R_{a}(s,s')+\gamma V_k(s')] \end{align*}</script><p>for all $s\in S$. For arbitrary $V_0$, the sequence $\{V_k\}$ can be shown to converge to $V^\ast$ under the $V^\ast$.</p>
+<img src="/en/reinforcement-learning/MDP/MDP_algo_2.png" title="Value Iteration">
+<h1 id="Code-Example"><a href="#Code-Example" class="headerlink" title="Code Example"></a>Code Example</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> gym</span><br><span class="line"><span class="keyword">from</span> gym <span class="keyword">import</span> wrappers</span><br></pre></td></tr></table></figure>
+<h2 id="Policy-Iterated-RL-1"><a href="#Policy-Iterated-RL-1" class="headerlink" title="Policy-Iterated RL"></a>Policy-Iterated RL</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">policy_evaluation</span><span class="params">(env, policy, gamma=<span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Iteratively evaluate the value-function under policy.</span></span><br><span class="line"><span class="string">    Alternatively, we could formulate a set of linear equations in iterms of v[s] </span></span><br><span class="line"><span class="string">    and solve them to find the value function.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    v = np.zeros(env.nS)</span><br><span class="line">    eps = <span class="number">1e-10</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        prev_v = np.copy(v)</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">            policy_a = policy[s]</span><br><span class="line">            v[s] = sum([p * (r + gamma * prev_v[s_]) <span class="keyword">for</span> p, s_, r, _ <span class="keyword">in</span> env.P[s][policy_a]])</span><br><span class="line">        <span class="keyword">if</span> (np.sum((np.fabs(prev_v - v))) &lt;= eps):</span><br><span class="line">            <span class="comment"># value converged</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> v</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">policy_improvement</span><span class="params">(v, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Extract the policy given a value-function """</span></span><br><span class="line">    policy = np.zeros(env.nS)</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">        q_sa = np.zeros(env.nA)</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> range(env.nA):</span><br><span class="line">            q_sa[a] = sum([p * (r + gamma * v[s_]) <span class="keyword">for</span> p, s_, r, _ <span class="keyword">in</span>  env.P[s][a]])</span><br><span class="line">        policy[s] = np.argmax(q_sa)</span><br><span class="line">    <span class="keyword">return</span> policy</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">policy_iteration</span><span class="params">(env, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Policy-Iteration algorithm """</span></span><br><span class="line">    <span class="comment"># initialize a random policy</span></span><br><span class="line">    policy = np.random.choice(env.nA, size=(env.nS))</span><br><span class="line">    <span class="comment"># parameter</span></span><br><span class="line">    max_iterations = <span class="number">200000</span></span><br><span class="line">    gamma = <span class="number">1.0</span></span><br><span class="line">    <span class="comment"># run iterations</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(max_iterations):</span><br><span class="line">        <span class="comment"># calculate the value given the old policy</span></span><br><span class="line">        old_policy_v = policy_evaluation(env, policy, gamma)</span><br><span class="line">        <span class="comment"># find the new policy</span></span><br><span class="line">        new_policy = policy_improvement(old_policy_v, gamma)</span><br><span class="line">        <span class="keyword">if</span> (np.all(policy == new_policy)):</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'Policy-Iteration converged at step %d.'</span> %(i+<span class="number">1</span>))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        policy = new_policy</span><br><span class="line">    <span class="keyword">return</span> policy</span><br></pre></td></tr></table></figure>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_episode</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>, render = False)</span>:</span></span><br><span class="line">    <span class="string">""" Runs an episode and return the total reward """</span></span><br><span class="line">    obs = env.reset()</span><br><span class="line">    total_reward = <span class="number">0</span></span><br><span class="line">    step_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> render:</span><br><span class="line">            env.render()</span><br><span class="line">        obs, reward, done , _ = env.step(int(policy[obs]))</span><br><span class="line">        total_reward += (gamma ** step_idx * reward)</span><br><span class="line">        step_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> done:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> total_reward</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_policy</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>, n = <span class="number">100</span>, render = False)</span>:</span></span><br><span class="line">    scores = [run_episode(env, policy, gamma, render) <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">    <span class="keyword">return</span> np.mean(scores)</span><br><span class="line"></span><br><span class="line">env_name  = <span class="string">'FrozenLake8x8-v0'</span></span><br><span class="line">env = gym.make(env_name).unwrapped</span><br><span class="line">optimal_policy = policy_iteration(env, gamma = <span class="number">1.0</span>)</span><br><span class="line">scores = evaluate_policy(env, optimal_policy, gamma = <span class="number">1.0</span>, render = <span class="literal">False</span>)</span><br><span class="line">print(<span class="string">'Average scores = '</span>, np.mean(scores))</span><br><span class="line"><span class="comment"># Policy-Iteration converged at step 13.</span></span><br><span class="line"><span class="comment"># Average scores =  1.0</span></span><br></pre></td></tr></table></figure>
+<h2 id="Value-Iterated-RL-1"><a href="#Value-Iterated-RL-1" class="headerlink" title="Value-Iterated RL"></a>Value-Iterated RL</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract_policy</span><span class="params">(v, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Extract the policy given a value-function """</span></span><br><span class="line">    policy = np.zeros(env.nS)</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">        q_sa = np.zeros(env.action_space.n)</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> range(env.action_space.n):</span><br><span class="line">            <span class="keyword">for</span> next_sr <span class="keyword">in</span> env.P[s][a]:</span><br><span class="line">                <span class="comment"># next_sr is a tuple of (probability, next state, reward, done)</span></span><br><span class="line">                p, s_, r, _ = next_sr</span><br><span class="line">                q_sa[a] += (p * (r + gamma * v[s_]))</span><br><span class="line">        policy[s] = np.argmax(q_sa)</span><br><span class="line">    <span class="keyword">return</span> policy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">value_iteration</span><span class="params">(env, gamma = <span class="number">1.0</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Value-iteration algorithm """</span></span><br><span class="line">    v = np.zeros(env.nS)  <span class="comment"># initialize value-function</span></span><br><span class="line">    max_iterations = <span class="number">100000</span></span><br><span class="line">    eps = <span class="number">1e-20</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(max_iterations):</span><br><span class="line">        prev_v = np.copy(v)</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> range(env.nS):</span><br><span class="line">            q_sa = [sum([p*(r + prev_v[s_]) <span class="keyword">for</span> p, s_, r, _ <span class="keyword">in</span> env.P[s][a]]) <span class="keyword">for</span> a <span class="keyword">in</span> range(env.nA)]</span><br><span class="line">            v[s] = max(q_sa)</span><br><span class="line">        <span class="keyword">if</span> (np.sum(np.fabs(prev_v - v)) &lt;= eps):</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'Value-iteration converged at iteration# %d.'</span> %(i+<span class="number">1</span>))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> v</span><br></pre></td></tr></table></figure>
+<h2 id="Evaluation-1"><a href="#Evaluation-1" class="headerlink" title="Evaluation"></a>Evaluation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_episode</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>, render = False)</span>:</span></span><br><span class="line">    <span class="string">""" Evaluates policy by using it to run an episode and finding its</span></span><br><span class="line"><span class="string">    total reward.</span></span><br><span class="line"><span class="string">    args:</span></span><br><span class="line"><span class="string">    env: gym environment.</span></span><br><span class="line"><span class="string">    policy: the policy to be used.</span></span><br><span class="line"><span class="string">    gamma: discount factor.</span></span><br><span class="line"><span class="string">    render: boolean to turn rendering on/off.</span></span><br><span class="line"><span class="string">    returns:</span></span><br><span class="line"><span class="string">    total reward: real value of the total reward recieved by agent under policy.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    obs = env.reset()</span><br><span class="line">    total_reward = <span class="number">0</span></span><br><span class="line">    step_idx = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> render:</span><br><span class="line">            env.render()</span><br><span class="line">        obs, reward, done , _ = env.step(int(policy[obs]))</span><br><span class="line">        total_reward += (gamma ** step_idx * reward)</span><br><span class="line">        step_idx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> done:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> total_reward</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate_policy</span><span class="params">(env, policy, gamma = <span class="number">1.0</span>,  n = <span class="number">100</span>)</span>:</span></span><br><span class="line">    <span class="string">""" Evaluates a policy by running it n times.</span></span><br><span class="line"><span class="string">    returns:</span></span><br><span class="line"><span class="string">    average total reward</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    scores = [</span><br><span class="line">            run_episode(env, policy, gamma = gamma, render = <span class="literal">False</span>)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">    <span class="keyword">return</span> np.mean(scores)</span><br><span class="line"></span><br><span class="line">env_name  = <span class="string">'FrozenLake8x8-v0'</span></span><br><span class="line">gamma = <span class="number">1.0</span></span><br><span class="line">env = gym.make(env_name).unwrapped</span><br><span class="line">optimal_v = value_iteration(env, gamma);</span><br><span class="line">policy = extract_policy(optimal_v, gamma)</span><br><span class="line">policy_score = evaluate_policy(env, policy, gamma, n=<span class="number">1000</span>)</span><br><span class="line">print(<span class="string">'Policy average score = '</span>, policy_score)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Value-iteration converged at iteration# 2357.</span></span><br><span class="line"><span class="comment"># Policy average score =  1.0</span></span><br></pre></td></tr></table></figure>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol>
+<li><a href="http://incompleteideas.net/book/first/ebook/node43.html" target="_blank" rel="noopener">Policy Iteration</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/Q-learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1270,7 +1469,7 @@
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
