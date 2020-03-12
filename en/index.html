@@ -425,15 +425,27 @@
 <li>every edge of $H$ connects two vertices of $H$,<br>which means that the vertices of $H$ are a subset of the vertices of $G$, and every pair of adjacent vertices in $H$ also appears in $G$.</li>
 </ol>
 <p>Furthermore, if $V(H)=V(G)$, then $H$ is a <em>spanning subgraph</em> of $G$. In addition, if $H$ is a tree, then $H$ is a <em>spanning tree</em> of $G$.</p>
-<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h2><p>Let $X$ be a nonempty set. A <em>topology on $X$</em>, denoted by $T$, is a family of subsets of $X$, for which satisfies</p>
+<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h2><p>Let $X$ be a nonempty set and $\mathcal{P}(X)$ be the power set of $X$. A <em>topology on $X$</em>, denoted by $T\subset \mathcal{P}(X)$, is a family of subsets of $X$, for which satisfies</p>
 <ol>
 <li>$\varnothing\in T$ and $X\in T$.</li>
 <li>If $O_1,O_2\in T$, then $O_1\cap O_2\in T$. (finite intersection)</li>
 <li>If $O_i\in T$ for $i\in I$, then $\bigcup\limits_{i\in I}O_i\in T$. (infinite union)</li>
 </ol>
-<h2 id="Continuous-Functions"><a href="#Continuous-Functions" class="headerlink" title="Continuous Functions"></a>Continuous Functions</h2><h3 id="Continuous-Functions-between-Topological-Spaces"><a href="#Continuous-Functions-between-Topological-Spaces" class="headerlink" title="Continuous Functions between Topological Spaces"></a>Continuous Functions between Topological Spaces</h3><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
-<li><strong>Definition</strong><br><em>A map $f:X_1\rightarrow X_2$ is open if the image of every open set in $X_1$ is open in $X_2$.</em></li>
+<p>We can define a topology by a basis $B\subset \mathcal{P}(X)$:</p>
+<ol>
+<li>$\forall\ x\in X$, $\exists\ V\in B$, s.t. $x\in V$.</li>
+<li>$\forall\ V_1,V_2\in B$ and $x\in X$, if $x\in V_1\cap V_2$, then $\exists\ V_3\in B$, s.t. $x\in V_3\subset V_1\cap V_2$.</li>
+</ol>
+<p>The open sets in $T$ are all the possible unions of sets in $B$. In general, bases are not unique.</p>
+<p>We call the sets in $T$ the open sets. A set $C$ is closed if $X\setminus C$ is open.</p>
+<h3 id="Hausforff-Topology"><a href="#Hausforff-Topology" class="headerlink" title="Hausforff Topology"></a>Hausforff Topology</h3><p>A topology is <em>Hausforff</em> if $\forall\ x,y\in X$, $\exists\ V_x,V_y\in T$, $V_x\cap V_y=\varnothing$, s.t. $x\in V_x,y\in V_y$.</p>
+<h3 id="Subspace-Topology"><a href="#Subspace-Topology" class="headerlink" title="Subspace Topology"></a>Subspace Topology</h3><p>Given $A\subset X$, the subspace topology on $A$ consists of the open sets $\{A\cap U|U\in T\}$.</p>
+<h2 id="Continuity"><a href="#Continuity" class="headerlink" title="Continuity"></a>Continuity</h2><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
+<li><strong>Definition</strong><br><em>A map $f:X_1\rightarrow X_2$ is open if the image of every open set in $X_2$ is open in $X_1$.</em> </li>
 </ul>
+<h3 id="Continous-Maps"><a href="#Continous-Maps" class="headerlink" title="Continous Maps"></a>Continous Maps</h3><p><em>A map $f:X_1\rightarrow X_2$ is continuous if for any open set in $X_2$, the inverse image in $X_1$ is open.</em> </p>
+<p><em>A map $f:X_1\rightarrow X_2$ is continuous if for any set in $T_2$, the inverse image is in $T_1$.</em> </p>
+<p>Equivalently, $f$ is continuous if and only if for any $C$ closed in $X_2$, $f^{-1}(C)$ is closed in $X_1$.</p>
 <h3 id="Homeomorphisms"><a href="#Homeomorphisms" class="headerlink" title="Homeomorphisms"></a>Homeomorphisms</h3><ul>
 <li><strong>Definition</strong><br><em>If a map $f:X_1\rightarrow X_2$ is a bijection, and both $f$ and $f^{-1}$ are continuous (or equivalently, $f$ is a continuous and open map), then $f$ is a homeomorphism.</em></li>
 </ul>
@@ -444,9 +456,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><p>Let $(X,\Omega)$ be a topological space. Then $X$ is <em>connected</em> if the only subsets of $X$, which are both open and closed are $\varnothing$ and $X$.</p>
+<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><p>Let $(X,T)$ be a topological space. Then $X$ is <em>connected</em> if the only subsets of $X$, which are both open and closed are $\varnothing$ and $X$. </p>
+<p>$X$ is <em>disconnected</em>, if there exsits $U,V\in T$, $U,V\neq \varnothing$ and $U\cap V=\varnothing$, s.t. $X=U\cup V$. Equivalently, $X$ is <em>disconnected</em> if there exists a continuous surjective map $f:X\mapsto \{0,1\}$.</p>
+<p>For the subspace topology on $A\subset X$, if $A$ is connected, then $\forall\ B$ such that $A\subseteq B\subseteq \overline{A}$, $B$ is connected.</p>
 <p>$X$ is path-connected if for<br>any two points $x, y \in X$, there exists a continuous function $f : [0, 1] \rightarrow X$ such that $f(0) = x $ and $f(1) = y$. Every path-connected space is connected. </p>
-<h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><ul>
+<p>If $X$ is path connect, then $X$ is connected. For open sets in $\mathbb{R}^n$, $X$ is path connected if and only if $X$ is connected.</p>
+<h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><p>Given a topology space $(X,T)$, a subset $A\subset X$ is <em>compact</em> if for every open cover there is a finite subcover.</p>
+<p>Every finite set is compact.</p>
+<p>In $\mathbb{R}^n$, a set is compact if and only if it is closed and bounded.</p>
+<p>In a Hausdorff space, a set is closed if it is compact.</p>
+<p>In a compact space, a set is compact if it is closed.</p>
+<p>For example, $\mathbb{R}$ is Hausdorff but not compact since it is not bounded. A compact subset of $\mathbb{R}$ is closed and bounded. But not all closed subsets are compact.</p>
+<h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><ul>
 <li><strong>Definition</strong><br><em>Let $X$ be a nonempty set. A metric on $X$ is a function $d:X\times X\mapsto \mathbb{R}$ if for all $x,y,z\in X$,</em></li>
 </ul>
 <ol>
@@ -456,6 +477,16 @@
 </ol>
 <p><em>We call $d(x, y)$ the distance between $x$ and $y$. A set X, together with a metric on X, is called a metric space.</em></p>
 <p>$B_d(x,\epsilon)=\{y\in X:d(x,y)&lt;\epsilon\}$ is called an <em>$\epsilon$-ball</em>. The <em>metric topology</em> induced by $d$ is the collection of all $\epsilon$-balls $B=\{B_d(x,\epsilon:x\in X,\epsilon&gt;0\}$.</p>
+<h2 id="Main-Results"><a href="#Main-Results" class="headerlink" title="Main Results"></a>Main Results</h2><ul>
+<li>If $X,Y$ are connected/compact, then $X\times Y$ is connected/compact.</li>
+<li>If $X,Y$ are connected and $X\cap Y\neq \varnothing$, then $X\cup Y$ is connected.</li>
+<li>If $X$ is connected/compact and    $f:X\mapsto Y$ is continuous, then $f(X)$ is connected/compact.</li>
+<li>If $X$ is compact and $f:X\mapsto \mathbb{R}$, then $f$ attains its global maximum and minimum.</li>
+<li>If $X$ is compact, $Y$ is Hausdorff and $f:X\mapsto Y$ is continuous, then $f$ is a closed map.</li>
+<li>If $X$ is compact, $Y$ is Hausdorff and $f:X\mapsto Y$ is bijective and continuous, then $f$ is a homeomorphism.</li>
+<li>If $f$ is a homeomorphism, then $X$ is connected/compact if and only if $Y$ is connected/compact.</li>
+<li>If $(X,T,d)$ is a metric space, then $A\subset X$ is compact if and only if every sequence in $A$ has a convergent subsequence.</li>
+</ul>
 <h1 id="Real-Analysis"><a href="#Real-Analysis" class="headerlink" title="Real Analysis"></a>Real Analysis</h1><h1 id="Complex-Variables"><a href="#Complex-Variables" class="headerlink" title="Complex Variables"></a>Complex Variables</h1><h2 id="Complex-Numbers"><a href="#Complex-Numbers" class="headerlink" title="Complex Numbers"></a>Complex Numbers</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Thre <em>complex numbers</em> $\mathbb{C}$ is a set of all order pairs of real numbers $(x,y)$. The <em>imaginary unit</em> $i$ is a complex number such that $i^2=-1$. Then each complex number can be expressed as $z=x+yi$ where $x\in\mathbb{R}$ and $y\in\mathbb{R}$  are called the <em>real part</em> and <em>imaginary part</em> of $z$, denoted by $\text{Re} z$ and $\text{Im} z$ respectively. The <em>(complex) conjugate</em> of $z$ is the number $\overline{z}=x-yi$.</p>
 <p>The complex numbers can be graphed on the <em>complex plane</em> ($xy$-plane). The horizontal $x$-axis is called the <em>real axis</em> and the vertical $y$-axis is called the <em>imaginary axis</em>.</p>
 <p>The <em>modulus</em>, <em>magnitude</em> or <em>absolute value</em> of $z$ is given by $|z|=\sqrt{x^2+y^2}$. The absolute value of $z$ satisfies $|z|^2=z\overline{z}$.</p>
@@ -497,6 +528,290 @@
 <script type="math/tex; mode=display">a_n=\frac{f^{(n)}(z_0)}{n!}</script><script type="math/tex; mode=display">a_{-n}=\frac{1}{2\pi i}\oint\frac{f(z)}{(z-z_0)^{-n+1}}\mathrm{d}z</script><p>for $n\geq0$.</p>
 <p>In practice, we don’t usually figure out the Laurent coefficients from this formula; instead, we derive them by algebraic manipulations of the Taylor series.</p>
 <h1 id="Numerical-Analysis"><a href="#Numerical-Analysis" class="headerlink" title="Numerical Analysis"></a>Numerical Analysis</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAbstractAlgebra/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/gre-sub-math/GreSubMathAbstractAlgebra/" itemprop="url">Chapter 6 - Number Theory and Abstract Algebra</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-03T11:00:00-06:00">
+                2020-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/gre-sub-math/" itemprop="url" rel="index">
+                    <span itemprop="name">gre-sub-math</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/gre-sub-math/GreSubMathAbstractAlgebra/" class="leancloud_visitors" data-flag-title="Chapter 6 - Number Theory and Abstract Algebra">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Number-Theory"><a href="#Number-Theory" class="headerlink" title="Number Theory"></a>Number Theory</h1><h2 id="Divisibility"><a href="#Divisibility" class="headerlink" title="Divisibility"></a>Divisibility</h2><h3 id="The-Euclidean-Algorithm"><a href="#The-Euclidean-Algorithm" class="headerlink" title="The Euclidean Algorithm"></a>The Euclidean Algorithm</h3><h3 id="The-Diophantine-Equation"><a href="#The-Diophantine-Equation" class="headerlink" title="The Diophantine Equation"></a>The Diophantine Equation</h3><h2 id="Congruences"><a href="#Congruences" class="headerlink" title="Congruences"></a>Congruences</h2><p>Let $a,$, $b$ and $n$ be integers. If $n\neq 0$, we say that $a$ is congruent to $b$ modulo $n$ if $a-b$ is divisible by $n$, which is written $a\equiv b(\text{mod}\  n)$. </p>
+<ul>
+<li>If $a\equiv b(\text{mod}\  n)$ and $b\equiv c(\text{mod}\  n)$, then $a\equiv c(\text{mod}\  n)$.</li>
+<li>If $a\equiv b(\text{mod}\  n)$, then for any $c$, $a\pm c\equiv b\pm c(\text{mod}\  n)$ and $ac\equiv bc(\text{mod}\  n)$.</li>
+<li>If $a_1\equiv b_1(\text{mod}\  n)$ and $a_2\equiv b_2(\text{mod}\  n)$, then $a_1\pm a_2\equiv b_1\pm b_2(\text{mod}\  n)$ and <script type="math/tex">a_1a_2\equiv b_1b_2(\text{mod}\  n)</script>.</li>
+<li>For any positive integer $c$, the statement $a\equiv b(\text{mod}\  n)$ is equivalent to the congruences $a\equiv b,b+n,\ldots,b+(c-1)n\ (\text{mod}\  n)$.</li>
+<li>If $ab\equiv ac(\text{mod}\  n)$, then $b\equiv c(\text{mod}\  n)$ if $\text{gcd}(a,n)=1$ or $b\equiv c(\text{mod}\  \frac{n}{d})$ if $d=\text{gcd}(a,n)&gt;1$.</li>
+<li><strong>Fermat’s Little Theorem.</strong> If $p$ is a prime and $a$ is an integer, then $a^p\equiv a(\text{mod}\  p)$ for any $a$, and $a^{p-1}\equiv 1(\text{mod}\  p)$ if $p$ does not divide $a$.</li>
+</ul>
+<p>Related problems:</p>
+<ul>
+<li>What is the value of $a$ modulo $b$?</li>
+<li>$19^{2015}$ mod $5=$? (Fermat’s Little Theorem.)</li>
+<li>Solve $ax\equiv b(\text{mod})$ for $x,y\in\mathbb{Z}$.</li>
+<li>Given $ax+by$ divisible by $n$, which of the following must be divisble by $n$? Choose $x=y=0$ to eliminate some options.</li>
+<li>Solve $ax+by=c$ for $x,y\in\mathbb{Z}$.<ul>
+<li>Solution for $ax+by=c$ exists in $\mathbb{Z}$ if and only if $gcd(a,b)|c$.</li>
+<li>Find a private solution and the homogeneous solution.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Groups"><a href="#Groups" class="headerlink" title="Groups"></a>Groups</h2><p>Let $S$ be a nonempty set, then a <em>binary operation</em> on $S$ is a function $f:S\times S\rightarrow S$ (closed under the binary operation). $f(a,b)$ is usually denoted by $a\ast b$ for $a,b\in S$. A nonempty set $S$, together with a binary operation defined on it, is called a <em>binary structure</em>.</p>
+<p>A binary structure whose binary operation is <em>associative</em>, i.e., <script type="math/tex">(a\ast b)\ast c=a\ast (b\ast c)</script> is called a <em>semigroup</em>.</p>
+<p>The element $e$ of $S$ with the property that <script type="math/tex">a\ast e=e\ast a=a,</script> for every $a\in S$ is called the <em>identity</em>. The identity may not exist for some binary structures. A semigroup that has an identity is called a <em>monoid</em>.</p>
+<p>Let $(S,\ast )$ be a monoid, if $\forall\ a\in S$, $\exists\ a^{-1}\in S$ being the inverse of $a$, such that <script type="math/tex">aa^{-1}=a^{-1}a=e,</script> then $(S,\ast )$ is a <em>group</em>. </p>
+<p>Examples:</p>
+<ul>
+<li>$(\mathbb{Z},+),e=0$.</li>
+<li>$GL_n(\mathbb{R})$, invertible real $n\times n$ matrices with matrix multiplication, $e=I$.</li>
+<li>$(\mathbb{Q}\setminus\{0\},\cdot),e=1$.</li>
+<li>Symmetric group $S_n$, bijections from $\{1,2,\ldots,n\}$ to $\{1,2,\ldots,n\}$ with composition as the group operation. $S_n$ can be viewed as permutation of the set $\{1,2,\ldots,n\}$.</li>
+</ul>
+<p>A semigroup, monoid, or group whose binary operation is <em>commutative</em>, i.e. <script type="math/tex">a\ast b=b\ast a,</script> is said <em>Abelian</em>.</p>
+<p><strong>Common notations.</strong> We usually just write $ab$, instead of $a \ast  b$, even if the operation isn’t ordinary multiplication. Also, if the binary operation is commutative, it’s common to see it denoted by $+$, even if the operation isn’t ordinary addition.</p>
+<p>Examples:</p>
+<ul>
+<li>$(\mathbb{Z},+),e=0$.</li>
+<li>$(\mathbb{Q}\setminus\{0\},\cdot),e=1$.</li>
+<li>$(\mathbb{R}^{n\times n},+),e=\mathbf{0}$.</li>
+<li>$\mathbb{Z}[x],\mathbb{Q}[x],\mathbb{R}[x],$ polynomial group with addition.</li>
+</ul>
+<p>A group $G$ with the property that there’s an element $a$ in $G$ such that <script type="math/tex">G=\{a^n:n=0,1,2,\ldots\}</script><br>is said to be <em>cyclic</em>, and the element $a$ is a <em>generator</em> of the group.</p>
+<ul>
+<li>The integer $m$ is a generator of $(\mathbb{Z}_n,\oplus)$ if and only if $m$ is relatively prime to $n$.</li>
+<li>Let $G$ be a cyclic group with generator $a$. The element $a^m$ is a generator of $G$ if and only if $m$ is relatively prime to $n$.</li>
+</ul>
+<p>If a pair of groups are <em>isomorphic</em>, then all their structural properties are identical.</p>
+<h2 id="Subgroup"><a href="#Subgroup" class="headerlink" title="Subgroup"></a>Subgroup</h2><p>Let $(G, \ast  )$ be a group. If there’s a subset $H$ of $G$ such that $(H, \ast )$ is also a group, then we say that $H$ is a <em>subgroup</em> of $G$, and write $H \leq G$. If $H\neq G$, then $H$ is a <em>proper subgroup</em> of $G$, denoted by $H&lt;G$. The <em>trivial subgroups</em> of $G$ are $\{e\}$ and $G$.</p>
+<p>The <em>cyclic subgroup</em> generated by $a\in G$ is given by $\langle a\rangle=\{a^n:n\in\mathbb{Z}\}$. The order of an element of a group is the order of $\langle a\rangle$. </p>
+<p>Examples:</p>
+<ul>
+<li>The <em>conjugation</em> $gHg^{-1}=\{gxg^{-1},x\in H\}$ for $H\leq G$ and $g\in G$ is a subgroup of $G$. </li>
+</ul>
+<p>If $\forall\ g\in G,gHg^{-1}=H$, then $H$ is a <em>normal subgroup</em> of $G$, denoted by $H\lhd G$ $(\{e\}\lhd G,G\lhd G)$. Any subgroup of abelian group is normal.</p>
+<p>Given a group $H\lhd G$, define an equivalence relation $x\sim y\ \Leftrightarrow\ xy^{-1}\in H$, then the set of equivalent classes $G/H$ is a group, called a <em>quotient group</em> (not a subgroup of $G$).</p>
+<p>Examples:</p>
+<ul>
+<li>$k\mathbb{Z}\lhd\mathbb{Z}$, $a\sim b\ \Leftrightarrow\ a+(-b)\in k\mathbb{Z}$, $\mathbb{Z}/k\mathbb{Z}=\mathbb{Z}_k=\langle \overline{1}\rangle$.</li>
+</ul>
+<p>The <em>order</em> of a group is $|G|$, the number of elements in a group. The <em>index</em> of a subgroup is $[G:H]=\frac{|G|}{|H|}$. If the subgroup is normal, then $[G:H]=|G/H|$. The <em>order</em> of an element $g\in G$ is $|\langle g\rangle|$, which is the minimal positive integer $n$ for which $g^n=e$.</p>
+<p>Properties:</p>
+<ul>
+<li>If $H\leq G$, then $|H|$ divides $|G|$. </li>
+<li>For any $g\in G$, $g^{|G|}=e$.</li>
+<li>Any subgroup of index 2 is normal.</li>
+</ul>
+<p>For some groups, particularly large ones, it’s often more economical to specify a set of generators and a set of equations connecting them-called <em>relations</em>-that can be used to reconstruct the entire group table. Together, the set of generators and set of relations is called a <em>presentation</em> of the group.</p>
+<ul>
+<li><strong>Lagrange’s Theorem.</strong> Let $G$ be a finite group. If $H$ is a subgroup of $G$, then the order of $H$ divides the order of $G$.</li>
+<li>Let $G$ be a finite, Abelian group of order $n$. Then $G$ has at least one subgroup of order $d$ for every (positive) divisor $d$ of $n$.</li>
+<li>Let $G$ be a finite, cyclic group of order $n$. Then $G$ has exactly one subgroup-a cyclic subgroup-of order $d$ for every (positive) divisor $d$ of $n$, i.e., $G=\langle a\rangle$ if and only if $gcd(a,|G|)=1$. If $G$ is generated by $a$, then the subgroup generated by the element $b=a^m$ has order $d = \frac{n}{\text{gcd}(m, n )}$. [If $m = 0$, then we’ll agree that $\text{gcd}(m, n) = n$.]</li>
+<li><strong>Cauchy’s Theorem.</strong> Let $G$ be a finite group of order $n$, and let $p$ be a prime that divides $n$. Then $G$ has at least one subgroup of order $p$.</li>
+<li><strong>Sylow’s First Theorem.</strong> Let $G$ be a finite group of order $n=p^km$, where $p$ is a prime that does not divide $m$.Then $G$ has at least one subgroup of order $p^i$ for every integer $i$ from $0$ to $k$.</li>
+</ul>
+<h2 id="Group-Homomorphisms"><a href="#Group-Homomorphisms" class="headerlink" title="Group Homomorphisms"></a>Group Homomorphisms</h2><p>Let $(G,\cdot)$ and $(G’,\ast )$ be groups. A function $\phi:G\rightarrow G’$ with the property that <script type="math/tex">\phi(a\cdot b)=\phi(a)\ast \phi(b)</script><br>for all elements $a$ and $b$ in $G$, is called a group <em>homomorphism</em>.</p>
+<ul>
+<li>If $e$ is the identity in $G$, then $\phi(e)$ is the identity in $G’$.</li>
+<li>If $g\in G$ has finite order $m$, then $\phi(g)\in G’$ also has order $m$.</li>
+<li>If $a^{-1}$ is the inverse of $a$ in $G$, then $\phi(a^{-1 })$ is the inverse of $\phi(a)$ in $G’$.</li>
+<li>If $H$ is a subgroup of $G$, then $\phi(H)$ is a subgroup of $G’$, where $\phi(H)=\{\phi(h):h\in H\}$.</li>
+<li>If $G$ is finite, then the order of $\phi(G)$ divides the order of $G$; if $G’$ is finite, then the order of $\phi(G)$ also divides the order of $G’$.</li>
+<li>If $H’$ is a subgroup of $G’$, then $\phi^{-1} (H’)$ is a subgroup of $G$, where $\phi^{-1}(H’)=\{h\in G:\phi(h)\in H’\}$.</li>
+</ul>
+<p>A homomorphism that’s one-to-one (injective) is called a <em>monomorphism</em>; if it’s onto (surjective), it’s called an <em>epimorphism</em>; and if it’s one-to-one and onto (bijective), it’s called an <em>isomorphism</em>. A homomorphism from a group to itself is called an <em>endomorphism</em>, and an isomorphism from a group to itself is called an <em>automorphism</em>.</p>
+<ul>
+<li>A homomorphism is a monomorphism if and only if its kernel $\text{ker}\phi=\{g\in G:\phi(g)=e’\}$ is trivial.</li>
+<li>The kernel of a group homomorphism $\phi: G\rightarrow G’$ is always a subgroup of $G$.</li>
+</ul>
+<h2 id="Direct-Product-And-Direct-Sum"><a href="#Direct-Product-And-Direct-Sum" class="headerlink" title="Direct Product And Direct Sum"></a>Direct Product And Direct Sum</h2><p>The <em>direct product</em> of the groups $(G_1,\ast_1)$ and $(G_2,\ast_2)$ is  the group $(G_1\times G_2,\ast)$ where <script type="math/tex">G_1\times G_2=\{(a,b):a\in G_1,b\in G_2\}</script> and $*$ is the defined binary operation such that <script type="math/tex">(a_1,a_2)\ast(b_1,b_2)=(a_1\ast_1 b_1,a_2\ast_2 b_2).</script></p>
+<p>For Abelian groups, we use the notation $G_1\oplus G_2$ and call it as <em>direct sum</em>.</p>
+<ul>
+<li>The direct sum $\mathbb{Z}_m\oplus \mathbb{Z}_n$ is cyclic if and only if $\text{gcd}(m, n) = 1$. If this is the case, then, $\mathbb{Z}_m\oplus \mathbb{Z}_n$ is isomorphic to $\mathbb{Z}_{mn}$.</li>
+<li>The direct sum $\mathbb{Z}_{m_1}\oplus \cdots \oplus\mathbb{Z}_{m_k}$ is cyclic if and only if $\text{gcd}(m_i , m_j) = 1$ for every distinct pair $m_i$ and $m_j$. If this is the case, then $\mathbb{Z}_{m_1}\oplus \cdots \oplus\mathbb{Z}_{m_k}$ is isomorphic to $\mathbb{Z}_{m_1m_2\cdots m_k}.$</li>
+<li>Every finite Abelian group $G$ is isomorphic to a direct sum of the form <script type="math/tex">\mathbb{Z}_{p_1^{k_1}}\oplus\cdots\oplus \mathbb{Z}_{p_r^{k_r}}</script> where the $p_i$ are (not necessarily distinct) primes and $k$ are (not necessarily distinct) positive integers. The collection of prime powers $p_i^{k_i}$ for a given representation of $G$, are known as the <em>elementary divisors</em> of $G$.</li>
+<li>Every finite Abelian group G is isomorphic to a direct sum of the form <script type="math/tex">\mathbb{Z}_{m_1}\oplus\cdots\oplus \mathbb{Z}_{m_t}</script> where $m_1\geq 2$, $m_{i-1}$ divides $m_{i}$ for $i=1,\ldots,t.$ The distinct list $m_1,\cdots,m_t$ is called the <em>invariant factors</em> of $G$.</li>
+</ul>
+<h2 id="Rings"><a href="#Rings" class="headerlink" title="Rings"></a>Rings</h2><p>A set $R$, together with two binary operations (we’ll use addition, $+$, and multiplication, $\cdot$), is called a <em>ring</em> if the following conditions are satisfied:</p>
+<ol>
+<li>$(R,+)$ is a Abelian group;</li>
+<li>$(R,\cdot)$ is a semigroup;</li>
+<li>the distributive laws hold; that is, for every $a$, $b$, and $c$ in $R$, we have:<script type="math/tex">a*(b+c)=a\ast b+a\ast c\qquad (a+d)\ast c=a\ast c+d\ast c.</script></li>
+</ol>
+<p>The smallest positive integer $n$ such that $na = 0$ for every $a$ in R (if such an $n$ exists) is called the <em>characteristic</em> of the ring, and we write $\text{char} R = n$.</p>
+<p>If the multiplicative semigroup $(R, \cdot )$ is a monoid-that is, if there’s a multiplicative identity-then $R$ is called a <em>ring with unity</em>. The identity of the additive abelian group $(R, +)$ is usually denoted by $0$ and, in a ring with unity, the identity of the multiplicative monoid $(R, \cdot )$ is usually denoted by 1.</p>
+<p>If the operation of multiplication is commutative, then we call $R$ a commutative ring. (The term abelian is generally not used to describe a ring in which multiplication is commutative.)</p>
+<p>If $S$ is a subset of $R$, and $S$ satisfies the ring requirements with the same operations as $R$, then we say that $(S, +, \cdot )$ is a subring of $(R, +, \cdot)$.</p>
+<ul>
+<li><strong>ring of polynomial.</strong> The ring of polynomials with coefficients in a ring $R$ is usually denoted by $R[x_1,\cdots,x_n]$ or $R[x]$ where $x$ refer to the set of variables $\{x_1,\cdots,x_n\}$. An element $f(x)\in \mathbb{R}[x]$ can be written as a finite sum <script type="math/tex">f(x)=\sum\limits_b b_{\alpha} x^{\alpha},</script><br>where $\alpha=(\alpha_1,\cdots,\alpha_d)$ is a multi-index and $\alpha_i\in \mathbb{R}$.</li>
+</ul>
+<p>Let $I$ be a subring of a ring $R$. If $\forall\ r\in R,x\in I$, $rx\in I$ and $xr\in I$, then $I$ is called an <em>ideal</em> on $R$. Every ring $R$ has at least two ideals, $\{ 0 \}$ and $R$.</p>
+<h2 id="Ring-Homomorphisms"><a href="#Ring-Homomorphisms" class="headerlink" title="Ring Homomorphisms"></a>Ring Homomorphisms</h2><p>Let $(R, +, \times)$ and $(R’, \oplus,\otimes)$ be rings. A function $\phi: R \rightarrow R’$ is called a <em>ring homomorphism</em> if both of the following conditions hold for be every $a$ and $b$ in $R$:</p>
+<ol>
+<li>$\phi(a+b)=\phi(a)\oplus\phi(b).$</li>
+<li>$\phi(a\times b)=\phi(a)\otimes\phi(b).$</li>
+</ol>
+<ul>
+<li>The kernel of a ring homomorphism is the set $\text{ker}\phi=\{a \in R : \phi(a) = 0’\}$, where $0’ $ is the additive identity in $R’$ and is always a subring of $R$.</li>
+<li>The image of $R$, $\phi(R)=\{\phi(r):r\in R\}$ is a subring of $R’$.</li>
+<li>The image of $0$, the additive identity in $R$, must be $0’$.</li>
+</ul>
+<!--## Ideal
+An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
+<dd>(a) $I$ is closed under addition;<br> (b) If $s\in I$ and $r\in R$, then $rs\in I$. Thus, $0\in I$.
+</dd>-->
+<h2 id="Domains"><a href="#Domains" class="headerlink" title="Domains"></a>Domains</h2><p>A commutative ring with unity ($1\neq 0$) that contains no zero divisors is called an <em>integral domain</em>, or simply a <em>domain</em>. The <em>cancellation law</em> holds for integral domains.</p>
+<h2 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h2><p>Let $a$ be a nonzero element of a ring $R$ with unity. If $a$ is invertible, then $a$ is called a <em>unit</em>. If every nonzero element in $R$ is a unit, i.e. $(R^{\ast },\cdot)$ is a group, then $R$ is called a <em>divison ring</em>. A division ring is a ring with exactly two ideals. </p>
+<p>A commutative division ring is called a <em>field</em>. A domain where all non-zero elements are units is a field.</p>
+<p>Every finite integral domain is a field. A finite division ring must be commutative.</p>
+<p>The ring $\mathbb{Z}_n$ is a field if and only if $n$ is a prime.</p>
+<p>The field has no zero divisors since a zero divisor is not invertible.</p>
+<img src="/en/gre-sub-math/GreSubMathAbstractAlgebra/1.png" title="Rings, domains and fields.">
           
         
       
@@ -817,7 +1132,7 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAbstractAlgebra/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/gre-sub-math/GreSubMathAbstractAlgebra-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -836,7 +1151,7 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/en/gre-sub-math/GreSubMathAbstractAlgebra/" itemprop="url">Chapter 6 - Number Theory and Abstract Algebra</a></h1>
+                <a class="post-title-link" href="/en/gre-sub-math/GreSubMathAbstractAlgebra-3/" itemprop="url">Chapter 6 - Number Theory and Abstract Algebra</a></h1>
         
 
         <div class="post-meta">
@@ -888,7 +1203,7 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
 
           
           
-             <span id="/en/gre-sub-math/GreSubMathAbstractAlgebra/" class="leancloud_visitors" data-flag-title="Chapter 6 - Number Theory and Abstract Algebra">
+             <span id="/en/gre-sub-math/GreSubMathAbstractAlgebra-3/" class="leancloud_visitors" data-flag-title="Chapter 6 - Number Theory and Abstract Algebra">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1051,7 +1366,7 @@ An *ideal*  $I$ of a ring $R$ is a nonempty subset of $R$ with there properties:
 <p>Every finite integral domain is a field. A finite division ring must be commutative.</p>
 <p>The ring $\mathbb{Z}_n$ is a field if and only if $n$ is a prime.</p>
 <p>The field has no zero divisors since a zero divisor is not invertible.</p>
-<img src="/en/gre-sub-math/GreSubMathAbstractAlgebra/1.png" title="Rings, domains and fields.">
+
           
         
       
@@ -1760,190 +2075,6 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/IntroductionOfReinforcementLearning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">Introduction Of Reinforcement Learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
-                2019-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="Introduction Of Reinforcement Learning">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Reinforcement learning is a computational goal-directed approach to learning from interaction with environment.</p>
-<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="Reinforcement Learning">
-<ul>
-<li>trial-and-error search </li>
-<li>delayed reward</li>
-</ul>
-<p>We can use ideas from dynamical systems theory to formulate a reinforcement learning problem, specifically, as the optimal control of incompletely-known Markov decision processes. A learning agent must be able to sense the state of its environment to some extent and must be able to take actions that affect the state. The agent also must have a goal or goals relating to the state of the environment.</p>
-<p>One of the challenges that arise in reinforcement learning, and not in other kinds of learning, is the trade-off between <strong>exploration</strong> and <strong>exploitation</strong>. The agent has to exploit what it has already experienced in order to obtain reward, but it also has to explore in order to make better action selections in the future.</p>
-<p>Methods based on general principles, such as search or learning, were characterized as “weak methods,” whereas those based on speciﬁc knowledge were called “strong methods.”</p>
-<h1 id="Taxonomy"><a href="#Taxonomy" class="headerlink" title="Taxonomy"></a>Taxonomy</h1><p>In reinforcement learning, we have two orthogonal choices: what kind of objective to optimize (involving a policy, value function, or dynamics model), and what kind of function approximators to use.</p>
-<p>First, we have two kinds of algorithms:</p>
-<ul>
-<li>Model-based RL algorithms: based on dynamics model that tends to predict the next state and the reward at the next step;</li>
-<li>Model-free RL algorithms: not based on a dynamics model.</li>
-</ul>
-<p>Then, for model-free RL algorithms, the figure below shows a taxonomy:</p>
-<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
-<p>Policy optimization methods are centered around the policy, the function that maps the agent’s state to its next action. These methods view reinforcement learning as a numerical optimization problem where we optimize the expected reward with respect to the policy’s parameters. There are two ways to optimize a policy. </p>
-<ol>
-<li>Derivative free optimization (DFO) algorithms, including evolutionary algorithms, like genetic programming, simulated annealing, etc.;</li>
-<li>Policy gradient methods.</li>
-</ol>
-<p>Approximate dynamic programming (ADP) focus on learning value functions, which predict how much reward the agent is going to receive.</p>
-<p>Finally, there are actor-critic methods that combine elements from both policy optimization and dynamic programming. These methods optimize a policy, but they use value functions to speed up this optimization, and often use ideas from approximate dynamic programming to fit the value functions.</p>
-<h1 id="Elements-of-Reinforcement-Learning"><a href="#Elements-of-Reinforcement-Learning" class="headerlink" title="Elements of Reinforcement Learning"></a>Elements of Reinforcement Learning</h1><ul>
-<li>a policy;</li>
-<li>a reward signal;</li>
-<li>a value function;</li>
-<li>(optionally) a model of the environment.</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/POMDP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2092,6 +2223,190 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
 <script type="math/tex; mode=display">\pi ^{\ast}=\underset  {\pi }{\mbox{argmax}}\ V^{\pi }(b_{0})</script><p>where $b_{0}$ is the initial belief.</p>
 <p>The optimal policy, denoted by $\pi^\ast$, yields the highest expected reward value for each belief state, compactly represented by the optimal value function $V^{\ast}$. This value function is solution to the Bellman optimality equation:</p>
 <script type="math/tex; mode=display">V^{\ast}(b)=\max_{a\in A}\Bigl[ r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o))\Bigr]</script><p>For finite-horizon POMDPs, the optimal value function is piecewise-linear and convex. It can be represented as a finite set of vectors. In the infinite-horizon formulation, a finite vector set can approximate $V^{\ast}$ arbitrarily closely, whose shape remains convex. Value iteration applies dynamic programming update to gradually improve on the value until convergence to an $\epsilon$-optimal value function, and preserves its piecewise linearity and convexity. By improving the value, the policy is implicitly improved. Another dynamic programming technique called policy iteration explicitly represents and improves the policy instead. These are the same as value iteration and policy iteration MDP.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/IntroductionOfReinforcementLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">Introduction Of Reinforcement Learning</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="Introduction Of Reinforcement Learning">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Reinforcement learning is a computational goal-directed approach to learning from interaction with environment.</p>
+<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="Reinforcement Learning">
+<ul>
+<li>trial-and-error search </li>
+<li>delayed reward</li>
+</ul>
+<p>We can use ideas from dynamical systems theory to formulate a reinforcement learning problem, specifically, as the optimal control of incompletely-known Markov decision processes. A learning agent must be able to sense the state of its environment to some extent and must be able to take actions that affect the state. The agent also must have a goal or goals relating to the state of the environment.</p>
+<p>One of the challenges that arise in reinforcement learning, and not in other kinds of learning, is the trade-off between <strong>exploration</strong> and <strong>exploitation</strong>. The agent has to exploit what it has already experienced in order to obtain reward, but it also has to explore in order to make better action selections in the future.</p>
+<p>Methods based on general principles, such as search or learning, were characterized as “weak methods,” whereas those based on speciﬁc knowledge were called “strong methods.”</p>
+<h1 id="Taxonomy"><a href="#Taxonomy" class="headerlink" title="Taxonomy"></a>Taxonomy</h1><p>In reinforcement learning, we have two orthogonal choices: what kind of objective to optimize (involving a policy, value function, or dynamics model), and what kind of function approximators to use.</p>
+<p>First, we have two kinds of algorithms:</p>
+<ul>
+<li>Model-based RL algorithms: based on dynamics model that tends to predict the next state and the reward at the next step;</li>
+<li>Model-free RL algorithms: not based on a dynamics model.</li>
+</ul>
+<p>Then, for model-free RL algorithms, the figure below shows a taxonomy:</p>
+<img src="/en/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
+<p>Policy optimization methods are centered around the policy, the function that maps the agent’s state to its next action. These methods view reinforcement learning as a numerical optimization problem where we optimize the expected reward with respect to the policy’s parameters. There are two ways to optimize a policy. </p>
+<ol>
+<li>Derivative free optimization (DFO) algorithms, including evolutionary algorithms, like genetic programming, simulated annealing, etc.;</li>
+<li>Policy gradient methods.</li>
+</ol>
+<p>Approximate dynamic programming (ADP) focus on learning value functions, which predict how much reward the agent is going to receive.</p>
+<p>Finally, there are actor-critic methods that combine elements from both policy optimization and dynamic programming. These methods optimize a policy, but they use value functions to speed up this optimization, and often use ideas from approximate dynamic programming to fit the value functions.</p>
+<h1 id="Elements-of-Reinforcement-Learning"><a href="#Elements-of-Reinforcement-Learning" class="headerlink" title="Elements of Reinforcement Learning"></a>Elements of Reinforcement Learning</h1><ul>
+<li>a policy;</li>
+<li>a reward signal;</li>
+<li>a value function;</li>
+<li>(optionally) a model of the environment.</li>
+</ul>
 
           
         
@@ -2327,174 +2642,6 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
 
        
     
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/Q-learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/reinforcement-learning/Q-learning/" itemprop="url">Q-learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-27T10:51:23-05:00">
-                2019-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/reinforcement-learning/Q-learning/" class="leancloud_visitors" data-flag-title="Q-learning">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Q-leaning is a model-free (no need to build a model of environment) reinforcement learning method. The goal of Q-leaning is to learn a policy, which can be used to guide a agent to take corresponding action in different states. For any finite Markov Decision Process, Q-learning can find the optimal policy that miximizes the expected total reward.</p>
-<h1 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h1><p>Reinforcement learning includes a agent, a state set $S$ and an action set $A$. When the state $s_t\in S$ is observed, the agent will choose an action $a_t\in A$. Then it will get a reward $r_t$ and goes to the next state $s_{t+1}$.</p>
-<p>Our goal is to maximize the future total reward, i.e., the expection of total reward given the current state. In practice, we usually use weighted sum, e.g., discount criterion to compute the expected total reward.</p>
-<p>Q-learning is used to learn a function $Q:S\times A\mapsto \mathbb{R}$. At any state $s_t$, the agent can choose an action $a_t$ such that $Q(s_t,a_t)$ is maximized。</p>
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>To use Q-learning, wehave to find a way to learn the $Q$ function. The simplest way is to maintain a table with size $|S|\times |A|$, and use value iteration to update the Q-table. The update rule is given by</p>
-<script type="math/tex; mode=display">Q^{new}(s_{t},a_{t})\leftarrow (1-\alpha )\cdot  Q(s_{t},a_{t})+\alpha \cdot  \left( r_t + \gamma \cdot \max_a Q(s_{t+1},a) \right)</script><p>whick requires $s_t$, $r_t$ and $s_{t+1}$ at each update step.</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gym</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="comment"># 1. Load Environment and Q-table structure</span></span><br><span class="line">env = gym.make(<span class="string">'FrozenLake8x8-v0'</span>)</span><br><span class="line">Q = np.zeros([env.observation_space.n,env.action_space.n])</span><br><span class="line"><span class="comment"># env.obeservation.n, env.action_space.n gives number of states and action in env loaded</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># 2. Parameters of Q-leanring</span></span><br><span class="line">eta = <span class="number">.628</span></span><br><span class="line">gma = <span class="number">.9</span></span><br><span class="line">epis = <span class="number">100</span></span><br><span class="line">rev_list = [] <span class="comment"># reward per episode calculate</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># 3. Q-learning Algorithm</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epis):</span><br><span class="line">    <span class="comment"># Reset environment</span></span><br><span class="line">    s = env.reset()</span><br><span class="line">    rAll = <span class="number">0</span></span><br><span class="line">    d = <span class="literal">False</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># The Q-Table learning algorithm</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; <span class="number">99</span>:</span><br><span class="line">        env.render()</span><br><span class="line">        j+=<span class="number">1</span></span><br><span class="line">        <span class="comment"># Choose action from Q table</span></span><br><span class="line">        a = np.argmax(Q[s,:] + np.random.randn(<span class="number">1</span>,env.action_space.n)*(<span class="number">1.</span>/(i+<span class="number">1</span>)))</span><br><span class="line">        <span class="comment"># Get new state &amp; reward from environment</span></span><br><span class="line">        s1,r,d,_ = env.step(a)</span><br><span class="line">        <span class="comment"># Update Q-Table with new knowledge</span></span><br><span class="line">        Q[s,a] = Q[s,a] + eta*(r + gma*np.max(Q[s1,:]) - Q[s,a])</span><br><span class="line">        rAll += r</span><br><span class="line">        s = s1</span><br><span class="line">        <span class="keyword">if</span> d == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    rev_list.append(rAll)</span><br><span class="line">    env.render()</span><br></pre></td></tr></table></figure>
-<h2 id="Variants"><a href="#Variants" class="headerlink" title="Variants"></a>Variants</h2><ol>
-<li>Deep Q-learning</li>
-<li>Double Q-learning</li>
-<li>Double Deep Q-learning</li>
-<li>Delayed Q-learning</li>
-<li>Greedly GQ</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
   </section>
 
   
@@ -2547,7 +2694,7 @@ V(s) &=\mathbb{E}[V|S_t=s]\\
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

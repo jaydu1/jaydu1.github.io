@@ -425,15 +425,27 @@
 <li>every edge of $H$ connects two vertices of $H$,<br>which means that the vertices of $H$ are a subset of the vertices of $G$, and every pair of adjacent vertices in $H$ also appears in $G$.</li>
 </ol>
 <p>Furthermore, if $V(H)=V(G)$, then $H$ is a <em>spanning subgraph</em> of $G$. In addition, if $H$ is a tree, then $H$ is a <em>spanning tree</em> of $G$.</p>
-<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h2><p>Let $X$ be a nonempty set. A <em>topology on $X$</em>, denoted by $T$, is a family of subsets of $X$, for which satisfies</p>
+<h1 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h1><h1 id="Combinatorics"><a href="#Combinatorics" class="headerlink" title="Combinatorics"></a>Combinatorics</h1><h1 id="Probability-And-Statistics"><a href="#Probability-And-Statistics" class="headerlink" title="Probability And Statistics"></a>Probability And Statistics</h1><h1 id="Point-Set-Topology"><a href="#Point-Set-Topology" class="headerlink" title="Point-Set Topology"></a>Point-Set Topology</h1><h2 id="Topology"><a href="#Topology" class="headerlink" title="Topology"></a>Topology</h2><p>Let $X$ be a nonempty set and $\mathcal{P}(X)$ be the power set of $X$. A <em>topology on $X$</em>, denoted by $T\subset \mathcal{P}(X)$, is a family of subsets of $X$, for which satisfies</p>
 <ol>
 <li>$\varnothing\in T$ and $X\in T$.</li>
 <li>If $O_1,O_2\in T$, then $O_1\cap O_2\in T$. (finite intersection)</li>
 <li>If $O_i\in T$ for $i\in I$, then $\bigcup\limits_{i\in I}O_i\in T$. (infinite union)</li>
 </ol>
-<h2 id="Continuous-Functions"><a href="#Continuous-Functions" class="headerlink" title="Continuous Functions"></a>Continuous Functions</h2><h3 id="Continuous-Functions-between-Topological-Spaces"><a href="#Continuous-Functions-between-Topological-Spaces" class="headerlink" title="Continuous Functions between Topological Spaces"></a>Continuous Functions between Topological Spaces</h3><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
-<li><strong>Definition</strong><br><em>A map $f:X_1\rightarrow X_2$ is open if the image of every open set in $X_1$ is open in $X_2$.</em></li>
+<p>We can define a topology by a basis $B\subset \mathcal{P}(X)$:</p>
+<ol>
+<li>$\forall\ x\in X$, $\exists\ V\in B$, s.t. $x\in V$.</li>
+<li>$\forall\ V_1,V_2\in B$ and $x\in X$, if $x\in V_1\cap V_2$, then $\exists\ V_3\in B$, s.t. $x\in V_3\subset V_1\cap V_2$.</li>
+</ol>
+<p>The open sets in $T$ are all the possible unions of sets in $B$. In general, bases are not unique.</p>
+<p>We call the sets in $T$ the open sets. A set $C$ is closed if $X\setminus C$ is open.</p>
+<h3 id="Hausforff-Topology"><a href="#Hausforff-Topology" class="headerlink" title="Hausforff Topology"></a>Hausforff Topology</h3><p>A topology is <em>Hausforff</em> if $\forall\ x,y\in X$, $\exists\ V_x,V_y\in T$, $V_x\cap V_y=\varnothing$, s.t. $x\in V_x,y\in V_y$.</p>
+<h3 id="Subspace-Topology"><a href="#Subspace-Topology" class="headerlink" title="Subspace Topology"></a>Subspace Topology</h3><p>Given $A\subset X$, the subspace topology on $A$ consists of the open sets $\{A\cap U|U\in T\}$.</p>
+<h2 id="Continuity"><a href="#Continuity" class="headerlink" title="Continuity"></a>Continuity</h2><h3 id="Open-Maps"><a href="#Open-Maps" class="headerlink" title="Open Maps"></a>Open Maps</h3><ul>
+<li><strong>Definition</strong><br><em>A map $f:X_1\rightarrow X_2$ is open if the image of every open set in $X_2$ is open in $X_1$.</em> </li>
 </ul>
+<h3 id="Continous-Maps"><a href="#Continous-Maps" class="headerlink" title="Continous Maps"></a>Continous Maps</h3><p><em>A map $f:X_1\rightarrow X_2$ is continuous if for any open set in $X_2$, the inverse image in $X_1$ is open.</em> </p>
+<p><em>A map $f:X_1\rightarrow X_2$ is continuous if for any set in $T_2$, the inverse image is in $T_1$.</em> </p>
+<p>Equivalently, $f$ is continuous if and only if for any $C$ closed in $X_2$, $f^{-1}(C)$ is closed in $X_1$.</p>
 <h3 id="Homeomorphisms"><a href="#Homeomorphisms" class="headerlink" title="Homeomorphisms"></a>Homeomorphisms</h3><ul>
 <li><strong>Definition</strong><br><em>If a map $f:X_1\rightarrow X_2$ is a bijection, and both $f$ and $f^{-1}$ are continuous (or equivalently, $f$ is a continuous and open map), then $f$ is a homeomorphism.</em></li>
 </ul>
@@ -444,9 +456,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><p>Let $(X,\Omega)$ be a topological space. Then $X$ is <em>connected</em> if the only subsets of $X$, which are both open and closed are $\varnothing$ and $X$.</p>
+<h2 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h2><p>Let $(X,T)$ be a topological space. Then $X$ is <em>connected</em> if the only subsets of $X$, which are both open and closed are $\varnothing$ and $X$. </p>
+<p>$X$ is <em>disconnected</em>, if there exsits $U,V\in T$, $U,V\neq \varnothing$ and $U\cap V=\varnothing$, s.t. $X=U\cup V$. Equivalently, $X$ is <em>disconnected</em> if there exists a continuous surjective map $f:X\mapsto \{0,1\}$.</p>
+<p>For the subspace topology on $A\subset X$, if $A$ is connected, then $\forall\ B$ such that $A\subseteq B\subseteq \overline{A}$, $B$ is connected.</p>
 <p>$X$ is path-connected if for<br>any two points $x, y \in X$, there exists a continuous function $f : [0, 1] \rightarrow X$ such that $f(0) = x $ and $f(1) = y$. Every path-connected space is connected. </p>
-<h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><ul>
+<p>If $X$ is path connect, then $X$ is connected. For open sets in $\mathbb{R}^n$, $X$ is path connected if and only if $X$ is connected.</p>
+<h2 id="Compactness"><a href="#Compactness" class="headerlink" title="Compactness"></a>Compactness</h2><p>Given a topology space $(X,T)$, a subset $A\subset X$ is <em>compact</em> if for every open cover there is a finite subcover.</p>
+<p>Every finite set is compact.</p>
+<p>In $\mathbb{R}^n$, a set is compact if and only if it is closed and bounded.</p>
+<p>In a Hausdorff space, a set is closed if it is compact.</p>
+<p>In a compact space, a set is compact if it is closed.</p>
+<p>For example, $\mathbb{R}$ is Hausdorff but not compact since it is not bounded. A compact subset of $\mathbb{R}$ is closed and bounded. But not all closed subsets are compact.</p>
+<h2 id="Metric-Spaces"><a href="#Metric-Spaces" class="headerlink" title="Metric Spaces"></a>Metric Spaces</h2><ul>
 <li><strong>Definition</strong><br><em>Let $X$ be a nonempty set. A metric on $X$ is a function $d:X\times X\mapsto \mathbb{R}$ if for all $x,y,z\in X$,</em></li>
 </ul>
 <ol>
@@ -456,6 +477,16 @@
 </ol>
 <p><em>We call $d(x, y)$ the distance between $x$ and $y$. A set X, together with a metric on X, is called a metric space.</em></p>
 <p>$B_d(x,\epsilon)=\{y\in X:d(x,y)&lt;\epsilon\}$ is called an <em>$\epsilon$-ball</em>. The <em>metric topology</em> induced by $d$ is the collection of all $\epsilon$-balls $B=\{B_d(x,\epsilon:x\in X,\epsilon&gt;0\}$.</p>
+<h2 id="Main-Results"><a href="#Main-Results" class="headerlink" title="Main Results"></a>Main Results</h2><ul>
+<li>If $X,Y$ are connected/compact, then $X\times Y$ is connected/compact.</li>
+<li>If $X,Y$ are connected and $X\cap Y\neq \varnothing$, then $X\cup Y$ is connected.</li>
+<li>If $X$ is connected/compact and    $f:X\mapsto Y$ is continuous, then $f(X)$ is connected/compact.</li>
+<li>If $X$ is compact and $f:X\mapsto \mathbb{R}$, then $f$ attains its global maximum and minimum.</li>
+<li>If $X$ is compact, $Y$ is Hausdorff and $f:X\mapsto Y$ is continuous, then $f$ is a closed map.</li>
+<li>If $X$ is compact, $Y$ is Hausdorff and $f:X\mapsto Y$ is bijective and continuous, then $f$ is a homeomorphism.</li>
+<li>If $f$ is a homeomorphism, then $X$ is connected/compact if and only if $Y$ is connected/compact.</li>
+<li>If $(X,T,d)$ is a metric space, then $A\subset X$ is compact if and only if every sequence in $A$ has a convergent subsequence.</li>
+</ul>
 <h1 id="Real-Analysis"><a href="#Real-Analysis" class="headerlink" title="Real Analysis"></a>Real Analysis</h1><h1 id="Complex-Variables"><a href="#Complex-Variables" class="headerlink" title="Complex Variables"></a>Complex Variables</h1><h2 id="Complex-Numbers"><a href="#Complex-Numbers" class="headerlink" title="Complex Numbers"></a>Complex Numbers</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Thre <em>complex numbers</em> $\mathbb{C}$ is a set of all order pairs of real numbers $(x,y)$. The <em>imaginary unit</em> $i$ is a complex number such that $i^2=-1$. Then each complex number can be expressed as $z=x+yi$ where $x\in\mathbb{R}$ and $y\in\mathbb{R}$  are called the <em>real part</em> and <em>imaginary part</em> of $z$, denoted by $\text{Re} z$ and $\text{Im} z$ respectively. The <em>(complex) conjugate</em> of $z$ is the number $\overline{z}=x-yi$.</p>
 <p>The complex numbers can be graphed on the <em>complex plane</em> ($xy$-plane). The horizontal $x$-axis is called the <em>real axis</em> and the vertical $y$-axis is called the <em>imaginary axis</em>.</p>
 <p>The <em>modulus</em>, <em>magnitude</em> or <em>absolute value</em> of $z$ is given by $|z|=\sqrt{x^2+y^2}$. The absolute value of $z$ satisfies $|z|^2=z\overline{z}$.</p>
@@ -759,7 +790,7 @@
 <ul>
 <li><strong>ring of polynomial.</strong> The ring of polynomials with coefficients in a ring $R$ is usually denoted by $R[x_1,\cdots,x_n]$ or $R[x]$ where $x$ refer to the set of variables $\{x_1,\cdots,x_n\}$. An element $f(x)\in \mathbb{R}[x]$ can be written as a finite sum <script type="math/tex">f(x)=\sum\limits_b b_{\alpha} x^{\alpha},</script><br>where $\alpha=(\alpha_1,\cdots,\alpha_d)$ is a multi-index and $\alpha_i\in \mathbb{R}$.</li>
 </ul>
-<p>Let $I$ be a subring of a ring $R$. If $\forall\ r\in R,x\in I$, $rx\in I$ and $xr\in I$, then $I$ is called an <em>idela</em> on $R$. Every ring $R$ has at least two ideals, $\{ 0 \}$ and $R$.</p>
+<p>Let $I$ be a subring of a ring $R$. If $\forall\ r\in R,x\in I$, $rx\in I$ and $xr\in I$, then $I$ is called an <em>ideal</em> on $R$. Every ring $R$ has at least two ideals, $\{ 0 \}$ and $R$.</p>
 <h2 id="Ring-Homomorphisms"><a href="#Ring-Homomorphisms" class="headerlink" title="Ring Homomorphisms"></a>Ring Homomorphisms</h2><p>Let $(R, +, \times)$ and $(R’, \oplus,\otimes)$ be rings. A function $\phi: R \rightarrow R’$ is called a <em>ring homomorphism</em> if both of the following conditions hold for be every $a$ and $b$ in $R$:</p>
 <ol>
 <li>$\phi(a+b)=\phi(a)\oplus\phi(b).$</li>
@@ -1489,189 +1520,6 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">强化学习简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
-                2019-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">reinforcement-learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="强化学习简介">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。</p>
-<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="强化学习">
-<ul>
-<li>试错搜索；</li>
-<li>延时报酬。</li>
-</ul>
-<p>我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。</p>
-<p>强化学习中的一个特有的挑战是如何权衡新知识的探索（<strong>exploration</strong>）与旧知识的利用（<strong>exploitation</strong>）。代理需要利用已有的经验来取得报酬，但它也要探索以便在以后可以采取更好的行动选择。</p>
-<p>主流的方法，例如搜索和学习，是被称为弱方法；而基于特点知识的方法被称为强方法。</p>
-<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>在强化学习中，我们需要选择：待优化目标函数的类型（策略、值函数、动力模型）以及函数近似器的类型。</p>
-<p>首先，我们有两种算法：</p>
-<ul>
-<li>基于模型的强化学习算法：基于动力学模型，预测下一阶段的状态和下一步的报酬；</li>
-<li>模型无关的强化学习算法：不基于动力学模型。<br>然后，对于模型无关的强化学习算法，下图展示了进一步的分类：</li>
-</ul>
-<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
-<p>策略优化方法围绕策略函数$\pi:S\mapsto A$。这些方法将强化学习视为一个数值优化问题，最大化与策略参数有关的期望总报酬。这里有两种方式来优化策略：</p>
-<ol>
-<li>导数无关（Derivative free optimization， DFO）的优化算法，包括进化算法，例如基因编程、模拟退火等等；</li>
-<li>策略梯度方法。</li>
-</ol>
-<p>近似动态规划（Approximate dynamic programming， ADP）着眼于学习值函数$V:S\mapsto\mathbb{R}$，用来预测在一个状态下代理会接受到的报酬。</p>
-<p>最后，actor-critic方法结合了策略优化和动态规划。这些方法优化一个策略，但他们用值函数来假设优化过程。通常它是通过近似动态规划的方法来计算值函数的。</p>
-<h1 id="强化学习的基本元素"><a href="#强化学习的基本元素" class="headerlink" title="强化学习的基本元素"></a>强化学习的基本元素</h1><ul>
-<li>一个策略$\pi$；</li>
-<li>一个报酬信号$r_t$；</li>
-<li>一个值函数$V(s)$；</li>
-<li>（可选）一个描述环境的模型。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/POMDP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1822,6 +1670,189 @@ c_1&c_2&c_3\end{matrix}\right|.</script></p>
 <script type="math/tex; mode=display">V^\pi(b_0) = \sum_{t=0}^\infty  \gamma^t r(b_t, a_t) = \sum_{t=0}^\infty \gamma^t \mathbb{E}\Bigl[ R(s_t,a_t) \mid b_0, \pi \Bigr]</script><p>其中$\gamma&lt;1$是折扣因子。最优策略$\pi^\ast$是由优化长期报酬得到：</p>
 <script type="math/tex; mode=display">\pi^{\ast}=\underset{\pi }{\mbox{argmax}}\ V^{\pi}(b_{0})</script><p>最优策略$\pi^\ast$对每一个信念状态产生最高期望报酬，即最优值函数$V^{\ast}$。这个值函数是贝尔曼方程的解：</p>
 <script type="math/tex; mode=display">V^{\ast}(b)=\max _{a\in A}{\Bigl [}r(b,a)+\gamma \sum _{o\in \Omega }\mathbb{P}(o\mid b,a)V^{\ast}(\tau (b,a,o)){\Bigr ]}</script><p>对有限阶段的POMDPs，最优值函数是分段线性、凸的。它可以用有限的向量集合表示。对无限阶段的POMDPs，最优值函数可以由有限向量集合任意逼近，并且保持凸性。值迭代应用动态规划更新，逐渐改善值函数，直到收敛到$\epsilon$-最优的值函数，保持分段线性和凸性。通过改善值函数，策略也间接得到改善。另外也可以用策略迭代直接改善策略。这与MDP的值迭代和策略迭代相同。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/reinforcement-learning/IntroductionOfReinforcementLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/reinforcement-learning/IntroductionOfReinforcementLearning/" itemprop="url">强化学习简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T10:20:54-05:00">
+                2019-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/reinforcement-learning/IntroductionOfReinforcementLearning/" class="leancloud_visitors" data-flag-title="强化学习简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>强化学习是一种从与环境的交互中学习，具有直接目标的计算方法。</p>
+<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl.png" title="强化学习">
+<ul>
+<li>试错搜索；</li>
+<li>延时报酬。</li>
+</ul>
+<p>我们可以借用动力系统的想法来描述一个强化学习问题，特别地，作为一个非完全已知的马尔科夫决策过程的最优控制问题。一个可学习的代理必须能够在一定程度上观测到环境的状态，并且可以采取行动以影响当前状态。代理还必须有一个目标或者一些目标，目标是与环境的状态有关的。</p>
+<p>强化学习中的一个特有的挑战是如何权衡新知识的探索（<strong>exploration</strong>）与旧知识的利用（<strong>exploitation</strong>）。代理需要利用已有的经验来取得报酬，但它也要探索以便在以后可以采取更好的行动选择。</p>
+<p>主流的方法，例如搜索和学习，是被称为弱方法；而基于特点知识的方法被称为强方法。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>在强化学习中，我们需要选择：待优化目标函数的类型（策略、值函数、动力模型）以及函数近似器的类型。</p>
+<p>首先，我们有两种算法：</p>
+<ul>
+<li>基于模型的强化学习算法：基于动力学模型，预测下一阶段的状态和下一步的报酬；</li>
+<li>模型无关的强化学习算法：不基于动力学模型。<br>然后，对于模型无关的强化学习算法，下图展示了进一步的分类：</li>
+</ul>
+<img src="/reinforcement-learning/IntroductionOfReinforcementLearning/rl_category.png" title="A Taxonomy of Model-free RL Algorithms">
+<p>策略优化方法围绕策略函数$\pi:S\mapsto A$。这些方法将强化学习视为一个数值优化问题，最大化与策略参数有关的期望总报酬。这里有两种方式来优化策略：</p>
+<ol>
+<li>导数无关（Derivative free optimization， DFO）的优化算法，包括进化算法，例如基因编程、模拟退火等等；</li>
+<li>策略梯度方法。</li>
+</ol>
+<p>近似动态规划（Approximate dynamic programming， ADP）着眼于学习值函数$V:S\mapsto\mathbb{R}$，用来预测在一个状态下代理会接受到的报酬。</p>
+<p>最后，actor-critic方法结合了策略优化和动态规划。这些方法优化一个策略，但他们用值函数来假设优化过程。通常它是通过近似动态规划的方法来计算值函数的。</p>
+<h1 id="强化学习的基本元素"><a href="#强化学习的基本元素" class="headerlink" title="强化学习的基本元素"></a>强化学习的基本元素</h1><ul>
+<li>一个策略$\pi$；</li>
+<li>一个报酬信号$r_t$；</li>
+<li>一个值函数$V(s)$；</li>
+<li>（可选）一个描述环境的模型。</li>
+</ul>
 
           
         
@@ -2275,7 +2306,7 @@ for i in range(epis):
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/UChicago/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/course/SYSU/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinhong Du">
@@ -2294,7 +2325,7 @@ for i in range(epis):
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/course/UChicago/" itemprop="url">课程材料（UChicago）</a></h1>
+                <a class="post-title-link" href="/course/SYSU/" itemprop="url">课程材料（SYSU）</a></h1>
         
 
         <div class="post-meta">
@@ -2346,7 +2377,7 @@ for i in range(epis):
 
           
           
-             <span id="/course/UChicago/" class="leancloud_visitors" data-flag-title="课程材料（UChicago）">
+             <span id="/course/SYSU/" class="leancloud_visitors" data-flag-title="课程材料（SYSU）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2379,30 +2410,91 @@ for i in range(epis):
       
         
           
-            <h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
+            <h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><div class="table-container">
 <table>
 <thead>
 <tr>
 <th>课程名称</th>
 <th>Github</th>
-<th>百度云盘</th>
+<th>百度云盘 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>STAT30400 - Distribution Theory</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
+<td>实变函数</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Math/Real%20Function" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1ES_EFeewTD7fIDxJlL1SZA" target="_blank" rel="noopener">0jgw</a></td>
 </tr>
 <tr>
-<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
+<td>复变函数</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Math/Complex%20Function/" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1J10IvkHlv-fufIOI13s3ew" target="_blank" rel="noopener">gq93</a></td>
 </tr>
 <tr>
-<td>STAT34300 - Applied Linear Statistical Model</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
+<td>最优化理论及其应用</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Math/Optimization" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1F_rQMJV9oShI4hwsHscGKw" target="_blank" rel="noopener">dtkm</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>课程名称</th>
+<th>Github</th>
+<th>百度云盘 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数理统计</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Mathematical%20Statistics" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1YpusdMvS93n4EpXuALlTlA" target="_blank" rel="noopener">6hva</a></td>
+</tr>
+<tr>
+<td>应用回归分析</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Applied%20Linear%20Statistical%20Models" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1WC1FgzRQhStSuqtqcN2TBQ" target="_blank" rel="noopener">8duc</a></td>
+</tr>
+<tr>
+<td>随机过程</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Stochastic%20Processes" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1M70iCYSwwy0-8pDybM6tLA" target="_blank" rel="noopener">ywch</a></td>
+</tr>
+<tr>
+<td>统计计算</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Statistical%20Computing" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1nTUFxsza-Xq4VQ5El7kUKQ" target="_blank" rel="noopener">2r15</a></td>
+</tr>
+<tr>
+<td>生物统计</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Biostatistics" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1W-pTepfDdPEEw9v1uPTunQ" target="_blank" rel="noopener">4ih2</a></td>
+</tr>
+<tr>
+<td>多元统计分析</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Statistics/Modern%20Multivariate%20Statistical%20Techniques" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/17-wagfrpqdgH1Q-rXlPkLg" target="_blank" rel="noopener">nwdy</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>课程名称</th>
+<th>Github</th>
+<th>百度云盘 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据结构</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/SYSU/Computer%20Science/Data%20Structure" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1s8Icgy-ehznvFg_vsWIzWg" target="_blank" rel="noopener">hdsk</a></td>
 </tr>
 </tbody>
 </table>

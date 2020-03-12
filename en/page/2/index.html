@@ -297,6 +297,356 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/reinforcement-learning/Q-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/reinforcement-learning/Q-learning/" itemprop="url">Q-learning</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-27T10:51:23-05:00">
+                2019-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/reinforcement-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">reinforcement-learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/reinforcement-learning/Q-learning/" class="leancloud_visitors" data-flag-title="Q-learning">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Q-leaning is a model-free (no need to build a model of environment) reinforcement learning method. The goal of Q-leaning is to learn a policy, which can be used to guide a agent to take corresponding action in different states. For any finite Markov Decision Process, Q-learning can find the optimal policy that miximizes the expected total reward.</p>
+<h1 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h1><p>Reinforcement learning includes a agent, a state set $S$ and an action set $A$. When the state $s_t\in S$ is observed, the agent will choose an action $a_t\in A$. Then it will get a reward $r_t$ and goes to the next state $s_{t+1}$.</p>
+<p>Our goal is to maximize the future total reward, i.e., the expection of total reward given the current state. In practice, we usually use weighted sum, e.g., discount criterion to compute the expected total reward.</p>
+<p>Q-learning is used to learn a function $Q:S\times A\mapsto \mathbb{R}$. At any state $s_t$, the agent can choose an action $a_t$ such that $Q(s_t,a_t)$ is maximized。</p>
+<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>To use Q-learning, wehave to find a way to learn the $Q$ function. The simplest way is to maintain a table with size $|S|\times |A|$, and use value iteration to update the Q-table. The update rule is given by</p>
+<script type="math/tex; mode=display">Q^{new}(s_{t},a_{t})\leftarrow (1-\alpha )\cdot  Q(s_{t},a_{t})+\alpha \cdot  \left( r_t + \gamma \cdot \max_a Q(s_{t+1},a) \right)</script><p>whick requires $s_t$, $r_t$ and $s_{t+1}$ at each update step.</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gym</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="comment"># 1. Load Environment and Q-table structure</span></span><br><span class="line">env = gym.make(<span class="string">'FrozenLake8x8-v0'</span>)</span><br><span class="line">Q = np.zeros([env.observation_space.n,env.action_space.n])</span><br><span class="line"><span class="comment"># env.obeservation.n, env.action_space.n gives number of states and action in env loaded</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># 2. Parameters of Q-leanring</span></span><br><span class="line">eta = <span class="number">.628</span></span><br><span class="line">gma = <span class="number">.9</span></span><br><span class="line">epis = <span class="number">100</span></span><br><span class="line">rev_list = [] <span class="comment"># reward per episode calculate</span></span><br><span class="line">	</span><br><span class="line"><span class="comment"># 3. Q-learning Algorithm</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epis):</span><br><span class="line">    <span class="comment"># Reset environment</span></span><br><span class="line">    s = env.reset()</span><br><span class="line">    rAll = <span class="number">0</span></span><br><span class="line">    d = <span class="literal">False</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># The Q-Table learning algorithm</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; <span class="number">99</span>:</span><br><span class="line">        env.render()</span><br><span class="line">        j+=<span class="number">1</span></span><br><span class="line">        <span class="comment"># Choose action from Q table</span></span><br><span class="line">        a = np.argmax(Q[s,:] + np.random.randn(<span class="number">1</span>,env.action_space.n)*(<span class="number">1.</span>/(i+<span class="number">1</span>)))</span><br><span class="line">        <span class="comment"># Get new state &amp; reward from environment</span></span><br><span class="line">        s1,r,d,_ = env.step(a)</span><br><span class="line">        <span class="comment"># Update Q-Table with new knowledge</span></span><br><span class="line">        Q[s,a] = Q[s,a] + eta*(r + gma*np.max(Q[s1,:]) - Q[s,a])</span><br><span class="line">        rAll += r</span><br><span class="line">        s = s1</span><br><span class="line">        <span class="keyword">if</span> d == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    rev_list.append(rAll)</span><br><span class="line">    env.render()</span><br></pre></td></tr></table></figure>
+<h2 id="Variants"><a href="#Variants" class="headerlink" title="Variants"></a>Variants</h2><ol>
+<li>Deep Q-learning</li>
+<li>Double Q-learning</li>
+<li>Double Deep Q-learning</li>
+<li>Delayed Q-learning</li>
+<li>Greedly GQ</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UChicago/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinhong Du">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/en/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jaydu1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/en/course/UChicago/" itemprop="url">Course materials in UChicago</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52-05:00">
+                2019-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/en/categories/course/" itemprop="url" rel="index">
+                    <span itemprop="name">course</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/en/course/UChicago/" class="leancloud_visitors" data-flag-title="Course materials in UChicago">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Course Name</th>
+<th>Github</th>
+<th>BaiduDisk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STAT30400 - Distribution Theory</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
+</tr>
+<tr>
+<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
+</tr>
+<tr>
+<td>STAT34300 - Applied Linear Statistical Model</td>
+<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
+<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+       
+    
+                  
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UCB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -748,188 +1098,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/course/UChicago/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jinhong Du">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/en/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jaydu1">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/en/course/UChicago/" itemprop="url">Course materials in UChicago</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T19:40:52-05:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/en/categories/course/" itemprop="url" rel="index">
-                    <span itemprop="name">course</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/en/course/UChicago/" class="leancloud_visitors" data-flag-title="Course materials in UChicago">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Course Name</th>
-<th>Github</th>
-<th>BaiduDisk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>STAT30400 - Distribution Theory</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030400%20-%20Distribution%20Theory" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1Tmy8WUMuAtyS3_wNqYP46Q" target="_blank" rel="noopener">de7j</a></td>
-</tr>
-<tr>
-<td>STAT30900 - Mathematical Computation I:Matrix Computation</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2030900%20-%20Mathematical%20Computation%20I-Matrix%20Computation" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1bbsUVcX4_pJr8ir7I4XA3g" target="_blank" rel="noopener">cq9v</a></td>
-</tr>
-<tr>
-<td>STAT34300 - Applied Linear Statistical Model</td>
-<td><a href="https://github.com/jaydu1/Course-Material/tree/master/UChicago/Statistics/STAT%2034300%20-%20Applied%20Linear%20Statistical%20Model" target="_blank" rel="noopener">link</a></td>
-<td><a href="https://pan.baidu.com/s/1p1IVliUYyCf2vtgBMOegNQ" target="_blank" rel="noopener">y79v</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-       
-    
-                  
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/en/uncategorized/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1102,7 +1270,7 @@
               
                 <a href="/en/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
