@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Website moved</title>
+</head>
+<body>
+  <p id="message">This page has moved.</p>
+
+  <script>
+    (() => {
+      const oldPrefix = "/dujinhong";
+      const newOrigin = "https://jinhongdu-lab.github.io";
+      const oldPath = window.location.pathname;
+
+      if (
+        oldPath === oldPrefix ||
+        oldPath.startsWith(oldPrefix + "/")
+      ) {
+        // Remove "/dujinhong" while preserving the remaining path.
+        const newPath = oldPath.slice(oldPrefix.length) || "/";
+
+        // Preserve query parameters and anchors.
+        const destination =
+          newOrigin +
+          newPath +
+          window.location.search +
+          window.location.hash;
+
+        window.location.replace(destination);
+        return;
+      }
+
+      document.getElementById("message").innerHTML =
+        'Page not found. Visit ' +
+        '<a href="https://jinhongdu-lab.github.io/">' +
+        'the new website</a>.';
+    })();
+  </script>
+</body>
+</html>
